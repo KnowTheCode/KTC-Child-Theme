@@ -1,0 +1,33 @@
+//
+// Labs Entry Meta
+//======================
+
+body.labs {
+  .entry-meta {
+    background-color: transparent;
+    margin: 10px 0;
+    padding: 0;
+    text-align: left;
+    color: $black;
+
+    .video-stats {
+      color: $green;
+    }
+
+    .entry-time, .fa-calendar {
+      color: lighten($black, 50%);
+    }
+
+    .fa {
+      margin-left: 10px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    &.lab-coming-soon {
+      color: $orange;
+    }
+  }
+}

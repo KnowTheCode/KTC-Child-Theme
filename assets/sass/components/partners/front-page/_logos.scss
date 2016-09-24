@@ -1,0 +1,31 @@
+//
+// Partner Logos
+//=======================
+
+.partners__home .partners__logos {
+  text-align: right;
+  margin-top: 20px;
+
+  @include media(480px) {
+    @include outer-container;
+    @include display(flex);
+    @include flex-wrap(wrap);
+  }
+
+  @include media(768px) {
+    margin-top: 0;
+    width: 66%;
+    float: left;
+    padding-left: 3%;
+  }
+
+  a {
+    border-bottom: none;
+
+    // 2 columns
+    @include media(480px) {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+  }
+}

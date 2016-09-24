@@ -1,0 +1,52 @@
+//
+// Badge
+//=========================
+
+.partner__adspot {
+  .partner__badge, .partner__badge_content {
+    background: #ccc;
+    padding: 2px 20px;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: $blue;
+    width: 100%;
+  }
+
+  .partner__gold {
+    .partner__badge, .partner__badge_content {
+      background-color: $partner_gold;
+    }
+  }
+
+  .partner__badge {
+    border: 1px solid #ccc;
+  }
+
+  .partner__badge_content {
+    display: none;
+    height: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .partner__badge_content {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 20px;
+    }
+
+    .partner__badge {
+      display: none;
+    }
+  }
+
+  .partner__badge_content {
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      width: $partner_container_tabletWidth - $partner_tabletWidth - 2px;
+    }
+    @media screen and (min-width: 1280px) {
+      width: $partner_container_desktopWidth - $partner_desktopWidth - 2px;
+    }
+  }
+}

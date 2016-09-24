@@ -1,0 +1,28 @@
+//
+// Partner's Page
+//===================================
+
+.partners__page {
+
+  @include media(480px) {
+    @include outer-container;
+    @include display(flex);
+    @include flex-wrap(wrap);
+  }
+
+  .partner {
+    position: relative;
+    overflow: hidden;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    color: $partner_gray;
+    text-align: center;
+
+    // 2 columns
+    @include media(768px) {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+  }
+}

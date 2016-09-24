@@ -1,0 +1,51 @@
+//
+// MemberPress
+// register pages
+//===============================
+
+.mp-form-row.mepr_bold.mepr_price {
+  font-size: rem(20);
+  font-weight: 700;
+  background-color: #e1e1e1;
+  padding: 20px;
+}
+
+body.basic-plan {
+  .mp-form-row {
+    &.mepr_bold.mepr_price, &.mepr_payment_method {
+      border-left: 10px solid $colorBasicBorder;
+    }
+  }
+
+  input[type="submit"] {
+    background-color: $colorBasicBorder;
+    border-color: $colorBasicBorder;
+    color: $black;
+    width: 100%;
+
+    &:hover {
+      background-color: $white;
+      border-color: $colorBasicBorder;
+    }
+  }
+}
+
+body.pro-plan {
+  .mp-form-row {
+    &.mepr_bold.mepr_price, &.mepr_payment_method {
+      border-left: 10px solid $colorProBorder;
+    }
+  }
+
+  input[type="submit"] {
+    background-color: $colorProBorder;
+    border-color: $colorProBorder;
+    color: $black;
+    width: 100%;
+
+    &:hover {
+      background-color: $white;
+      border-color: $colorProBorder;
+    }
+  }
+}

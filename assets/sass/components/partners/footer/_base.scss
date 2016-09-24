@@ -1,0 +1,19 @@
+//
+// Partners Footer
+//=========================
+
+.partners__footer {
+  background-color: #f2f2f2;
+  overflow: hidden;
+
+  .wrap {
+    position: relative;
+
+    @include media(768px) {
+      @include align-items(center);
+      @include display(flex);
+      @include flex-direction(row);
+      @include justify-content(center);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+//
+// WP Ninjas Colors
+//=======================
+
+.partner.wpninjas {
+  .partner__button {
+    background-color: #2e2f33;
+    border-color: #2e2f33;
+    color: $white;
+
+    &:hover, &:focus {
+      background-color: #D5DC28;
+      border-color: #D5DC28;
+      color: #2e2f33;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+//
+// Forms
+//====================
+
+input[type="text"],
+input[type="email"],
+textarea {
+  background: $white;
+  border: 1px solid lighten($darkBlue, 85);
+  color: lighten($darkBlue, 33);
+  font-size: $secondary-font-size;
+  padding: 16px;
+  width: 100%;
+}
+
+:-ms-input-placeholder {
+  color: $darkBlue;
+}
+:-moz-placeholder {
+  color: $darkBlue;
+}
+::-moz-placeholder {
+  color: $darkBlue;
+}
+::-webkit-input-placeholder {
+  color: $darkBlue;
+}

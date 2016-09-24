@@ -1,0 +1,35 @@
+//
+// Plan Features
+//========================
+
+.plan-feature__pro, .plan-feature__basic {
+  margin-top: 50px;
+}
+
+.plan-feature {
+  margin-bottom: 30px;
+
+  @include media($medium-screen-up) {
+    min-height: 180px;
+  }
+
+  @include media($large-screen-up) {
+    min-height: 200px;
+  }
+
+  h3 {
+    font-size: rem(20);
+  }
+  .fa {
+    margin-right: 8px;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+    min-height: 50px;
+  }
+}

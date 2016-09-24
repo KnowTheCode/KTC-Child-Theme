@@ -1,0 +1,14 @@
+//
+// Labs Entry Title
+//======================
+
+body.labs, body.single-lab {
+  .entry-title {
+    margin-left: 0;
+    &::before {
+      content: '\f04b';
+      font-family: FontAwesome;
+      margin-right: 7px;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+//
+// User History Page
+//==================================
+
+.entry-content .uh-filtering {
+  margin-bottom: 30px;
+  ul li {
+    margin-left: 0;
+  }
+  a.button {
+    width: 100%;
+    font-size: rem(16);
+  }
+}
+
+.uh-filtering {
+  ul, li {
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: 100%;
+
+    @include media($smaller-screen-up) {
+      display: inline-block;
+      width: auto;
+      margin-bottom: 0;
+      width: auto;
+    }
+  }
+
+  .button__filterby.current {
+    background-color: $white;
+    color: $blue;
+  }
+}
+
+.uhlist__table {
+  width: 100%;
+  border-spacing: 0.5rem;
+  border-collapse: collapse;
+
+  th {
+    text-align: left;
+    border-bottom: 1px solid $gray;
+  }
+
+  tr {
+    &:nth-child(even) {
+      background-color: $gray;
+    }
+  }
+
+  td {
+    padding: 10px;
+  }
+
+  .uhlist__document {
+    a {
+      font-weight: normal;
+      color: $black;
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+}

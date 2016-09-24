@@ -1,0 +1,34 @@
+
+
+.partner__graphic {
+  overflow: hidden;
+  border-bottom: none;
+
+  img {
+    border: 0;
+    height: auto;
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+.partner__adspot {
+  .partner__graphic {
+    @media screen and (min-width: 768px) {
+      float: left;
+      display: block;
+    }
+  }
+
+  .partner__graphic, .partner__graphic img {
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      width: $partner_tabletWidth;
+      height: $partner_tabletHeight;
+    }
+
+    @media screen and (min-width: 1280px) {
+      width: $partner_desktopWidth;
+      height: $partner_desktopHeight;
+    }
+  }
+}

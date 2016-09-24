@@ -1,0 +1,23 @@
+
+.partner__button {
+  padding: 2px 10px;
+  display: block;
+  text-align: center;
+  color: #fff;
+  background-color: $blue;
+  border: 1px solid $blue;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    background: $white;
+    color: $blue;
+  }
+}
+
+.partner__adspot .partner__button {
+  @include media($medium-screen-up) {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

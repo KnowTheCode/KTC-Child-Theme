@@ -1,0 +1,99 @@
+//
+// Technologies & Instruction Lists
+//====================================
+
+.technology-list, .docx-instruction-list {
+  overflow: hidden;
+}
+.docx-instruction-list {
+  @include media(480px) {
+    @include outer-container;
+    @include display(flex);
+    @include flex-wrap(wrap);
+  }
+}
+
+.entry-content ul.technology-list li,
+.docx-instruction-list li {
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+
+.docx-instruction-list li {
+
+  // 2 columns
+  @include media(480px) {
+    @include span-columns(6);
+    @include omega(2n);
+  }
+
+  // 3 columns
+  @include media(1024px) {
+    @include omega-reset(2n);
+    @include span-columns(4);
+    @include omega(3n);
+  }
+
+  //// 4 columns
+  //@include media(1280px) {
+  //  @include omega-reset(3n);
+  //  @include span-columns(3);
+  //  @include omega(4n);
+  //}
+
+  // 2 columns
+  @include media(480px) {
+    @include display(flex);
+    @include flex(1 0 auto);
+  }
+}
+
+.technology-list .button,
+.entry-content .technology-list a.button,
+.docx-instruction-list .button {
+  width: 100%;
+  text-align: center;
+}
+
+.docx-instruction-list .button{
+  text-transform: none;
+}
+
+/**
+ * Terminology Buttons
+ ****************************/
+
+.button,
+.entry-content a.button {
+
+  &.php {
+    background-color: $colorPHP;
+    border-color: $colorPHP;
+  }
+
+  &.javascript {
+    background-color: $colorJS;
+    border-color: $colorJS;
+  }
+
+  &.jquery {
+    background-color: $colorjQuery;
+    border-color: $colorjQuery;
+  }
+
+  &.wordpress {
+    background-color: $colorWordPress;
+    border-color: $colorWordPress;
+  }
+
+  &.genesis {
+    background-color: $colorGenesis;
+    border-color: $colorGenesis;
+  }
+
+  &.php, &.javascript, &.jquery, &.wordpress, &.genesis {
+    &:hover, &:focus, &:active {
+      background-color: #fff;
+    }
+  }
+}

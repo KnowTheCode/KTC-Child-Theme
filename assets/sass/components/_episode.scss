@@ -1,0 +1,19 @@
+.episode__signup {
+  text-align: center;
+
+  margin-left: -24vw;
+  margin-right: -24vw;
+  padding-left: 24vw;
+  padding-right: 24vw;
+
+  display: block;
+
+  background: url(#{$imagePath}/KTC-hero-2.jpg) center no-repeat transparent;
+  background-size: cover;
+
+  @include display(flex);
+  @include flex-direction(column);
+  @include justify-content(center);
+
+  min-height: 400px;
+}

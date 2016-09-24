@@ -1,0 +1,16 @@
+//
+// SiteGround Colors
+//=======================
+
+.partner.siteground {
+  .partner__button {
+    background-color: #59a345;
+    border-color: #59a345;
+    color: $white;
+
+    &:hover, &:focus {
+      background-color: #4b99d0;
+      border-color: #4b99d0;
+    }
+  }
+}

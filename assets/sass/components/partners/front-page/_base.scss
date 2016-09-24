@@ -1,0 +1,20 @@
+//
+// Partners
+//==================
+
+body.home .site-inner .partners__home .wrap {
+  padding: rem(40) 10%;
+
+  @include media($medium-screen-up) {
+    padding: rem(40) 0;
+    max-width: $wrap-max-width-medium;
+  }
+  @include media($large-screen-up) {
+    padding: 10% 0 5%;
+    max-width: $wrap-max-width-large;
+  }
+}
+
+.partners__home {
+  background-color: $white;
+}

@@ -1,0 +1,29 @@
+//
+// Intro section
+//========================
+
+.partners__home .partners__intro {
+  text-align: left;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  @include media(768px) {
+    float: left;
+    display: inline-block;
+    padding-right: 3%;
+    width: 31%;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+
+    h2 {
+      font-size: rem(26);
+    }
+
+    p {
+      font-size: rem(14);
+    }
+  }
+}

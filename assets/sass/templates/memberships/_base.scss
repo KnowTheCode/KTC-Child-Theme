@@ -1,0 +1,16 @@
+//
+// Membership page
+// the background image is in _page-headers.scss
+// ===================
+
+.entry.membership {
+  .entry-header {
+    .entry-title {
+      &::before {
+        content: '\f0c0';
+        font-family: FontAwesome;
+        margin-right: 10px;
+      }
+    }
+  }
+}

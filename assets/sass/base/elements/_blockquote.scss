@@ -1,0 +1,39 @@
+blockquote {
+  color: $black;
+  margin: 0 0 30px;
+  padding: 24px 40px;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    font-family: "fontawesome";
+    font-size: 24px;
+    font-size: 2.4rem;
+    content: "\f10d";
+    margin-right: 10px;
+    position: relative;
+    display: block;
+    height: 0;
+    left: -55px;
+    top: -10px;
+  }
+}
+
+
+//blockquote {
+//  color: $black;
+//  margin: 0;
+//  padding: 24px 40px;
+//  &::before {
+//    content: "\201C";
+//    display: block;
+//    font-family: $serif;
+//    font-size: 120px;
+//    height: 0;
+//    left: -55px;
+//    position: relative;
+//    top: -55px;
+//  }
+//}

@@ -1,0 +1,111 @@
+//
+// Pricing Tables
+//=========================
+.pricing__header {
+  text-align: center;
+
+  .fa {
+    font-size: rem( 60 );
+  }
+  h2 {
+    font-size: rem( 36 );
+  }
+  h3 {
+    font-size: rem( 20 );
+    margin-bottom: 0;
+  }
+}
+
+.plan-pricing {
+  margin-bottom: 10px;
+  padding: 20px;
+  background-color: #ecebec;
+  overflow: hidden;
+}
+
+.plan-pricing__container {
+  @include clearfix;
+
+  @include media($medium-screen-up) {
+    float: left;
+    width: 70%;
+  }
+}
+
+.plan-pricing__pro_yearly, .plan-pricing__basic_yearly {
+  padding-bottom: 10px;
+  border-bottom: 5px solid $white;
+  margin-bottom: 20px;
+  overflow: hidden;
+  min-height: 100px;
+}
+
+.plan_select__pro, .plan_select__basic {
+  position: relative;
+  display: inline;
+  float: right;
+  width: 95px;
+
+  .plan_select__term {
+    position: absolute;
+    opacity: 0;
+
+    &:checked + label::after {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 9px;
+      background: $white;
+      width: 2px;
+      height: 2px;
+      box-shadow:
+              2px 0 0 $white,
+              4px 0 0 $white,
+              4px -2px 0 $white,
+              4px -4px 0 $white,
+              4px -6px 0 $white;
+      @include transform(rotate(45deg));
+    }
+  }
+
+  label {
+    position: relative;
+    padding: 0;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: text-top;
+      width: 20px;
+      height: 20px;
+      background: $colorPro;
+    }
+  }
+}
+
+.plan_select__basic label::before {
+  background: $colorBasic;
+}
+
+.price {
+  font-size: rem(36);
+  font-weight: bold;
+  line-height: 0.9;
+  font-family: $serif;
+}
+
+.price-currency, .price-period {
+  color: $black;
+  font-size: rem(16);
+}
+
+.price-currency {
+  vertical-align: top;
+}
+
+.price-period {
+  padding: 0 0 0 0.5em;
+  font-style: italic;
+}

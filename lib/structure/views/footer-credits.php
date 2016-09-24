@@ -1,0 +1,2 @@
+<p class="copyright-credit">Copyright [footer_copyright first="2016"] <a href="https://UpTechLabs.io">UpTech Labs</a>. Know the Code is an UpTech Labs <a href="https://UpTechLabs.io/education">education initiative</a></p>
+<p class="legal-links" style="text-align: right;"><a href="https://knowthecode.io/terms-of-service">Terms</a> and <a href="https://knowthecode.io/privacy-policy">Privacy</a></p>

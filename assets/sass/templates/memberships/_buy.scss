@@ -1,0 +1,11 @@
+//
+// Buy Button
+//======================
+.plan-pricing__buy {
+  @include clearfix;
+}
+
+.entry-content .plan-pricing__buy a.button {
+  width: 100%;
+  text-align: center;
+}

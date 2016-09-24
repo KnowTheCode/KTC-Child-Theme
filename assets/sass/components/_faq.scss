@@ -1,0 +1,16 @@
+//
+// FAQ & QA
+// ==================
+
+.qa {
+  margin: 20px 0;
+  .qa-question {
+    background-color: $gray;
+    padding: 20px;
+  }
+
+  .qa-answer {
+    border: 1px solid $gray;
+    padding: 20px;
+  }
+}

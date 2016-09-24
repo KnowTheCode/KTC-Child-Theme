@@ -1,0 +1,30 @@
+//
+// Inpost Ad spots
+//===================================
+
+.partner__adspot {
+  .partner {
+    position: relative;
+    overflow: hidden;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    color: $partner_gray;
+    text-align: center;
+    width: 80%;
+
+    @media screen and (min-width: 480px) and (max-width: 767px) {
+      width: 370px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      width: $partner_container_tabletWidth;
+      height: $partner_container_tabletHeight;
+    }
+
+    @media screen and (min-width: 1280px) {
+      width: $partner_container_desktopWidth;
+      height: $partner_container_desktopHeight;
+    }
+  }
+}

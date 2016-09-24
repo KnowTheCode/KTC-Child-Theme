@@ -1,0 +1,21 @@
+//
+// Labs Page Header
+//======================
+
+body.labs {
+  .page-header {
+    @include page_header();
+    background-image: url(#{$imagePath}/header-labs-3.jpg);
+
+    p, .entry-title {
+      margin-left: 0;
+    }
+
+    .entry-title {
+      &::before {
+        content: '\f0c3';
+      }
+    }
+
+  }
+}

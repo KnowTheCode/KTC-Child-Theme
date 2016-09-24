@@ -1,0 +1,102 @@
+/*
+Defaults
+---------------------------------------------------------------------------------------------------- */
+
+/* Typographical Elements
+--------------------------------------------- */
+
+html, body {
+	overflow-x: hidden;
+}
+
+body {
+	background: $white;
+	color: $black;
+	font-family: $sans-serif;
+	font-size: $base-font-size;
+	font-weight: 400;
+	line-height: $base-line-height;
+	overflow-x: hidden;
+}
+
+*:focus {
+	outline:none;
+}
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.gallery img {
+	@include transition( all 0.1s ease-in-out );
+}
+
+::-moz-selection {
+	background: $black;
+	color: $white;
+}
+
+::selection {
+	background: $black;
+	color: $white;
+}
+
+a {
+	color: $orange;
+	border-bottom: 1px dotted;
+	font-weight: 700;
+	text-decoration: none;
+	word-wrap: break-word;
+	img {
+		margin-bottom: -4px;
+	}
+
+	&:hover, &:focus {
+		color: $black;
+	}
+}
+
+p {
+	margin: 0 0 24px;
+	padding: 0;
+}
+
+strong {
+	font-weight: 700;
+}
+
+pre {
+	background: lighten($black, 11);
+	color: lighten($black, 79);
+	overflow: scroll;
+	padding: 0 20px;
+	white-space: pre;
+}
+
+cite {
+	font-style: italic;
+	font-weight: 700;
+}
+
+/* Objects
+--------------------------------------------- */
+
+embed,
+iframe,
+img,
+object,
+video,
+.wp-caption {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	width: auto; /* IE8 */
+}
+
+
+

@@ -1,0 +1,16 @@
+//
+// StudioPress Colors
+//=======================
+
+.partner.studiopress {
+  .partner__button {
+    background-color: #0066cc;
+    border-color: #0066cc;
+    color: $white;
+
+    &:hover, &:focus {
+      background-color: #222;
+      border-color: #222;
+    }
+  }
+}

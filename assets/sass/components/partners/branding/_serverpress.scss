@@ -1,0 +1,16 @@
+//
+// ServerPress Colors
+//=======================
+
+.partner.serverpress {
+  .partner__button {
+    background-color: #357ebd;
+    border-color: #357ebd;
+    color: $white;
+
+    &:hover, &:focus {
+      background-color: #3fd5ae;
+      border-color: #3fd5ae;
+    }
+  }
+}

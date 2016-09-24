@@ -1,0 +1,14 @@
+//
+// Category & Labs
+//=======================
+
+body.category, body.tax-labs_technologies {
+  .archive-description {
+    @include page_header();
+    background-image: url(#{$imagePath}/header-pro-membership-3.jpg);
+
+    p, .archive-title {
+      margin-left: 0;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+body.catalog-index {
+  .entry-content ul li {
+    margin-left: 0;
+  }
+}
+
+.catalog {
+  ul > li, a {
+    list-style-type: none;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+}

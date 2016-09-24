@@ -1,0 +1,29 @@
+//
+// Partner Variables
+//===========================
+
+$partner_gray: #666;
+$partner_gold: #FFDF00;
+
+$imageWidth: 800;
+$imageHeight: 500;
+$imageScaler: 500 / 800;
+
+$container_to_graphic_scaler: 300 / 800;
+
+// Tablet
+$partner_badgetHeight: 20px;
+$partner_container_tabletWidth: 600px;
+$partner_container_tabletHeight: 146px;
+$partner_tabletWidth: 225px;
+$partner_tabletHeight: 144px;
+$partner_tabletContentWidth: $partner_container_tabletWidth - $partner_tabletWidth - 18px;
+$partner_tabletContentHeight: $partner_tabletHeight - $partner_badgetHeight;
+
+// Desktops
+$partner_container_desktopWidth: 800px;
+$partner_container_desktopHeight: 188px + 2px;
+$partner_desktopWidth: 300px;
+$partner_desktopHeight: 188px;
+$partner_desktopContentWidth: $partner_container_desktopWidth - $partner_desktopWidth - 18px;
+$partner_desktopContentHeight: $partner_desktopHeight - $partner_badgetHeight;
