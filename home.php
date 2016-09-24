@@ -3,14 +3,13 @@
 /**
  * Insights page template
  *
- * @package     KTC\Insights
+ * @package     KnowTheCode\Insights
  * @since       1.0.0
  * @author      hellofromTonya
- * @link        https://knowthecode.io
+ * @link        https://UpTechLabs.io
  * @license     GNU General Public License 2.0+ and MIT Licence (MIT)
  */
-
-namespace KTC\Insights;
+namespace KnowTheCode\Insights;
 
 do_action( 'fulcrum_grid' );
 
@@ -37,4 +36,3 @@ function add_in_blog_page_contents() {
 }
 
 genesis();
-
