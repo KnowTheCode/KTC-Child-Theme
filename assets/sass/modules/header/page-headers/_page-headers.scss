@@ -3,7 +3,7 @@
 //=======================
 
 .entry.membership .entry-header,
-.entry.docx .entry-header,
+body.single-docx .entry.docx .entry-header,
 .archive-description,
 body.bbpress .entry-header,
 body.blog .page-header,
@@ -12,7 +12,7 @@ body.blog .page-header,
 }
 
 .entry.membership .entry-header,
-.entry.docx .entry-header,
+body.single-docx .entry.docx .entry-header,
 body.bbpress .entry-header,
 .archive-description,
 .type-memberpressproduct .entry-header {
@@ -25,12 +25,13 @@ body.bbpress .entry-header,
   }
 }
 
-.entry.membership .entry-header, body.blog .page-header,
+.entry.membership .entry-header,
+body.blog .page-header,
 .type-memberpressproduct .entry-header {
   background-image: url(#{$imagePath}/header-pro-membership-3.jpg);
 }
 
-.entry.docx .entry-header {
+body.single-docx .entry.docx .entry-header {
   background-image: url(#{$imagePath}/header-docs-3.jpg);
 }
 

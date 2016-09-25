@@ -10,4 +10,21 @@ body.catalog-index {
     margin-bottom: 20px;
     text-align: left;
   }
+
+  li {
+
+    @media screen and (min-width: 480px) {
+      position: relative;
+      float: left;
+      display: inline-block;
+    }
+
+    @media screen and (min-width: 480px) and (max-width: 767px) {
+      width: 50%;
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 33.333333333333%;
+    }
+  }
 }

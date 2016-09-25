@@ -11,35 +11,35 @@
 }
 
 .archive-description,
-.entry.docx .entry-header {
+body.single-docx .entry.docx .entry-header {
   background-size: cover;
 }
 
 body.php .archive-description,
-.entry.docx.technologies-php .entry-header {
+body.single-docx .entry.docx.technologies-php .entry-header {
   background-image: url(#{$imagePath}/header-php-3.jpg);
 }
 
 body.wordpress .archive-description,
-.entry.docx.technologies-wordpress .entry-header {
+body.single-docx .entry.docx.technologies-wordpress .entry-header {
   background-image: url(#{$imagePath}/header-wordpress-3.jpg);
 }
 
 body.genesis .archive-description,
-.entry.docx.technologies-genesis .entry-header {
+body.single-docx .entry.docx.technologies-genesis .entry-header {
   background-image: url(#{$imagePath}/header-genesis-3.jpg);
 }
 
 body.javascript .archive-description,
-.entry.docx.technologies-javascript .entry-header {
+body.single-docx .entry.docx.technologies-javascript .entry-header {
   background-image: url(#{$imagePath}/header-javascript-3.jpg);
 }
 
 body.jquery .archive-description,
-.entry.docx.technologies-jquery .entry-header {
+body.single-docx .entry.docx.technologies-jquery .entry-header {
   background-image: url(#{$imagePath}/header-jquery-3.jpg);
 }
 
-.entry.docx .entry-header .entry-title {
+body.single-docx .entry.docx .entry-header .entry-title {
   margin-bottom: 0;
 }
