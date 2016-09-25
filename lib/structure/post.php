@@ -57,7 +57,7 @@ add_action( 'genesis_after_endwhile', __NAMESPACE__ . '\do_post_pagination' );
 function do_post_pagination() {
 	$post_type = get_post_type();
 
-	if ( 'forum' == $post_type  ) {
+	if ( 'forum' == $post_type ) {
 		return;
 	}
 
@@ -66,7 +66,7 @@ function do_post_pagination() {
 	}
 
 	$args = array(
-		'mid_size' => 2,
+		'mid_size'           => 2,
 		'before_page_number' => '<span class="screen-reader-text">' . __( 'Page', 'ktc' ) . ' </span>',
 	);
 
@@ -80,7 +80,7 @@ add_filter( 'genesis_noposts_text', '__return_empty_string' );
 /**
  * Add Prev/Next to bottom of the singles.
  *
- * @since 1.0.0
+ * @since 1.3.0
  *
  * @param string $post_type
  *
@@ -91,8 +91,12 @@ function add_post_prev_next_to_singles( $post_type ) {
 		return;
 	}
 
-	$previous = get_previous_post();
-	$next = get_next_post();
+	if ( ! fulcrum_is_parent_post() ) {
+		return;
+	}
+
+	$previous = fulcrum_get_previous_parent_post();
+	$next     = fulcrum_get_next_parent_post();
 
 	include( CHILD_THEME_DIR . '/lib/views/single-navigation.php' );
 }
