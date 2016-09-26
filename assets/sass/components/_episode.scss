@@ -17,3 +17,15 @@
 
   min-height: 400px;
 }
+
+.episode__lab-title {
+  font-size: 18px;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+.episode__content {
+  ol, ul {
+    margin: 20px 0px 26px 40px;
+  }
+}

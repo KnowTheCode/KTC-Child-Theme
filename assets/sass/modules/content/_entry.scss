@@ -26,11 +26,10 @@
 	}
 }
 
-
-.entry-content ol,
-.entry-content ul,
-.quote-caption {
-	margin-bottom: 26px;
+.entry-content {
+	ol, ul {
+		margin: 20px 0px 26px 40px;
+	}
 }
 
 .entry-content {

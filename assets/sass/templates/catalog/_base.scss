@@ -1,15 +1,42 @@
 body.catalog-index {
-  .entry-content ul li {
-    margin-left: 0;
+  .entry-content ul {
+    margin: 0;
+    li {
+      margin-left: 0;
+    }
   }
 }
 
-.catalog {
+.catalog, .catalog__index {
   ul > li, a {
     list-style-type: none;
     margin-bottom: 20px;
     text-align: left;
   }
+}
+
+.catalog__nav {
+  label {
+    font-weight: bold;
+  }
+  margin-bottom: 40px;
+  li {
+    list-style-type: none;
+    display: inline;
+    margin-right: 10px;
+  }
+
+  a.button {
+    padding: 5px 20px;
+  }
+}
+
+a.button.current__filter {
+  background-color: $white;
+  color: $darkBlue;
+}
+
+.catalog {
 
   li {
 
