@@ -1,3 +1,9 @@
+## 1.4.0
+
+- Catalog Filtering
+- Catalog Index
+- Catalog Series
+
 ## 1.3.0
 
 - New navigation
