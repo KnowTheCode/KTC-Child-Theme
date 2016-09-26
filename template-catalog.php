@@ -13,12 +13,19 @@
 namespace KnowTheCode;
 
 remove_all_actions( 'genesis_entry_content' );
-add_action( 'genesis_entry_content', __NAMESPACE__ . '\do_the_catalog_index' );
-function do_the_catalog_index() {
+add_action( 'genesis_entry_content', __NAMESPACE__ . '\do_the_catalog_page' );
+/**
+ * Callback to do the catalog page.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function do_the_catalog_page() {
 	$permalink = get_the_permalink();
 	$filter    = get_catalog_filter();
 
-	require_once( 'lib/views/catalog-nav.php' );
+	require_once( 'lib/views/catalog/nav.php' );
 
 	if ( $filter === 'index' ) {
 		render_catalog_index();
@@ -48,7 +55,7 @@ function render_catalog_topics() {
 		return;
 	}
 
-	require_once( 'lib/views/catalog.php' );
+	require_once( 'lib/views/catalog/catalog.php' );
 }
 
 /**
@@ -67,7 +74,7 @@ function render_catalog_index() {
 		'orderby'        => 'title',
 	);
 
-	render_catalog_query( $args, 'lib/views/catalog-index.php' );
+	render_catalog_query( $args, 'lib/views/catalog/index.php' );
 }
 
 /**
@@ -86,7 +93,7 @@ function render_catalog_series() {
 		'orderby'        => 'title',
 	);
 
-	render_catalog_query( $args, 'lib/views/catalog-index.php' );
+	render_catalog_query( $args, 'lib/views/catalog/index.php' );
 }
 
 
@@ -124,16 +131,23 @@ function render_catalog_query( array $args, $view_file ) {
  */
 function render_catalog_index_items( $query ) {
 	$view_filename = get_catalog_filter() == 'series'
-		? 'catalog-series-item.php'
-		: 'catalog-index-item.php';
+		? 'series-item.php'
+		: 'index-item.php';
 
 	while ( $query->have_posts() ) {
 		$query->the_post();
 
-		include( 'lib/views/' . $view_filename );
+		include( 'lib/views/catalog/' . $view_filename );
 	}
 }
 
+/**
+ * Get the catalog filter from the URI.
+ *
+ * @since 1.4.0
+ *
+ * @return string
+ */
 function get_catalog_filter() {
 	if ( ! isset( $_GET['filter'] ) ) {
 		return '';

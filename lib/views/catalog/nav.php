@@ -1,4 +1,4 @@
-<nav class="catalog__nav">
+<nav class="filterby__nav">
 	<ul>
 		<li><label>Filter by:</label></li>
 		<li><a href="<?php echo $permalink; ?>" class="button<?php if ( ! $filter ) { echo ' current__filter'; } ?>"><?php _e( 'Topics', 'ktc' ); ?></a>

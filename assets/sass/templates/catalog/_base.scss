@@ -7,7 +7,18 @@ body.catalog-index {
   }
 }
 
-.catalog, .catalog__index {
+.entry-content {
+  .catalog__content, .whats-new__content {
+    ul>li {
+      list-style-type: none;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+  }
+}
+
+.catalog, .catalog__content {
+
   ul > li, a {
     list-style-type: none;
     margin-bottom: 20px;
@@ -15,26 +26,6 @@ body.catalog-index {
   }
 }
 
-.catalog__nav {
-  label {
-    font-weight: bold;
-  }
-  margin-bottom: 40px;
-  li {
-    list-style-type: none;
-    display: inline;
-    margin-right: 10px;
-  }
-
-  a.button {
-    padding: 5px 20px;
-  }
-}
-
-a.button.current__filter {
-  background-color: $white;
-  color: $darkBlue;
-}
 
 .catalog {
 

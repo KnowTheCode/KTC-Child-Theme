@@ -1,0 +1,24 @@
+body.whats-new {
+  .entry-content ul {
+    margin: 0;
+    li {
+      margin-left: 0;
+    }
+
+    > li {
+      list-style-type: none;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+  }
+}
+
+.whats-new__content {
+
+  ul > li, a {
+    list-style-type: none;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+}

@@ -12,6 +12,9 @@
 			<li class="menu-item menu__catalog<?php if ( is_page( 'catalog' ) ) { echo ' current-menu-item'; } ?>">
 				<a href="<?php echo home_url( 'catalog' ); ?>" itemprop="url"><span itemprop="name"><i class="fa fa-list" aria-hidden="true"></i> Catalog</span></a>
 			</li>
+			<li class="menu-item menu__whatsnew<?php if ( is_page( 'whats-new' ) ) { echo ' current-menu-item'; } ?>">
+				<a href="<?php echo home_url( 'whats-new' ); ?>" itemprop="url"><span itemprop="name"><i class="fa fa-plus-circle" aria-hidden="true"></i> What's New</span></a>
+			</li>
 			<li class="menu-item menu__help<?php if ( is_page( 'help' ) ) { echo ' current-menu-item'; } ?>">
 				<a href="<?php echo home_url( 'help' ); ?>" itemprop="url"><span itemprop="name"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</span></a>
 			</li>

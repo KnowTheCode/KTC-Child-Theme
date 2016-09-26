@@ -1,0 +1,32 @@
+//
+// Filtering nav (inpost filter by)
+//=================================
+
+.filterby__nav {
+  margin-bottom: 40px;
+
+  label {
+    font-weight: bold;
+  }
+
+  ul > li, a {
+    list-style-type: none;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  li {
+    list-style-type: none;
+    display: inline;
+    margin-right: 10px;
+  }
+
+  a.button {
+    padding: 5px 20px;
+
+    &.current__filter {
+      background-color: $white;
+      color: $darkBlue;
+    }
+  }
+}
