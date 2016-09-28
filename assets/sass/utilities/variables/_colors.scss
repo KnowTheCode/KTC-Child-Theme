@@ -32,5 +32,16 @@ $colorBasic: #f58728;
 $colorBasicBorder: #f48728;
 $colorFree: #465573;
 
+
+//
+// Color Configuration
+//===========================
+$link--color: $orange;
+$link--hover-color: $black;
+
+// Elements
+$base--color: $black;
+$body--background-color: $white;
+
 $comments-background-color: $white;
 $author-box-background: lighten($black, 92);

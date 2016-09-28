@@ -1,16 +1,16 @@
 blockquote {
-  .pullleft, .pullright {
+  &.pullleft, &.pullright {
     margin: 30px 0;
     padding: 0;
   }
 
-  .pullleft {
+  &.pullleft {
     float: left;
     margin-left: 30px;
     padding-left: 20px;
   }
 
-  .pullright {
+  &.pullright {
     border-left: none;
     padding-left: 0;
     border-right: 10px solid $green;

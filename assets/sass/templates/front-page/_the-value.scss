@@ -26,7 +26,7 @@ body.home .site-inner .the-value .wrap {
   @include display(flex);
   @include flex-direction(column);
   @include justify-content(center);
-  background-image: url(#{$imagePath}/wordpress-developer-hero.jpg);
+  background-image: url(#{$image--path}/wordpress-developer-hero.jpg);
 
   height: 450px;
   text-align: center;

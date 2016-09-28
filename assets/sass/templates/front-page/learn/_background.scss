@@ -32,11 +32,11 @@
   @include transform( translate3d(0px, 0px, 0px) );
 
   &.space {
-    background: url(#{$imagePath}/space.jpg);
+    background: url(#{$image--path}/space.jpg);
     background-position: center;
   }
 
   &.stars {
-    background: url( #{$imagePath}/stars.png );
+    background: url( #{$image--path}/stars.png );
   }
 }

@@ -28,14 +28,14 @@ body.bbpress .entry-header,
 .entry.membership .entry-header,
 body.blog .page-header,
 .type-memberpressproduct .entry-header {
-  background-image: url(#{$imagePath}/header-pro-membership-3.jpg);
+  background-image: url(#{$image--path}/header-pro-membership-3.jpg);
 }
 
 body.single-docx .entry.docx .entry-header {
-  background-image: url(#{$imagePath}/header-docs-3.jpg);
+  background-image: url(#{$image--path}/header-docs-3.jpg);
 }
 
 .type-memberpressproduct.post-99 .entry-header,
 .type-memberpressproduct.post-100 .entry-header {
-  background-image: url(#{$imagePath}/header-basic-membership-3.jpg);
+  background-image: url(#{$image--path}/header-basic-membership-3.jpg);
 }

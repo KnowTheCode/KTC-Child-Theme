@@ -10,8 +10,8 @@ html, body {
 }
 
 body {
-	background: $white;
-	color: $black;
+	background: $body--background-color;
+	color: $base--color;
 	font-family: $sans-serif;
 	font-size: $base-font-size;
 	font-weight: 400;
@@ -45,7 +45,7 @@ textarea:focus,
 }
 
 a {
-	color: $orange;
+	color: $link--color;
 	border-bottom: 1px dotted;
 	font-weight: 700;
 	text-decoration: none;
@@ -55,7 +55,7 @@ a {
 	}
 
 	&:hover, &:focus {
-		color: $black;
+		color: $link--hover-color;
 	}
 }
 

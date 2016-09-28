@@ -6,7 +6,7 @@
 	Author: hellofromTonya
 	Author URI: https://UpTechLabs.io
 
-	Version: 1.4.4
+	Version: 1.4.7
 
 	Template: genesis
 	Template Version: 2.2.3
@@ -17,30 +17,31 @@
 */
 
 // Config
-$imagePath: 'assets/images';
+$image--path: 'assets/images';
+
 
 // Base stuff
-@import "bourbon";
-@import "neat";
-@import "utilities/index";
-@import "base/index";
+@import 'bourbon';
+@import 'neat';
+@import 'utilities/index';
+@import 'base/index';
 
 // Layouts
-@import "layout/index";
+@import 'layout/index';
 
 // Components
-@import "components/index";
+@import 'components/index';
 
 // Modules
-@import "modules/index";
+@import 'modules/index';
 
 // Templates - Page specific styles
-@import "templates/index";
+@import 'templates/index';
 
 // Widgets
-@import "widgets/index";
+@import 'widgets/index';
 
 // Vendors
-@import "vendors/forums/index";
-@import "vendors/membership-pro/index";
+@import 'vendors/forums/index';
+@import 'vendors/membership-pro/index';
 

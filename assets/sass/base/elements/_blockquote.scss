@@ -1,10 +1,21 @@
 blockquote {
   color: $black;
-  margin: 30px 0;
+  margin: 40px 0;
   padding: 0;
 
   border-left: 10px solid $green;
   padding-left: 20px;
+
+  &.blockquote__biggap {
+    margin: 80px 0;
+  }
+
+  &.blockquote__right {
+    border-left: none;
+    padding-left: 0;
+    border-right: 10px solid $green;
+    padding-right: 20px;
+  }
 
   p:last-child {
     margin-bottom: 0;

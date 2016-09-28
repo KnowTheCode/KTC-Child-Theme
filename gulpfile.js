@@ -1,81 +1,124 @@
-/**
- * gulfile.js - Entry point for launching KnowTheCodeGulp
- *
- * @package     KnowTheCodeGulp
- * @since       1.3.1
- * @author      hellofromTonya
- * @link        https://github.com/KnowTheCode/KTC-Child-Theme
- * @license     GPL-2.0+
- *
- * This gulpfile.js is a customized version of the wd_s from WebDevStudios
- * @link https://github.com/WebDevStudios/wd_s/blob/master/Gulpfile.js
- */
+'use strict';
 
-/**********************************************
- * Declarations
- *********************************************/
-var gulp = require( 'gulp' ),
-	/**
-	 * Fetch all of the plugins out of the package.json file.
-	 * This reduces redundancy and keeps us DRY.
-	 */
-	plugins = require( 'gulp-load-plugins' )( {
-		pattern: '*'
-	} ),
-	/**
-	 * Fetch where the `config.js` is located within the theme.  This value
-	 * is stored in the `package.json` file and keyed by `gulpConfig`.
-	 */
-	gulpConfig = require( './package' ).gulpConfig,
-	/**
-	 * We want to make sure we have the theme's root, as files are being
-	 * loaded and processed from subfolders.
-	 */
-	themeRoot = require( 'app-root-path' ).resolve( './' ),
-	/**
-	 * Now load the `config.js` file, which has all of the
-	 * settings and parameters for the tasks.
-	 */
-	config = require( "./" + gulpConfig )( themeRoot );
+var gulp = require('gulp'),
+
+	// Sass/CSS processes
+	bourbon = require('bourbon').includePaths,
+	neat = require('bourbon-neat').includePaths,
+	sass = require('gulp-sass'),
+	postcss = require('gulp-postcss'),
+	autoprefixer = require('autoprefixer'),
+	sourcemaps = require('gulp-sourcemaps'),
+	cssMinify = require('gulp-cssnano'),
+	sassLint = require('gulp-sass-lint'),
+
+	// Utilities
+	rename = require('gulp-rename'),
+	notify = require('gulp-notify'),
+	plumber = require('gulp-plumber');
+
+/*************
+ * Utilities
+ ************/
 
 /**
- * Load up the reload into plugins.
+ * Error handling
+ *
+ * @function
  */
-plugins.reload = plugins.browserSync.reload;
+function handleErrors() {
+	var args = Array.prototype.slice.call(arguments);
 
-/**********************************************
- * Task Module Loader
- * ********************************************
- *
- * Get the Task from the tasks folder.  Using this architecture,
- * we are able to parse out the tasks into separate files, which are
- * located in the `gulp/tasks/` folder.  This promotes a more
- * modular gulp structure verses having everything loaded here
- * in this one file.
- *
- * @since 1.0.0
- *
- * @param {string} task Name of the task to be loaded.
- *
- * @returns {*}
- */
-function getTask( task ) {
-	var taskDir = config.gulpDir + 'tasks/' + task;
+	notify.onError({
+		title: 'Task Failed [<%= error.message %>',
+		message: 'See console.',
+		sound: 'Sosumi' // See: https://github.com/mikaelbr/node-notifier#all-notification-options-with-their-defaults
+	}).apply(this, args);
 
-	return require( taskDir )( gulp, plugins, config );
+	gutil.beep(); // Beep 'sosumi' again
+
+	// Prevent the 'watch' task from stopping
+	this.emit('end');
 }
 
-var tasks = ['imagemin', 'styles', 'scripts', 'watch'];
-for ( var index in tasks ) {
-	getTask( tasks[ index ] );
-}
 
-/**********************************************
- * Callable Tasks
- * ********************************************
- *
- * Here are the individual tasks which can be run.  Notice that
- * they load up the task file when called.
+/*************
+ * CSS Tasks
+ ************/
+
+/**
+ * PostCSS Task Handler
  */
+gulp.task('postcss', function(){
 
-gulp.task( 'default', [ 'styles', 'scripts', 'imagemin' ] );
+	return gulp.src('assets/sass/style.scss')
+
+           // Error handling
+           .pipe(plumber({
+                errorHandler: handleErrors
+           }))
+
+	           // Wrap tasks in a sourcemap
+			.pipe( sourcemaps.init())
+
+			.pipe( sass({
+				includePaths: [].concat( bourbon, neat ),
+				errLogToConsole: true,
+				outputStyle: 'expanded' // Options: nested, expanded, compact, compressed
+			}))
+
+		   .pipe( postcss([
+			   autoprefixer({
+				   browsers: ['last 2 versions']
+			   })
+		   ]))
+
+			// creates the sourcemap
+			.pipe(sourcemaps.write())
+
+			.pipe(gulp.dest('./'));
+
+});
+
+gulp.task('css:minify', ['postcss'], function() {
+	return gulp.src('style.css')
+       // Error handling
+       .pipe(plumber({
+           errorHandler: handleErrors
+       }))
+
+		.pipe( cssMinify({
+			safe: true
+		}))
+       .pipe(rename('style.min.css'))
+       .pipe(gulp.dest('./'))
+		.pipe(notify({
+			message: 'Styles are built.'
+		}))
+});
+
+gulp.task('sass:lint', ['css:minify'], function() {
+	gulp.src([
+		'assets/sass/style.scss',
+		'!assets/sass/base/html5-reset/_normalize.scss',
+		'!assets/sass/utilities/animate/**/*.*'
+	])
+		.pipe(sassLint())
+		.pipe(sassLint.format())
+		.pipe(sassLint.failOnError())
+});
+
+
+/********************
+ * All Tasks Listeners
+ *******************/
+
+gulp.task('watch', function () {
+	gulp.watch('assets/sass/**/*.scss', ['styles']);
+});
+
+/**
+ * Individual tasks.
+ */
+// gulp.task('scripts', [''])
+gulp.task('styles', ['sass:lint'] );

@@ -11,7 +11,7 @@
   -o-background-size: cover;
   background-size: cover;
 
-  background-image: url(#{$imagePath}/KTC-hero-1.jpg);
+  background-image: url(#{$image--path}/KTC-hero-1.jpg);
 
   @include display(flex);
   @include flex-direction(column);
