@@ -1,6 +1,11 @@
-@import "forms";
-@import "buttons";
-@import "list";
-@import "tables";
-@import "blockquote";
-@import "typography";
+/* # Defaults
+---------------------------------------------------------------------------------------------------- */
+
+@import 'defaults';
+@import 'lists';
+@import 'blockquote';
+@import 'headings';
+@import 'objects';
+@import 'forms';
+@import 'tables';
+@import 'accessibility';

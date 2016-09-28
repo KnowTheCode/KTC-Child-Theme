@@ -24,7 +24,7 @@
     font-size: $secondary-font-size;
 
     @include media($medium-screen-up) {
-      font-size: rem(18);
+      @include rem( font-size, 18px );
       max-width: $wrap-max-width-medium;
     }
 

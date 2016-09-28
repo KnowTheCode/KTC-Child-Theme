@@ -30,15 +30,15 @@
     height: 200px;
 
     @include media($smaller-screen-up) {
-      font-size: rem(22);
+      @include rem( font-size, 22px );
     }
 
     //@include media($small-screen-up) {
-    //  font-size: rem(22);
+    //  @include rem( font-size, 22px );
     //
     //}
     @include media($small-screen-up) {
-      font-size: rem(22);
+      @include rem( font-size, 22px );
       @include flex(1);
       &::before {
         z-index:10;
@@ -50,7 +50,7 @@
       }
     }
     @include media($large-screen-up) {
-      font-size: rem(30);
+      @include rem( font-size, 30px );
     }
     position:relative;
 
@@ -65,12 +65,12 @@
     @include flex-direction(column);
     @include justify-content(center);
     text-align: center;
-    font-size: rem(30);
+    @include rem( font-size, 30px );
     border-bottom: none;
     background-color: $blue;
 
     @include media($large-screen-up) {
-      font-size: rem(40);
+      @include rem( font-size, 40px );
     }
 
     &.orange {
@@ -119,14 +119,14 @@
     }
 
     .big-button-description {
-      font-size: rem(18);
+      @include rem( font-size, 18px );
       font-weight: 400;
 
       @include media($small-screen-up) {
-        font-size: rem(16);
+        @include rem( font-size, 16px );
       }
       @include media($large-screen-up) {
-        font-size: rem(18);
+        @include rem( font-size, 18px );
       }
     }
   }

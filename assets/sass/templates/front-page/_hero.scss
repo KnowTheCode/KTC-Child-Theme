@@ -22,29 +22,29 @@
   text-align: center;
 
   h1 {
-    font-size: rem(26);
+    @include rem( font-size, 26px );
 
     @include media($smaller-screen) {
-      font-size: rem(30);
+      @include rem( font-size, 30px );
     }
     @include media($small-screen-up) {
-      font-size: rem(50);
+      @include rem( font-size, 50px );
     }
     @include media($large-screen-up) {
-      font-size: rem(60);
+      @include rem( font-size, 60px );
     }
   }
 
   h2, h3 {
-    font-size: rem(16);
+    @include rem( font-size, 16px );
     @include media($smaller-screen) {
-      font-size: rem(20);
+      @include rem( font-size, 20px );
     }
     @include media($small-screen-up) {
-      font-size: rem(24);
+      @include rem( font-size, 24px );
     }
     @include media($large-screen-up) {
-      font-size: rem(28);
+      @include rem( font-size, 28px );
     }
   }
 }

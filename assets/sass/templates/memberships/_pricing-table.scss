@@ -5,13 +5,13 @@
   text-align: center;
 
   .fa {
-    font-size: rem( 60 );
+    @include rem( font-size, 60px );
   }
   h2 {
-    font-size: rem( 36 );
+    @include rem( font-size, 26px );
   }
   h3 {
-    font-size: rem( 20 );
+    @include rem( font-size, 20px );
     margin-bottom: 0;
   }
 }
@@ -90,7 +90,7 @@
 }
 
 .price {
-  font-size: rem(36);
+  @include rem( font-size, 26px );
   font-weight: bold;
   line-height: 0.9;
   font-family: $serif;
@@ -98,7 +98,7 @@
 
 .price-currency, .price-period {
   color: $black;
-  font-size: rem(16);
+  @include rem( font-size, 16px );
 }
 
 .price-currency {

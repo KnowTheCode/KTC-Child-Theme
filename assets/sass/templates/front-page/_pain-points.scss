@@ -43,7 +43,7 @@
   }
 
   .fa {
-    font-size: rem(40);
+    @include rem( font-size, 40px );
     display: block;
   }
 
@@ -59,13 +59,13 @@
   @include media($small-screen-up) {
     padding: 24px;
     .fa {
-      font-size: rem(40);
+      @include rem( font-size, 40px );
     }
   }
   @include media($large-screen-up) {
     padding: 40px;
     .fa {
-      font-size: rem(70);
+      @include rem( font-size, 70px );
     }
   }
 }
@@ -74,20 +74,20 @@
   background-color: $blue;
 
   h2, h3 {
-    font-size: rem(18);
+    @include rem( font-size, 18px );
     @include media($small-screen-up) {
-      font-size: rem(22);
+      @include rem( font-size, 22px );
     }
     @include media($medium-screen-up) {
-      font-size: rem(30);
+      @include rem( font-size, 30px );
     }
   }
 }
 .pain-point__content {
   background-color: $green;
-  font-size: rem(18);
+  @include rem( font-size, 18px );
 
   @include media($small-screen-up) {
-    font-size: rem(22);
+    @include rem( font-size, 22px );
   }
 }

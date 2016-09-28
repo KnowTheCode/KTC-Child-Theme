@@ -19,7 +19,7 @@
   }
 
   .fa {
-    font-size: rem(40);
+    @include rem( font-size, 40px );
   }
 
   &:hover {

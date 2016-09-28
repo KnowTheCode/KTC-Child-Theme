@@ -14,7 +14,7 @@
 
   .entry-footer & {
     .button {
-      font-size: rem(12);
+      @include rem( font-size, 12px );
       padding: 7px 15px;
     }
   }

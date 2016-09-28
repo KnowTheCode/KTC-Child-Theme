@@ -32,7 +32,7 @@
   }
 
   .message {
-    font-size: rem(20);
+    @include rem( font-size, 20px );
     font-family: $heading-font-family;
     margin-right: 20px;
     margin-bottom: 20px;
@@ -42,7 +42,7 @@
     }
 
     @include media(1280px) {
-      font-size: rem(30);
+      @include rem( font-size, 30px );
     }
   }
 
@@ -51,7 +51,7 @@
     border: $orange;
 
     @include media($medium-screen) {
-      font-size: rem(22);
+      @include rem( font-size, 22px );
     }
 
     &:hover, &:focus, &:active {

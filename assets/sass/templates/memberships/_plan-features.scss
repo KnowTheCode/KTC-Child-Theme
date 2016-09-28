@@ -18,7 +18,7 @@
   }
 
   h3 {
-    font-size: rem(20);
+    @include rem( font-size, 20px );
   }
   .fa {
     margin-right: 8px;

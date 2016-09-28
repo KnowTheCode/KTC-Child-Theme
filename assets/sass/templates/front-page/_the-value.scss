@@ -45,13 +45,13 @@ body.home .site-inner .the-value .wrap {
 
   h2 {
     color: $white;
-    font-size: rem(26);
+    @include rem( font-size, 26px );
 
     @include media($smaller-screen) {
-      font-size: rem(30);
+      @include rem( font-size, 30px );
     }
     @include media($small-screen-up) {
-      font-size: rem(50);
+      @include rem( font-size, 50px );
     }
   }
 }

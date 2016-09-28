@@ -25,8 +25,6 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_front_page_assets' )
  * @return void
  */
 function enqueue_front_page_assets() {
-//	wp_enqueue_script( 'ktc_front_page_js', CHILD_URL . '/assets/js/jquery.front-page.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
-
 	wp_enqueue_style( 'ktc_front_page_css', CHILD_URL . '/assets/dist/css/front-page.min.css' );
 }
 

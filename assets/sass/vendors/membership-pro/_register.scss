@@ -4,7 +4,7 @@
 //===============================
 
 .mp-form-row.mepr_bold.mepr_price {
-  font-size: rem(20);
+  @include rem( font-size, 20px );
   font-weight: 700;
   background-color: #e1e1e1;
   padding: 20px;

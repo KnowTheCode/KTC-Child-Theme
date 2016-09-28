@@ -4,10 +4,10 @@
 .breadcrumb {
   margin: 20px 0;
   padding: 0 10px;
-  font-size: rem(14);
+  @include rem( font-size, 14px );
 
   @include media($medium-screen-up) {
     padding: 0;
-    font-size: rem(16);
+    @include rem( font-size, 16px );
   }
 }

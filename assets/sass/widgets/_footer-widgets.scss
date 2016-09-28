@@ -27,7 +27,7 @@
   }
 
   .widgettitle {
-    font-size: rem(18);
+    @include rem( font-size, 18px );
     color: $gray;
   }
 

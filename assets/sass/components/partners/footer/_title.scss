@@ -27,12 +27,12 @@
   }
 
   h2 {
-    font-size: rem(14);
+    @include rem( font-size, 14px );
     color: $blue;
     margin-bottom: 0;
 
     @include media(768px) {
-      font-size: rem(20);
+      @include rem( font-size, 20px );
     }
   }
 }

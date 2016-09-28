@@ -16,15 +16,7 @@
 	Text Domain: ktc
 */
 
-// Config
-$image--path: 'assets/images';
-
-
-// Base stuff
-@import 'bourbon';
-@import 'neat';
-@import 'utilities/index';
-@import 'base/index';
+@import 'base-stuff';
 
 // Layouts
 @import 'layout/index';

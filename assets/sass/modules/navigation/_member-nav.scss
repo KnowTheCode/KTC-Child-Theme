@@ -38,13 +38,8 @@
     }
   }
 
-  //li+li::before {
-  //  content: '/';
-  //  padding-right: 7px;
-  //}
-
   .hello-member {
     margin-right: 10px;
-    font-size: rem(14);
+    @include rem( font-size, 14px );
   }
 }

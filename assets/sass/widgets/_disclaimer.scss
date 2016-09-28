@@ -5,7 +5,7 @@
 .disclaimer {
   background-color: $darkBlue;
   color: $gray;
-  font-size: rem(14);
+  @include rem( font-size, 14px );
   padding: 10px 0;
   text-align: center;
   margin:0;

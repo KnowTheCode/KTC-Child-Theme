@@ -28,7 +28,7 @@
       position: relative;
       float: left;
       display: inline-block;
-      font-size: rem(22);
+      @include rem( font-size, 22px );
       height: 150px;
 
     }
@@ -60,7 +60,7 @@
     }
 
     @include media($large-screen-up) {
-      font-size: rem(26);
+      @include rem( font-size, 26px );
     }
   }
 }
@@ -132,13 +132,13 @@
 }
 
 .notched-big-buttons__description {
-  font-size: rem(18);
+  @include rem( font-size, 18px );
   font-weight: 400;
 
   @include media($small-screen-up) {
-    font-size: rem(16);
+    @include rem( font-size, 16px );
   }
   @include media($large-screen-up) {
-    font-size: rem(18);
+    @include rem( font-size, 18px );
   }
 }

@@ -1,0 +1,23 @@
+html {
+  font-size: 62.5%;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  background: $body--background-color;
+  color: $base--color;
+  font-family: $sans-serif;
+  @include rem( font-size, $base-font-size );
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  line-height: $base-line-height;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+*:focus {
+  outline:none;
+}

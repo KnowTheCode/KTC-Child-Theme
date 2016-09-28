@@ -9,7 +9,7 @@
   }
   a.button {
     width: 100%;
-    font-size: rem(16);
+    @include rem( font-size, 16px );
   }
 }
 

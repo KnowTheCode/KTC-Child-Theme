@@ -1,11 +1,13 @@
-// Config
-$use-tada: true;
-$image--path: '../../images';
+/*!
+  Front Page Stylesheet
 
-// Base stuff
-@import "bourbon";
-@import "neat";
-@import "utilities/index";
-@import "base/index";
+  Version: 1.4.0
+
+*/
+
+// Animation configuration
+$use-tada: true;
+
+@import 'base-stuff';
 
 @import "templates/front-page/index";

@@ -35,8 +35,7 @@
   &__item {
     background-color: #e2e2e2;
     border-bottom: 1px solid $gray;
-    //color: #3a3a3a;
-    font-size: rem(18);
+    @include rem( font-size, 18px );
     line-height: 1;
     padding: 0 25px;
     position: relative;
@@ -54,7 +53,7 @@
   &__index {
     color: #9a9a9a;
     content: counter(episode-index);
-    font-size: 12px;
+    @include rem( font-size, 12px );
     margin-right: 25px;
     position: relative;
     width: 14px;
@@ -109,7 +108,7 @@
 .episode-list__free, .episode-list__basic, .episode-list__pro {
   margin-left: 15px;
   background: $colorFree;
-  font-size: rem(12);
+  @include rem( font-size, 12px );
   padding: 3px 4px;
   color: $white;
   text-transform: lowercase;

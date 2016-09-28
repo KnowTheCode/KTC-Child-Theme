@@ -24,7 +24,7 @@
     list-style-type: none;
     position: absolute;
     white-space: nowrap;
-    font-size: rem(30);
+    @include rem( font-size, 30px );
 
     @include transform( translate3d(0, 0, 0) );
     @include transform-style(preserve-3d);

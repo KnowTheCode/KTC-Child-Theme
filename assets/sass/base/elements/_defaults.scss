@@ -1,23 +1,6 @@
-/*
-Defaults
----------------------------------------------------------------------------------------------------- */
-
-/* Typographical Elements
+/* ## Typographical Elements
 --------------------------------------------- */
-
-html, body {
-	overflow-x: hidden;
-}
-
-body {
-	background: $body--background-color;
-	color: $base--color;
-	font-family: $sans-serif;
-	font-size: $base-font-size;
-	font-weight: 400;
-	line-height: $base-line-height;
-	overflow-x: hidden;
-}
+@import "body";
 
 *:focus {
 	outline:none;
@@ -79,23 +62,6 @@ pre {
 cite {
 	font-style: italic;
 	font-weight: 700;
-}
-
-/* Objects
---------------------------------------------- */
-
-embed,
-iframe,
-img,
-object,
-video,
-.wp-caption {
-	max-width: 100%;
-}
-
-img {
-	height: auto;
-	width: auto; /* IE8 */
 }
 
 

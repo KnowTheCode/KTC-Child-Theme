@@ -36,7 +36,7 @@ body.home .site-inner {
   width: 100%;
   text-align: center;
   .fa {
-    font-size: rem(30);
+    @include rem( font-size, 30px );
   }
 
   h3 {

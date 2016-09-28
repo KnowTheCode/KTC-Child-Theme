@@ -27,6 +27,6 @@
 
   .hello-member {
     margin-right: 10px;
-    font-size: rem(18);
+    @include rem( font-size, 18px );
   }
 }

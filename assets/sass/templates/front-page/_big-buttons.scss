@@ -14,7 +14,7 @@ body.home {
       @include flex-direction(column);
       @include justify-content(center);
       text-align: center;
-      font-size: rem(30);
+      @include rem( font-size, 30px );
 
       &:hover, &:focus, &:active {
         background-color: #e1e5cc;
@@ -40,27 +40,27 @@ body.home {
       }
 
       @include media($smaller-screen-up) {
-        font-size: rem(22);
+        @include rem( font-size, 22px );
         width: 50%;
       }
 
       @include media($small-screen-up) {
-        font-size: rem(22);
+        @include rem( font-size, 22px );
         width: 25%;
       }
       @include media($large-screen-up) {
-        font-size: rem(30);
+        @include rem( font-size, 30px );
       }
 
       .big-button-description {
-        font-size: rem(18);
+        @include rem( font-size, 18px );
         font-weight: 400;
 
         @include media($small-screen-up) {
-          font-size: rem(16);
+          @include rem( font-size, 16px );
         }
         @include media($large-screen-up) {
-          font-size: rem(18);
+          @include rem( font-size, 18px );
         }
       }
     }
