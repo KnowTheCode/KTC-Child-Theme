@@ -1,14 +1,14 @@
-.content-sidebar-wrap {
-  display: flex;
-  align-items: stretch;
+.help-center__qa {
+  margin: 80px 0 40px;
 }
 
-.content {
-  float: right;
-  width: 60%;
-}
+.menu__topics, .menu__topics.current-menu-item {
+  a {
+    background-color: $orange;
+    color: $white;
 
-.topics__sidebar {
-  float: left;
-  width: 35%;
+    &:hover {
+      background-color: $green;
+    }
+  }
 }

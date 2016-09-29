@@ -1,0 +1,28 @@
+/* Primary & Footer Navigation
+--------------------------------------------- */
+
+.nav-secondary {
+	background-color: $white;
+	text-align: center;
+	color: $darkBlue;
+	border-bottom: 1px solid $darkBlue;
+
+	.wrap {
+		padding: 0;
+		position: relative;
+	}
+
+	a {
+		color: $darkBlue;
+		background-color: $white;
+		border: 0;
+	}
+
+	a:hover,
+	a:focus,
+	a:active,
+	.current-menu-item > a {
+		background-color: $darkBlue;
+		color: $white;
+	}
+}

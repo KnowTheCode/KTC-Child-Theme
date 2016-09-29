@@ -1,12 +1,14 @@
 /*!
   Front Page Stylesheet
 
-  Version: 1.4.0
+  Version: 1.1.0
 
 */
 
-// Animation configuration
+// Configuration
 $use-tada: true;
+// CSS path dist/css/
+$image--path: '../../images';
 
 @import 'base-stuff';
 

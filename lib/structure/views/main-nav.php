@@ -15,8 +15,8 @@
 			<li class="menu-item menu__whatsnew<?php if ( is_page( 'whats-new' ) ) { echo ' current-menu-item'; } ?>">
 				<a href="<?php echo home_url( 'whats-new' ); ?>" itemprop="url"><span itemprop="name"><i class="fa fa-plus-circle" aria-hidden="true"></i> What's New</span></a>
 			</li>
-			<li class="menu-item menu__help<?php if ( is_page( 'help' ) ) { echo ' current-menu-item'; } ?>">
-				<a href="<?php echo home_url( 'help' ); ?>" itemprop="url"><span itemprop="name"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</span></a>
+			<li class="menu-item menu__help<?php if ( is_help_center_page() ) { echo ' current-menu-item'; } ?>">
+				<a href="<?php echo home_url( 'help-center' ); ?>" itemprop="url"><span itemprop="name"><i class="fa fa-life-ring" aria-hidden="true"></i> Help Center</span></a>
 			</li>
 			<?php if ( $user_is_logged_in ) : ?>
 			<li class="menu-item menu__dashboard<?php if ( is_page( 'my-dashboard' ) ) { echo ' current-menu-item'; } ?>">

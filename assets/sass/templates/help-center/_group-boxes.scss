@@ -1,0 +1,78 @@
+.help-center__groups {
+  overflow: hidden;
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    height: 100px;
+    text-align: center;
+    @include display(flex);
+    @include flex-direction(column);
+    @include justify-content(center);
+
+    @include media(480px) {
+      float: left;
+      width: 50%;
+
+      &:nth-of-type(2n+1) {
+        clear: left;
+      }
+    }
+
+    @include media(600px) {
+      @include rem( font-size, 20px );
+    }
+
+    @include media(1280px) {
+      @include rem( font-size, 24px );
+    }
+
+    @include media(1400px) {
+      @include rem( font-size, 30px );
+    }
+
+    a {
+      color: $white;
+    }
+
+    background-color: $green;
+
+    &:hover, &:focus {
+      background-color: #dde7a9;
+      a, a:hover {
+        color: $darkBlue;
+      }
+    }
+
+    &:nth-of-type(even) {
+      background-color: $darkBlue;
+      &:hover, &:focus {
+        background-color: #e1e5cc;
+      }
+    }
+
+    &:nth-of-type(3n+3) {
+      background-color: $orange;
+      &:hover, &:focus {
+        background-color: #f6dbd0;
+      }
+    }
+
+    &:nth-of-type(3n+2) {
+      background-color: #ced2b7;
+      a {
+        color: $darkBlue;
+      }
+      &:hover, &:focus {
+        background-color: #d1d2d6;
+      }
+    }
+  }
+
+  a {
+    border-bottom: none;
+    text-align: center;
+  }
+}

@@ -3,10 +3,10 @@
 //==================
 
 body.home .site-inner .partners__home .wrap {
-  padding: rem(40) 10%;
+  padding: 40px 10%;
 
   @include media($medium-screen-up) {
-    padding: rem(40) 0;
+    padding: 40px 0;
     max-width: $wrap-max-width-medium;
   }
   @include media($large-screen-up) {

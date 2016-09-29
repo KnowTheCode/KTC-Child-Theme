@@ -1,0 +1,28 @@
+.help-center__topic {
+  padding: 20px;
+
+  // 2 columns
+  @include media(1024px) {
+    float: left;
+    width: 50%;
+    margin: 0;
+
+    &:nth-of-type(2n+1) {
+      border-right: 1px solid $gray;
+      clear: left;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    margin-bottom: 10px;
+
+    @include media(1024px) {
+      margin-bottom: 20px;
+    }
+  }
+
+}
