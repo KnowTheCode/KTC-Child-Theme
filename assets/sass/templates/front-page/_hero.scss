@@ -35,7 +35,7 @@
     }
   }
 
-  h2, h3 {
+  h2 {
     @include rem( font-size, 16px );
     @include media($smaller-screen) {
       @include rem( font-size, 20px );
@@ -45,6 +45,25 @@
     }
     @include media($large-screen-up) {
       @include rem( font-size, 28px );
+    }
+  }
+
+  h3 {
+    color: $orange;
+
+    @include rem( font-size, 16px );
+    @include media($smaller-screen) {
+      @include rem( font-size, 18px );
+    }
+    @include media($small-screen-up) {
+      @include rem( font-size, 20px );
+    }
+    @include media($large-screen-up) {
+      @include rem( font-size, 24px );
+    }
+
+    em {
+      border-bottom: 1px dotted $orange;
     }
   }
 }

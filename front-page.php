@@ -4,7 +4,7 @@
  * Front page template
  *
  * @package     KnowTheCode\Front_Page
- * @since       1.0.0
+ * @since       1.6.1
  * @author      hellofromTonya
  * @link        https://UpTechLabs.io
  * @license     GNU General Public License 2.0+ and MIT Licence (MIT)
@@ -25,7 +25,7 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_front_page_assets' )
  * @return void
  */
 function enqueue_front_page_assets() {
-	wp_enqueue_style( 'ktc_front_page_css', CHILD_URL . '/assets/dist/css/front-page.min.css', array(), '1.1.0' );
+	wp_enqueue_style( 'ktc_front_page_css', CHILD_URL . '/assets/dist/css/front-page.min.css', array(), '1.6.1' );
 }
 
 genesis();

@@ -20,10 +20,6 @@ namespace KnowTheCode;
 function unregister_post_events() {
 	remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
 	remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
-
-	if ( is_post_type_archive( 'forum' ) ) {
-		remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
-	}
 }
 
 add_action( 'genesis_before_loop', __NAMESPACE__ . '\change_breadcrumb_from_single_posts', 1 );

@@ -3,13 +3,15 @@
 //==========================
 
 body.home .site-inner .the-value .wrap {
-  padding: 40px 10%;
-
+  max-width: $max-width;
+  padding: 40px 5%;
   @include media($medium-screen-up) {
-    padding: 0;
+    max-width: $wrap-max-width-medium;
+    padding: 40px 0;
   }
+
   @include media($large-screen-up) {
-    max-width: 1000px;
+    max-width: $wrap-max-width-large;
   }
 }
 
@@ -18,22 +20,20 @@ body.home .site-inner .the-value .wrap {
   background-position: center;
   background-repeat: no-repeat;
 
+  @include display(flex);
+  @include flex-direction(column);
+  @include justify-content(center);
+  background-image: linear-gradient(
+                  rgba(200,207,169,0.7) 100%, $lightOlive),
+                  url(#{$image--path}/wordpress-developer-hero.jpg);
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 
-  @include display(flex);
-  @include flex-direction(column);
-  @include justify-content(center);
-  background-image: url(#{$image--path}/wordpress-developer-hero.jpg);
-
   height: 450px;
   text-align: center;
-
-  @include media($smaller-screen-up) {
-
-  }
 
   @include media($large-screen-up) {
     height: 600px;
@@ -43,8 +43,15 @@ body.home .site-inner .the-value .wrap {
     height: 1000px;
   }
 
+  h2, h3, p {
+    color: $darkBlue;
+  }
+  
+  h3, p {
+    text-align: left;
+  }
+
   h2 {
-    color: $white;
     @include rem( font-size, 26px );
 
     @include media($smaller-screen) {
@@ -53,5 +60,16 @@ body.home .site-inner .the-value .wrap {
     @include media($small-screen-up) {
       @include rem( font-size, 50px );
     }
+  }
+
+  .qa-question {
+    background-color: $green;
+    text-align: left;
+    color: $white;
+  }
+
+  .qa-answer {
+    text-align: left;
+    background-color: $white;
   }
 }
