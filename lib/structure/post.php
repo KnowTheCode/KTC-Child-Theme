@@ -13,7 +13,7 @@ namespace KnowTheCode;
 /**
  * Unregister all of the post default events.
  *
- * @since 1.0.0
+ * @since 1.4.8
  *
  * @return void
  */
