@@ -8,8 +8,9 @@ Want to build your own Genesis starter theme? No problem.  We have a [hands-on l
 
 This child theme is dependent upon the following:
 
-1. [Fulcrum](https://github.com/hellofromtonya/fulcrum) - The central custom repository for WordPress
-2. The [Genesis](http://www.studiopress.com/features/) theming framework from [StudioPress](http://www.studiopress.com).
+1. The [Genesis](http://www.studiopress.com/features/) theming framework from [StudioPress](http://www.studiopress.com).
+
+Optionally, if you want the login styling, then you will need [Fulcrum](https://github.com/hellofromtonya/Fulcrum) - The central custom repository for WordPress.
 
 ## Instructions to install:
 
@@ -25,9 +26,11 @@ To make styling changes, navigate to `assets/sass`.  There you will find each of
 
 The variables are setup for our color scheme.  Therefore, you want to use the variables found in the `utilities/variables/_variables.scss` file.  For example, let's say that you want the background-color to be our branding green color.  You would use `$green` as the color.  This variable holds the hex color.
 
-## Gulp
+## Gulp and Sass
 
-When you are actively making styling changes, you need to convert the Sass files into a compressed CSS file.  To do this, in terminal, type `gulp` at the root of the theme folder.  Let it run as you make styling changes.  Refresh your browser to see the live changes on your local sandbox site.
+When you are actively making styling changes, you need to convert the Sass files into a compressed CSS file.  The first step is to make sure that you have all of the node modules installed, i.e. that are defined in the `package.json` file.  To install, you will need npm and node installed in your machine.  [Automating Tasks with Gulp](https://knowthecode.io/labs/part-3a-automating-tasks-gulp) walks you through the process.
+
+Once everything is installed, then you type `gulp watch`.  You can now make changes to the Sass files and have them compiled into native CSS.  Two files will be stored in the theme's root directory: `style.css` and `style.min.css`.  The minified version is loaded within the theme as it's more optimized and will download faster to the viewing devices.
 
 ## Contributions
 
