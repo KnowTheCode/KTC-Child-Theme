@@ -1,6 +1,7 @@
 ## 1.4.8
 
 - Don't limit the content for the forums archive page.
+- Check if Fulcrum is loaded for login page handling.
 
 ## 1.4.0
 
