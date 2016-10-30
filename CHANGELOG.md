@@ -3,6 +3,9 @@
 - Added dependency checker and helper file
 Why? For anyone using this theme other than us.
 
+- Removed redundant Genesis loader from `functions.php`
+Why? WordPress loads the parent's `functions.php` automatically.  There's no need to call it in our theme.
+
 ## 1.4.8
 
 - Don't limit the content for the forums archive page.
