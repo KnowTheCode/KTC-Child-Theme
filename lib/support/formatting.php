@@ -45,3 +45,9 @@ function modify_the_content_more_link( $html, $more_link_text ) {
 
 	return $html;
 }
+
+if ( ! function_exists( 'is_help_center_page' ) ) {
+	function is_help_center_page() {
+		return false;
+	}
+}

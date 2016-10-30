@@ -1,3 +1,8 @@
+## 1.4.9
+
+- Added dependency checker and helper file
+Why? For anyone using this theme other than us.
+
 ## 1.4.8
 
 - Don't limit the content for the forums archive page.

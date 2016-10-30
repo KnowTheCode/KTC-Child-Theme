@@ -168,14 +168,12 @@ function remove_genesis_page_templates( $page_templates ) {
 	return $page_templates;
 }
 
-if ( function_exists( 'fulcrum_load_login_form_styling' ) ) {
-	/**
-	 * If this is the wp-login.php page, then the login-form styling is
-	 * loaded into the wp-head.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return void
-	 */
-	fulcrum_load_login_form_styling( CHILD_THEME_DIR . '/config/login-form.php' );
-}
+/**
+ * If this is the wp-login.php page, then the login-form styling is
+ * loaded into the wp-head.
+ *
+ * @since 1.4.9
+ *
+ * @return void
+ */
+fulcrum_load_login_form_styling( CHILD_THEME_DIR . '/config/login-form.php' );
