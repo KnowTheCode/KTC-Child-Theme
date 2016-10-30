@@ -12,7 +12,7 @@ This child theme is dependent upon the following:
 
 ### Optional dependency plugins
 
-This theme uses [Fulcrum](https://github.com/hellofromtonya/Fulcrum) and [Help Center]() plugins. Why? Fulcrum gives us some functions such as login page stylesheet handler, development environment, and parent-child.  The Help Center is specific to Know the Code.
+This theme uses [Fulcrum](https://github.com/hellofromtonya/Fulcrum) and [Help Center](https://github.com/KnowTheCode/Must-Use/tree/master/help-center) plugins. Why? Fulcrum gives us some functions such as login page stylesheet handler, development environment, and parent-child.  The Help Center is specific to Know the Code.
 
 Depending upon your project, you may want Fulcrum.  Typically though, you do not need these plugins.  The theme includes a checker to determine if these are loaded.  If no, it loads a dependency helper file.
 
