@@ -1,6 +1,6 @@
 <?php
 /**
- * Description
+ * Autoload files to launch the theme.
  *
  * @package     KnowTheCode
  * @since       1.3.0
@@ -13,12 +13,13 @@ namespace KnowTheCode\Support;
 /**
  * Initialize the filenames to be loaded.
  *
- * @since 1.3.0
+ * @since 1.4.9
  *
  * @return void
  */
 function init_files() {
 	$filenames = array(
+		'support/dependencies-helpers.php',
 		'setup.php',
 		'widgets/widget-areas.php',
 		'support/formatting.php',
