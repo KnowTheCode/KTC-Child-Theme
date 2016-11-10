@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Library Skills page
+ * Library page
  *
- * @package     KnowTheCode\Library
- * @since       1.3.0
+ * @package     KnowTheCode\Single
+ * @since       1.6.1
  * @author      hellofromTonya
  * @link        https://UpTechLabs.io
  * @license     GNU General Public License 2.0+ and MIT Licence (MIT)

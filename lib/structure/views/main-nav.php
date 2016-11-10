@@ -6,11 +6,8 @@
 				<a href="<?php echo home_url( 'membership' ); ?>" itemprop="url"><span itemprop="name"><i class="fa fa-code" aria-hidden="true"></i> Join</span></a>
 			</li>
 			<?php endif; ?>
-			<li class="menu-item menu__library<?php if ( is_page( 'library' ) ) { echo ' current-menu-item'; } ?>">
-				<a href="<?php echo home_url( 'library' ); ?>" itemprop="url"><span itemprop="name"><i class="fa fa-fighter-jet" aria-hidden="true"></i> Skills</span></a>
-			</li>
-			<li class="menu-item menu__catalog<?php if ( is_page( 'catalog' ) ) { echo ' current-menu-item'; } ?>">
-				<a href="<?php echo home_url( 'catalog' ); ?>" itemprop="url"><span itemprop="name"><i class="fa fa-list" aria-hidden="true"></i> Catalog</span></a>
+			<li class="menu-item menu__library<?php if ( is_page( 'quick-start-guide' ) ) { echo ' current-menu-item'; } ?>">
+				<a href="<?php echo home_url( 'quick-start-guide' ); ?>" itemprop="url"><span itemprop="name"><i class="fa fa-fighter-jet" aria-hidden="true"></i> Our Screencast Libraries</span></a>
 			</li>
 			<li class="menu-item menu__whatsnew<?php if ( is_page( 'whats-new' ) ) { echo ' current-menu-item'; } ?>">
 				<a href="<?php echo home_url( 'whats-new' ); ?>" itemprop="url"><span itemprop="name"><i class="fa fa-plus-circle" aria-hidden="true"></i> What's New</span></a>
