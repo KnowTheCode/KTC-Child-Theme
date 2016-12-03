@@ -95,11 +95,11 @@ function unregister_layouts() {
  * @return void
  */
 function unregister_genesis_callbacks() {
-	unregister_header_events();
-	unregister_nav_events();
-	unregister_post_events();
-	unregister_archive_events();
-	unregister_footer_events();
+	Structure\unregister_header_events();
+	Structure\unregister_nav_events();
+	Structure\unregister_post_events();
+	Structure\unregister_archive_events();
+	Structure\unregister_footer_events();
 }
 
 add_filter( 'genesis_theme_settings_defaults', __NAMESPACE__ . '\set_theme_settings_defaults' );

@@ -1,3 +1,7 @@
+## 1.5.0
+
+- Search results handler customized to order by post type and subtitle the parent's title.
+
 ## 1.4.9
 
 - Added dependency checker and helper file

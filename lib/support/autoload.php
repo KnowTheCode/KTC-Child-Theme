@@ -30,6 +30,7 @@ function init_files() {
 		'structure/header.php',
 		'structure/nav.php',
 		'structure/post.php',
+		'structure/search.php',
 	);
 
 	load_specified_files( $filenames );

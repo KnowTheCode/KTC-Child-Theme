@@ -1,7 +1,7 @@
 /* Posts Page
 --------------------------------------------- */
 
-body.blog, body.fulcrum-grid {
+body.blog, body.fulcrum-grid, body.search-results {
   @import "entry-header";
   @import "entry-title";
   @import "entry";

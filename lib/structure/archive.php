@@ -8,7 +8,7 @@
  * @link        https://UpTechLabs.io
  * @license     GNU General Public License 2.0+
  */
-namespace KnowTheCode;
+namespace KnowTheCode\Structure;
 
 /**
  * Unregister default archive events.
@@ -21,7 +21,7 @@ function unregister_archive_events() {
 	// nothing to unregister.
 }
 
-add_action('genesis_meta', __NAMESPACE__ . '\dont_limit_forum_archive_page');
+add_action( 'genesis_meta', __NAMESPACE__ . '\dont_limit_forum_archive_page' );
 /**
  * bbPress' forum archive page cannot be content
  * limited; else, the enter forum listing is cut off.
@@ -49,7 +49,7 @@ add_action( 'genesis_doctype', __NAMESPACE__ . '\do_grid_for_category_archive' )
  * @return void
  */
 function do_grid_for_category_archive() {
-	if ( is_category() || is_search() || is_tax( 'catalog' ) ) {
+	if ( is_category() || is_tax( 'catalog' ) ) {
 		do_action( 'fulcrum_grid' );
 	}
 }

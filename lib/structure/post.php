@@ -8,7 +8,7 @@
  * @link        https://UpTechLabs.io
  * @license     GNU General Public License 2.0+
  */
-namespace KnowTheCode;
+namespace KnowTheCode\Structure;
 
 /**
  * Unregister all of the post default events.
