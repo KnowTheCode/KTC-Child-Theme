@@ -98,7 +98,7 @@ function unregister_genesis_callbacks() {
 	Structure\unregister_header_events();
 	Structure\unregister_nav_events();
 	Structure\unregister_post_events();
-	Structure\unregister_archive_events();
+//	unregister_archive_events();
 	Structure\unregister_footer_events();
 }
 

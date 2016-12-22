@@ -2,64 +2,40 @@
 // User History Page
 //==================================
 
-.entry-content .uh-filtering {
-  margin-bottom: 30px;
-  ul li {
+ul.uhlist--container {
+  width: 100%;
+  list-style: none;
+  margin: 0 0 30px;
+
+  > li {
+    list-style-type: none;
+    display: table;
     margin-left: 0;
   }
-  a.button {
-    width: 100%;
-    @include rem( font-size, 16px );
-  }
 }
 
-.uh-filtering {
-  ul, li {
-    overflow: hidden;
-    margin-bottom: 20px;
-    width: 100%;
-
-    @include media($smaller-screen-up) {
-      display: inline-block;
-      width: auto;
-      margin-bottom: 0;
-      width: auto;
-    }
-  }
-
-  .button__filterby.current {
-    background-color: $white;
-    color: $blue;
-  }
-}
-
-.uhlist__table {
+.uhlist--item {
   width: 100%;
-  border-spacing: 0.5rem;
-  border-collapse: collapse;
+  padding: 10px;
+  border-bottom: 1px solid $gray;
 
-  th {
-    text-align: left;
-    border-bottom: 1px solid $gray;
+  span {
+    display: table-cell;
+    width: 30px;
+    margin-right: 10px;
+    //text-align: center;
+    vertical-align: middle;
   }
 
-  tr {
-    &:nth-child(even) {
-      background-color: $gray;
-    }
+  &:nth-child(even) {
+    background-color: $gray;
   }
 
-  td {
-    padding: 10px;
-  }
-
-  .uhlist__document {
-    a {
-      font-weight: normal;
-      color: $black;
-      &:hover {
-        color: $orange;
-      }
+  a {
+    font-weight: normal;
+    color: $black;
+    &:hover {
+      color: $orange;
     }
   }
 }

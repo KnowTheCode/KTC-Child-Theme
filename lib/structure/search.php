@@ -1,9 +1,9 @@
 <?php
 /**
- * Archive structures
+ * Search structures
  *
  * @package     KnowTheCode
- * @since       1.4.8
+ * @since       1.5.0
  * @author      hellofromTonya
  * @link        https://UpTechLabs.io
  * @license     GNU General Public License 2.0+
@@ -13,7 +13,7 @@ namespace KnowTheCod\Structure;
 /**
  * Unregister default archive events.
  *
- * @since 1.3.0
+ * @since 1.5.0
  *
  * @return void
  */
@@ -21,35 +21,34 @@ function unregister_search_events() {
 	// nothing to unregister.
 }
 
-add_filter('pre_get_posts', __NAMESPACE__ . '\change_search_post_types' );
+add_filter('pre_get_posts', __NAMESPACE__ . '\change_search_post_types', 50 );
 /**
  * Change the search post types to only include what we want.
  *
- * @since 1.0.0
+ * @since 1.5.0
  *
  * @param $query
  *
  * @return mixed
  */
 function change_search_post_types( $query ) {
-	if ( ! $query->is_search || is_admin() ) {
-		return $query;
+
+	if ( $query->is_search && ! is_admin() && $query->is_main_query() ) {
+		$query->set(
+			'post_type',
+			array(
+				'lab',
+//			'challenge',
+				'post',
+				'docx',
+				'glossary',
+				'help-center',
+				'page',
+			)
+		);
+
+		$query->set( 'posts_per_page', 100 );
 	}
-
-	$query->set(
-		'post_type',
-		array(
-			'lab',
-			'challenge',
-			'post',
-			'docx',
-			'glossary',
-			'help-center',
-			'page',
-		)
-	);
-
-	$query->set( 'posts_per_page', 100 );
 
 	return $query;
 }
@@ -58,7 +57,7 @@ add_filter( 'posts_orderby', __NAMESPACE__ . '\add_orderby_for_search_query', 50
 /**
  * Add the ORDER BY for the Search Query.
  *
- * @since 1.0.0
+ * @since 1.5.0
  *
  * @param string $orderby_sql
  *
@@ -73,8 +72,8 @@ function add_orderby_for_search_query( $orderby_sql ) {
 
 	$post_type_order = array(
 		'lab',
-		'challenge',
-//		4 => 'explained',
+//		'challenge',
+//		'explained',
 		'post',
 		'docx',
 		'glossary',

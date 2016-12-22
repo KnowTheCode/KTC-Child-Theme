@@ -1,0 +1,30 @@
+.entry-content .uh-filtering {
+  margin-bottom: 30px;
+  ul li {
+    margin-left: 0;
+  }
+  a.button {
+    width: 100%;
+    @include rem( font-size, 16px );
+  }
+}
+
+.uh-filtering {
+  ul, li {
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: 100%;
+
+    @include media($smaller-screen-up) {
+      display: inline-block;
+      width: auto;
+      margin-bottom: 0;
+      width: auto;
+    }
+  }
+
+  .button__filterby.current {
+    background-color: $white;
+    color: $blue;
+  }
+}

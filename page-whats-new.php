@@ -50,28 +50,7 @@ function render_filterby_navigation( $filterby ) {
  * @return void
  */
 function render_new_content( $filterby ) {
-	$args = array(
-		'post_status'    => 'publish',
-		'post_parent'    => 0,
-		'posts_per_page' => 20,
-		'orderby'        => 'date',
-		'order'          => 'DESC',
-		'date_query' => array(
-			'after' => '-2 month'
-		),
-	);
-
-	if ( $filterby == 'labs' ) {
-		$args['post_type'] = 'lab';
-	} elseif ( $filterby == 'docx' ) {
-		$args['post_type'] = 'docx';
-	} elseif ( $filterby == 'insights' ) {
-		$args['post_type'] = 'post';
-	} else {
-		$args['post_type'] = array( 'post', 'lab', 'docx' );
-	}
-
-	$query = new \WP_Query( $args );
+	$query = get_whats_new_query( $filterby );
 	if ( ! $query->have_posts() ) {
 		_e( 'Whoopsie, something went wrong.', 'ktc' );
 

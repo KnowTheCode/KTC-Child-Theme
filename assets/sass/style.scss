@@ -28,13 +28,15 @@ $image--path: 'assets/images';
 // Modules
 @import 'modules/index';
 
+// Vendors
+@import 'vendors/forums/index';
+@import 'vendors/membership-pro/index';
+
 // Templates - Page specific styles
 @import 'templates/index';
 
 // Widgets
 @import 'widgets/index';
 
-// Vendors
-@import 'vendors/forums/index';
-@import 'vendors/membership-pro/index';
+
 

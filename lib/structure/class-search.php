@@ -52,7 +52,7 @@ class SearchTemplate {
 
 		$header_text = __( 'Search Results for: ', 'ktc' ) . get_search_query();
 
-		include_once( __DIR__ . '/lib/views/search/search-header.php' );
+		include_once( __DIR__ . '/views/search/search-header.php' );
 	}
 
 	/**

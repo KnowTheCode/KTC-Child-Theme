@@ -1,0 +1,13 @@
+.dashboard-widget--whatsnew {
+  ol, ul {
+    margin: 0;
+
+    > li {
+      margin-left: 0;
+    }
+  }
+
+  .fa {
+    margin-right: 12px;
+  }
+}

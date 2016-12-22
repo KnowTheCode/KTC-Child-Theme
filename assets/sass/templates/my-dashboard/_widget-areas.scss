@@ -1,0 +1,32 @@
+.dashboard-widget--container {
+  overflow: hidden;
+  @include media(480px) {
+    @include outer-container;
+    @include display(flex);
+    @include flex-wrap(wrap);
+  }
+}
+
+.dashboard-widget {
+  margin-left: 0;
+  margin-bottom: 40px;
+  padding: 30px;
+  min-height: 300px;
+  border: 1px dotted #ccc;
+
+  // 2 columns
+  @include media(480px) {
+    @include span-columns(6);
+    @include omega(2n);
+  }
+}
+
+.dashboard-widget--header {
+  margin: -30px -30px 0;
+}
+
+.dashboard-widget--title {
+  @include rem(font-size, 22px);
+  padding: 10px 20px;
+  background-color: #ccc;
+}
