@@ -39,7 +39,7 @@ add_action( 'genesis_after_header', __NAMESPACE__ . '\render_sub_nav', 12 );
 /**
  * Render the subnav (secondary navigation) for specific pages.
  *
- * @since 1.4.8
+ * @since 1.5.1
  *
  * @return void
  */
@@ -51,24 +51,26 @@ function render_sub_nav() {
 
 	$page_name = get_current_page_name();
 	$subnavs   = array(
-		'quick-start-guide'    => 'start',
-		'library'              => 'start',
-		'catalog'              => 'start',
-		'glossary'             => 'start',
-		'the-docx'             => 'start',
-		'insights'             => 'start',
-		'my-dashboard'         => 'my',
-		'account'              => 'my',
-		'your-account-history' => 'my',
+		'quick-start-guide'     => 'start',
+		'library'               => 'start',
+		'catalog'               => 'start',
+		'glossary'              => 'start',
+		'the-docx'              => 'start',
+		'insights'              => 'start',
+		'whats-new'             => 'start',
+		'my-dashboard'          => 'my',
+		'account'               => 'my',
+		'your-activity-history' => 'my',
 	);
+
 	if ( ! array_key_exists( $page_name, $subnavs ) ) {
 		return;
 	}
 
 	$user_is_logged_in = is_user_logged_in();
 
-	$view = __DIR__ . '/views/' . $subnavs[ $page_name ] . '-subnav.php';
-	require( $view );
+	$view = sprintf( '%/views/%s-subnav.php', __DIR__, $subnavs[ $page_name ] );
+	include_once( $view );
 }
 
 /**

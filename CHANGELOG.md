@@ -1,3 +1,10 @@
+## 1.5.1
+
+- Bug fix: to load subnav for the 'your-activity-history' page
+- New my Dashboard template
+- New styling for the dashboard
+- Removed `home_url()` from nav views and replaced with `fulcrum_get_url_relative_to_home_url_` to speed up processing.
+
 ## 1.5.0
 
 - Search results handler customized to order by post type and subtitle the parent's title.
