@@ -7,14 +7,10 @@ $black: #010204; // text color
 $darkBlue: #1b202d; // heading color
 
 $blue: #1c202c;
-$blueTint: #5f616d;
-$blueShade: #131521;
-$bluePastel: #d1d2d6;
 $lightOlive: #c8cfa9;
 
 $white: #fff;
 $orange: #cb4b14;
-$orangeLight: #cc4b14;
 
 $gray: #cccccc;
 $red: #FF4614;
@@ -33,6 +29,7 @@ $colorBasic: #f58728;
 $colorBasicBorder: #f48728;
 $colorFree: #465573;
 
+$highlight-color: $yellow; //#868686;
 $background--accent-color: #ced2b7;
 $sidebar--color: #868686;
 $sidebar--hover-color: $darkBlue;

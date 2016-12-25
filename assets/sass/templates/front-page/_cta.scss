@@ -1,8 +1,12 @@
 .testimonial--cta {
   overflow: hidden;
 
-  background: linear-gradient( rgba(27,32,45,0.85) 100%, $darkBlue),
-      url(#{$image--path}/KTCToPowerofWP.png) repeat center 50% $darkBlue;
+background: linear-gradient( rgba(206,210,183,0.90) 100%, #ced2b7),
+    url(#{$image--path}/KTCToPowerofWP.png) repeat center 50% #ced2b7;
+
+  //background: linear-gradient( rgba(255,255,255,0.90) 100%, $white),
+  //    url(#{$image--path}/KTCToPowerofWP.png) repeat center 50% $white;
+
   padding: 20px 5%;
 
   @media screen and (min-width: 768px) {
@@ -14,11 +18,11 @@
   }
 
   h4 {
-    color: $white;
+    color: $darkBlue;
     text-align: center;
     margin: 0;
     font-size: 18px;
-    font-weight: 100;
+    font-weight: 400;
     line-height: 1.4;
 
     @media screen and (min-width: 768px) {

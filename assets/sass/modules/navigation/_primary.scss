@@ -39,5 +39,9 @@
 
 	&.menu__join {
 		background-color: $orange;
+
+		a {
+			color: $white;
+		}
 	}
 }

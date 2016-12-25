@@ -36,6 +36,9 @@
 	}
 
 	function setFeatureGridHeight() {
+		if ( $(window).width() < 768 ) {
+			return;
+		}
 		var newHeight,
 			containerWidth = $featureGif.width(),
 			$gif = $featureGif.find('img'),
