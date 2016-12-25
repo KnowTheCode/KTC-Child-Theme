@@ -15,7 +15,7 @@
 @import 'faq';
 @import 'filterby-nav';
 @import 'glossary-instruction-list';
-@import 'grid';
+@import 'grids/index';
 @import 'callout';
 @import 'info-boxes';
 @import 'intro';
@@ -28,3 +28,5 @@
 @import 'technologies';
 @import 'twitter-testimonials';
 @import 'video';
+
+@import "mouse-scroll";

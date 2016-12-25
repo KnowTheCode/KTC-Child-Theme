@@ -1,0 +1,51 @@
+@include keyframes(scrollBouncer) {
+  0% {
+    transform: translate(0, 0)
+  }
+  50% {
+    transform: translate(0, 5px)
+  }
+  100% {
+    transform: translate(0, 0)
+  }
+}
+
+.intro--scroll, .scroll-down--message {
+  position: absolute;
+  bottom: 5px;
+}
+
+.scroll-down--message {
+  text-align: center;
+  font-size: 12px;
+  left: 50%;
+  margin-left: -50px;
+  margin-bottom: 0;
+}
+
+.intro--scroll {
+  left: 50%;
+  bottom: 25px;
+  margin-left: -20px;
+  width: 40px;
+  height: 40px;
+  padding-left: 7px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.mouse-scroller {
+  color: $darkBlue;
+  width: 25px;
+  opacity: 1;
+  transition: opacity .5s;
+
+  &--stroke {
+    stroke: $darkBlue;
+  }
+
+  &--scroller {
+    animation: scrollBouncer 1s infinite;
+    stroke: #ada99d;
+  }
+}

@@ -1,4 +1,4 @@
-/**
+/*!
  * Front Page JavaScript handling.
  *
  * @package     KTC Front Page
@@ -7,42 +7,43 @@
  * @link        https://UpTechLabs.io
  * @license     GNU General Public License 2.0+
  */
-
 ;(function ( $, window, document, undefined ) {
 	'use strict';
 
-	var $items, containerIsOnScreen = false;
+	var $header, $featureGif, $boxedGrid;
 
-	function init() {
-		initAnimation();
+	var init = function() {
+		$header = $('.site-header');
+		$boxedGrid = $('.boxed-grid');
+		$featureGif = $('.boxed-grid--gif');
 
-		$( document ).scroll( function () {
-			initAnimation();
-		} );
+		headerHandler();
+		setFeatureGridHeight();
+
+		$(window)
+			.scroll(headerHandler)
+			.resize(setFeatureGridHeight);
 	}
 
-	function initAnimation() {
+	var headerHandler = function() {
+		var position =  $( this ).scrollTop();
 
-		$( '.animated__items' ).each( function( index, container ){
-			var $container = $( container );
-
-			containerIsOnScreen = $container.isOnScreen( 0.5, 0.5 );
-
-			$items = $container.find( '.animated__item' );
-			if ( $items.length < 1 ) {
-				return true;
-			}
-
-			animateItems();
-		});
-	}
-
-	function animateItems() {
-		if ( containerIsOnScreen ) {
-			$items.removeClass('hide');
-		} else {
-			$items.addClass('hide');
+		if ( position > 500 ) {
+			$header.slideUp();
+		} else if ( ! $header.is(':visible') ) {
+			$header.slideDown();
 		}
+	}
+
+	function setFeatureGridHeight() {
+		var newHeight,
+			containerWidth = $featureGif.width(),
+			$gif = $featureGif.find('img'),
+			gifHeight = $gif.height();
+
+		newHeight = ( gifHeight / $gif.width() ) * containerWidth;
+
+		$boxedGrid.css('height', newHeight);
 	}
 
 	$( document ).ready( function () {

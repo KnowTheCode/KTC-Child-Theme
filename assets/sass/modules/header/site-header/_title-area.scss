@@ -32,11 +32,12 @@
     margin: 0 auto;
     text-indent: -9999px;
 
-    @include media($small-screen) {
-      @include retina-image( "#{$image--path}/KTC-logo-2016-493x72", 493px, jpg, "#{$image--path}/KTC-logo-2016-493x72@2x", "@2x" );
-      min-height: 72px;
-      width: 493px;
-    }
+    //@include media($small-screen) {
+    //  @include retina-image( "#{$image--path}/KTC-logo-2016-493x72", 493px, jpg, "#{$image--path}/KTC-logo-2016-493x72@2x", "@2x" );
+    //  min-height: 72px;
+    //  width: 493px;
+    //  background-size: 300px 44px;
+    //}
   }
 }
 

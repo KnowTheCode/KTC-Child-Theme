@@ -26,7 +26,6 @@ module.exports = function ( gulp, plugins, config ) {
 	gulp.task( 'scripts', function ( callback ) {
 
 		runSequence( 'scripts-clean',
-			'scripts-build-concat',
 			'scripts-minify',
 // 			'scripts-finalize',
 // 			'scripts-final-clean',
@@ -45,7 +44,9 @@ module.exports = function ( gulp, plugins, config ) {
 	} );
 
 	gulp.task( 'scripts-minify', function () {
-		return minifyScripts();
+		var settings = config.scripts.minify;
+
+		return minifyScripts(settings);
 	} );
 
 	gulp.task( 'scripts-finalize', function () {
@@ -101,17 +102,16 @@ module.exports = function ( gulp, plugins, config ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function minifyScripts() {
-		var settings = config.styles.uglify;
+	function minifyScripts( settings ) {
 
 		return gulp.src( settings.src )
 	           // Deal with errors.
 	           .pipe( plugins.plumber( {errorHandler: handleErrors} ) )
 
-	           .pipe( plugins.rename( {suffix: '.min'} ) )
 	           .pipe( plugins.uglify( {
 		           mangle: false
 	           } ) )
+               .pipe( plugins.rename( {suffix: '.min'} ) )
 	           .pipe( gulp.dest( settings.dest ) ).on( 'end', function () {
 					plugins.util.log( plugins.util.colors.bgGreen( 'Scripts are now minified....[minifyScripts()]' ) );
 				} )

@@ -3,6 +3,9 @@
 //===================
 
 .entry-content .notched-big-buttons {
+  ul {
+    margin: 0;
+  }
   ol li, ul li {
     margin-left: 0;
   }
@@ -17,6 +20,7 @@
 
   ul {
     list-style: none;
+    margin: 0;
   }
 
   li {

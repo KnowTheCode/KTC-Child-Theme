@@ -76,10 +76,10 @@ module.exports = function ( themeRoot ) {
 		css: ['./*.css', '!*.min.css'],
 		icons: assetDirs.images + 'svg-icons/*.svg',
 		images: [ assetDirs.images + '*', '!' + assetDirs.images + '*.svg' ],
-		php: [ themeRoot + '*.php', themeRoot + '**/*.php'],
 		sass: assetDirs.sass + '**/*.scss',
-		concatScripts: assetDirs.scripts + 'concat/*.js',
-		scripts: [ assetDirs.scripts + '*.js', '!' + assetDirs.scripts + '*.min.js', '!' + assetDirs.scripts + 'customizer.js' ],
+		concatScripts: assetDirs.scripts + '/*.js',
+		vendorScripts: [ assetDirs.scripts + 'vendors/*.js', '!' + assetDirs.scripts + 'vendors/*.min.js' ],
+		scripts: [ assetDirs.scripts + '*.js', '!' + assetDirs.scripts + '*.min.js' ],
 		sprites: assetDirs.images + 'sprites/*.png'
 	};
 
@@ -92,7 +92,8 @@ module.exports = function ( themeRoot ) {
 	var distDirs = {
 		root: themeRoot,
 		css: distDir + 'css/',
-		scripts: distDir + 'js/'
+		scripts: distDir + 'js/',
+		vendorScripts: distDir + 'js/',
 	};
 
 	/************************************
@@ -130,13 +131,8 @@ module.exports = function ( themeRoot ) {
 		clean: {
 			src : [ distDirs.scripts + "*.*" ]
 		},
-		concat: {
-			src: assetDirs.scripts + 'concat/*.js',
-			dest: distDirs.scripts,
-			concatSrc: 'jquery.project.js',
-		},
-		uglify: {
-			src: distDirs.scripts,
+		minify: {
+			src: assetDirs.scripts + '*.js',
 			dest: distDirs.scripts,
 		}
 	};

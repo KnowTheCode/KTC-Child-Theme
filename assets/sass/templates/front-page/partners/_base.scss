@@ -1,0 +1,18 @@
+//
+// Partners
+//==================
+
+.partners {
+  background-color: $white;
+
+  .wrapper {
+      padding: 40px 10%;
+
+      @include media($medium-screen-up) {
+        padding: 40px 0;
+      }
+      @include media($large-screen-up) {
+        padding: 5% 0 5%;
+      }
+  }
+}

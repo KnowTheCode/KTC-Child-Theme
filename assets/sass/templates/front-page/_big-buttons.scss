@@ -7,7 +7,7 @@ body.home {
     overflow: hidden;
     .button {
       float: left;
-      height: 300px;
+      height: 400px;
       width: 100%;
       color: $white;
       @include display(flex);
@@ -50,6 +50,7 @@ body.home {
       }
       @include media($large-screen-up) {
         @include rem( font-size, 30px );
+        height: 300px;
       }
 
       .big-button-description {
