@@ -10,7 +10,7 @@
  * @package     KnowTheCodeGulp
  * @since       1.0.0
  * @author      hellofromTonya <hellofromtonya@knowthecode.io>
- * @link        https://knowthecode.io
+ * @link        https://KnowTheCode.io
  * @license     GNU General Public License 2.0+
  */
 

@@ -46,7 +46,7 @@ add_action( 'genesis_after_endwhile', __NAMESPACE__ . '\do_post_pagination' );
  * Return a paginated navigation to next/previous set of posts, when
  * applicable. Includes screen reader text for better accessibility.
  *
- * @since  1.0.1
+ * @since  1.5.4
  *
  * @see the_posts_pagination()
  */
@@ -58,7 +58,7 @@ function do_post_pagination() {
 	}
 
 	if ( is_single() ) {
-		return add_post_prev_next_to_singles( $post_type );
+		return render_single_post_pagination( $post_type );
 	}
 
 	$args = array(
@@ -68,6 +68,21 @@ function do_post_pagination() {
 
 	if ( 'numeric' === genesis_get_option( 'posts_nav' ) ) {
 		the_posts_pagination( $args );
+	}
+}
+
+/**
+ * Renders the single post pagination.
+ *
+ * @since 1.5.4
+ *
+ * @param string $post_type
+ *
+ * @return void
+ */
+function render_single_post_pagination( $post_type ) {
+	if ( 'post' == $post_type ) {
+		add_post_prev_next_to_singles( $post_type );
 	}
 }
 

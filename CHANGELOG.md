@@ -1,3 +1,7 @@
+## 1.5.4
+
+- Removed in-post navigation except for Posts.
+
 ## 1.5.1
 
 - Bug fix: to load subnav for the 'your-activity-history' page

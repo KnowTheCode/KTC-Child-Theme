@@ -1,0 +1,29 @@
+.donext--featured {
+  //border: 1px dotted #ccc;
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #f2f2f2;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.donext--entry-meta {
+  color: $darkBlue;
+  font-weight: 400;
+}
+
+.donext--image {
+  border-bottom: none;
+}
+
+.donext--entry-title a {
+  color: $darkBlue;
+  font-weight: 400;
+  @include rem( font-size, 22px);
+
+  &:hover {
+    color: $orange;
+  }
+}
