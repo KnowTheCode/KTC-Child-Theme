@@ -1,0 +1,18 @@
+.embedpost--entry-meta {
+  color: $darkBlue;
+  font-weight: 400;
+}
+
+.embedpost--image {
+  border-bottom: none;
+}
+
+.embedpost--entry-title a {
+  color: $darkBlue;
+  font-weight: 400;
+  @include rem( font-size, 22px);
+
+  &:hover {
+    color: $orange;
+  }
+}
