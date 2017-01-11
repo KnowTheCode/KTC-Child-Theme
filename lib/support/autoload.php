@@ -25,6 +25,7 @@ function init_files() {
 		'support/formatting.php',
 		'support/load-assets.php',
 		'structure/archive.php',
+		'structure/comments.php',
 //		'structure/comments.php',
 		'structure/footer.php',
 		'structure/header.php',

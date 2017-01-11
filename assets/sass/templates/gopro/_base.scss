@@ -1,0 +1,36 @@
+//
+// Membership page
+// the background image is in _page-headers.scss
+// ===================
+
+body {
+  background-color: $white; //#ced2b7;
+
+  .site-inner {
+    padding-top: 0;
+  }
+
+  .site-inner .wrap, .wrap {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+  }
+
+  .entry {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+  }
+}
+
+.gopro-pricing--plan, .gopro--features-panel, .gopro--page-title {
+  background-color: rgba(255,255,255,0.9);
+  box-shadow: 5px 5px 5px 0px rgba(200,207,169,1);
+  border-radius: 10px;
+}
+
+.gopro-pricing--plan, .gopro--features-panel {
+  //background-color: rgba(200,207,169,0.7);
+  padding: 20px;
+  margin-bottom: 20px;
+}

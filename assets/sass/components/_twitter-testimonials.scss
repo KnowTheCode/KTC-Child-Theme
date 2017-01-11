@@ -6,3 +6,23 @@
   background-color: #e1e5cc;
   padding: 20px 0;
 }
+
+blockquote.twitter-tweet {
+  color: $darkBlue;
+  border-left: none;
+  padding-left: 0;
+  border: 1px solid #ccc;
+  padding: 20px 10px 10px;
+  position: relative;
+  &::before {
+    content: '\f099';
+    font-family: "FontAwesome";
+    top: -15px;
+    left: -10px;
+    background-color: $darkBlue;
+    color: $white;
+    border-radius: 50%;
+    padding: 10px;
+    position: relative;
+  }
+}

@@ -1,0 +1,16 @@
+/*!
+  GoPro Stylesheet
+
+  Version: 1.0.0
+
+*/
+
+// Configuration
+$use-tada: true;
+// CSS path dist/css/
+$image--path: '../../images';
+
+@import 'base-stuff';
+
+@import "templates/gopro/index";
+@import "templates/front-page/cta";

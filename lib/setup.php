@@ -74,7 +74,7 @@ function adds_theme_supports() {
 function unregister_layouts() {
 	$layouts = array(
 		'sidebar-content',
-		'content-sidebar',
+//		'content-sidebar',
 		'content-sidebar-sidebar',
 		'sidebar-content-sidebar',
 		'sidebar-sidebar-content',
@@ -98,7 +98,7 @@ function unregister_genesis_callbacks() {
 	Structure\unregister_header_events();
 	Structure\unregister_nav_events();
 	Structure\unregister_post_events();
-//	unregister_archive_events();
+	Structure\unregister_archive_events();
 	Structure\unregister_footer_events();
 }
 

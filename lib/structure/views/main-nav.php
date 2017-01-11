@@ -7,10 +7,10 @@
 			</li>
 			<?php endif; ?>
 			<li class="menu-item menu__library<?php if ( is_page( 'library' ) ) { echo ' current-menu-item'; } ?>">
-				<a href="<?php echo fulcrum_get_url_relative_to_home_url( 'library' ); ?>" itemprop="url"><span itemprop="name"><i class="fa fa-fighter-jet" aria-hidden="true"></i> Our Screencast Libraries</span></a>
+				<a href="<?php echo fulcrum_get_url_relative_to_home_url( 'library' ); ?>" itemprop="url"><span itemprop="name"><i class="fa fa-code" aria-hidden="true"></i> Mastery Libraries</span></a>
 			</li>
-			<li class="menu-item menu__whatsnew<?php if ( is_page( 'whats-new' ) ) { echo ' current-menu-item'; } ?>">
-				<a href="<?php echo fulcrum_get_url_relative_to_home_url( 'whats-new' ); ?>" itemprop="url"><span itemprop="name"><i class="fa fa-plus-circle" aria-hidden="true"></i> What's New</span></a>
+			<li class="menu-item menu__glossary<?php if ( \KnowTheCode\Structure\is_insights() ) { echo ' current-menu-item'; } ?>">
+				<a href="<?php echo fulcrum_get_url_relative_to_home_url( 'insights' ); ?>" itemprop="url"><span itemprop="name"><i class="fa fa-list-ul" aria-hidden="true"></i> Tips & Insights</span></a>
 			</li>
 			<li class="menu-item menu__help<?php if ( is_help_center_page() ) { echo ' current-menu-item'; } ?>">
 				<a href="<?php echo fulcrum_get_url_relative_to_home_url( 'help-center' ); ?>" itemprop="url"><span itemprop="name"><i class="fa fa-life-ring" aria-hidden="true"></i> Help Center</span></a>

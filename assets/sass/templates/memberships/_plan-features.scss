@@ -2,34 +2,9 @@
 // Plan Features
 //========================
 
-.plan-feature__pro, .plan-feature__basic {
-  margin-top: 50px;
-}
+.gopro--features {
 
-.plan-feature {
-  margin-bottom: 30px;
-
-  @include media($medium-screen-up) {
-    min-height: 180px;
-  }
-
-  @include media($large-screen-up) {
-    min-height: 200px;
-  }
-
-  h3 {
-    @include rem( font-size, 20px );
-  }
-  .fa {
-    margin-right: 8px;
-  }
-
-  p:last-child {
-    margin-bottom: 0;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-    min-height: 50px;
-  }
+  //@media screen and (min-width: 1280px) {
+  //  min-height: 500px;
+  //}
 }

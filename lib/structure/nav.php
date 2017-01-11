@@ -58,6 +58,8 @@ function render_sub_nav() {
 		'the-docx'              => 'start',
 		'insights'              => 'start',
 		'whats-new'             => 'start',
+		'whats-coming'          => 'start',
+		'thank-you'             => 'my',
 		'my-dashboard'          => 'my',
 		'account'               => 'my',
 		'your-activity-history' => 'my',

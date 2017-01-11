@@ -3,10 +3,10 @@
  * Post structures
  *
  * @package     KnowTheCode
- * @since       1.3.0
+ * @since       1.5.8
  * @author      hellofromTonya
- * @link        https://UpTechLabs.io
- * @license     GNU General Public License 2.0+
+ * @link        https://KnowTheCode.io
+ * @license     GNU-2.0+
  */
 namespace KnowTheCode\Structure;
 
@@ -22,20 +22,21 @@ function unregister_post_events() {
 	remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 }
 
-add_action( 'genesis_before_loop', __NAMESPACE__ . '\change_breadcrumb_from_single_posts', 1 );
+add_action( 'genesis_before_content', __NAMESPACE__ . '\remove_insights_defaults', 1 );
 /**
  * Let's remove the breadcrumb from single posts, as it's just not needed
  * (and frankly it's darn confusing with the terms in it).
  *
- * @since 1.0.0
+ * @since 1.5.8
  *
  * @return void
  */
-function change_breadcrumb_from_single_posts() {
-	if ( ! is_single() || get_post_type() != 'post' ) {
+function remove_insights_defaults() {
+	if ( ! is_insights() ) {
 		return;
 	}
 
+	remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 	remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 }
 
@@ -46,19 +47,13 @@ add_action( 'genesis_after_endwhile', __NAMESPACE__ . '\do_post_pagination' );
  * Return a paginated navigation to next/previous set of posts, when
  * applicable. Includes screen reader text for better accessibility.
  *
- * @since  1.5.4
+ * @since  1.5.8
  *
  * @see the_posts_pagination()
  */
 function do_post_pagination() {
-	$post_type = get_post_type();
-
-	if ( 'forum' == $post_type ) {
+	if ( in_array( get_post_type(), array( 'forum', 'lab' ) ) || is_single() ) {
 		return;
-	}
-
-	if ( is_single() ) {
-		return render_single_post_pagination( $post_type );
 	}
 
 	$args = array(
@@ -71,34 +66,18 @@ function do_post_pagination() {
 	}
 }
 
-/**
- * Renders the single post pagination.
- *
- * @since 1.5.4
- *
- * @param string $post_type
- *
- * @return void
- */
-function render_single_post_pagination( $post_type ) {
-	if ( 'post' == $post_type ) {
-		add_post_prev_next_to_singles( $post_type );
-	}
-}
-
 add_filter( 'genesis_noposts_text', '__return_empty_string' );
 
+add_action( 'genesis_after_entry', __NAMESPACE__ . '\render_inpost_navigation', 7 );
 /**
  * Add Prev/Next to bottom of the singles.
  *
- * @since 1.3.0
- *
- * @param string $post_type
+ * @since 1.5.8
  *
  * @return void
  */
-function add_post_prev_next_to_singles( $post_type ) {
-	if ( ! is_single() || ! in_array( $post_type, array( 'post', 'lab' ) ) ) {
+function render_inpost_navigation() {
+	if ( ! is_single() || get_post_type() != 'post' ) {
 		return;
 	}
 
@@ -110,4 +89,45 @@ function add_post_prev_next_to_singles( $post_type ) {
 	$next     = fulcrum_get_next_parent_post();
 
 	include( CHILD_THEME_DIR . '/lib/views/single-navigation.php' );
+
+	include( __DIR__ . '/views/marketing.php' );
+}
+
+add_action( 'genesis_after_entry', __NAMESPACE__ . '\render_inpost_marketing', 10 );
+/**
+ * Render the inpost marketing
+ *
+ * @since 1.5.8
+ *
+ * @return void
+ */
+function render_inpost_marketing() {
+	if ( ! is_single() || get_post_type() != 'post' ) {
+		return;
+	}
+	include( __DIR__ . '/views/marketing.php' );
+}
+
+/**
+ * Checks if the page is Posts Page or a single post.
+ *
+ * @since 1.5.7
+ *
+ * @return bool
+ */
+function is_insights() {
+	return is_home() ||
+	       ( is_single() && get_post_type() == 'post' );
+}
+
+add_filter( 'genesis_author_box_gravatar_size', __NAMESPACE__ . '\set_author_box_gravatar_size' );
+/**
+ * Set the author box gravatar size.
+ *
+ * @since 1.5.8
+ *
+ * @return int
+ */
+function set_author_box_gravatar_size() {
+	return 125;
 }

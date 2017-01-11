@@ -1,0 +1,29 @@
+.entry-content {
+  .ul--fa-list {
+    margin: 0;
+    list-style-type: none;
+
+    > li {
+      margin-left: 20px;
+      list-style-type: none;
+    }
+  }
+}
+
+.ul--fa-list {
+  margin: 0;
+  list-style-type: none;
+
+  > li {
+    list-style-type: none;
+    margin-left: 20px;
+    clear: both;
+    margin: 0 0 20px 20px;
+  }
+
+  .fa {
+    float: left;
+    margin-right: 20px;
+    line-height: 30px;
+  }
+}

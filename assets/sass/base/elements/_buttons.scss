@@ -6,37 +6,41 @@
 .entry-content a.button,
 .content-hide-message a.button,
 input[type="submit"] {
-  background: $blue;
+  background-color: $blue;
   border: 1px solid $blue;
   border-bottom: 1px solid $blue;
   color: $white;
   cursor: pointer;
   font-size: $base-font-size;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 1px;
   padding: 16px 24px;
   width: auto;
+  border-radius: 5px;
+
+  &.button--pop {
+    box-shadow: 5px 5px 5px 0px rgba(28,32,44,0.5);
+  }
 
   &.button__full-width {
     width: 100%;
   }
 
   &.orange {
-    background: $orange;
+    background-color: $orange;
     border: 1px solid $orange;
     border-bottom: 1px solid $orange;
     color: $white;
   }
 
   &.green {
-    background: $green;
+    background-color: $green;
     border: 1px solid $green;
     border-bottom: 1px solid $green;
-    color: $blue;
   }
 
   &.gray {
-    background: $gray;
+    background-color: $gray;
     border: 1px solid $gray;
     border-bottom: 1px solid $gray;
     color: $blue;

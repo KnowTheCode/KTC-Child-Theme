@@ -4,6 +4,10 @@
 
 .qa {
   margin: 20px 0;
+  &:hover {
+    cursor: pointer;
+  }
+
   .qa-question {
     background-color: $gray;
     padding: 20px;
