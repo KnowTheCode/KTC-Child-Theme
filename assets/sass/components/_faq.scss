@@ -8,13 +8,71 @@
     cursor: pointer;
   }
 
-  .qa-question {
+  .qa--question {
     background-color: $gray;
-    padding: 20px;
+    position: relative;
+    //display: flex;
+    overflow: hidden;
+
+    &.lighter {
+      background-color: #f2f2f2;
+    }
+
+    &.blue {
+      background-color: $darkBlue;
+      color: $white;
+    }
+    &.green {
+      background-color: $green;
+      color: $white;
+    }
+    &.orange {
+      background-color: $orange;
+    }
+    &.olive {
+      background-color: $lightOlive;
+    }
+
+    &.php {
+      background-color: $colorPHP;
+    }
+    &.wordpress {
+      background-color: $colorWordPress;
+    }
+    &.genesis {
+      background-color: $colorGenesis;
+      color: $white;
+    }
   }
 
-  .qa-answer {
+  .qa--answer {
     border: 1px solid $gray;
     padding: 20px;
   }
+}
+
+.qa--quiz.qa--question {
+  background-color: #f2f2f2;
+  border: 1px solid $darkBlue;
+}
+
+.qa--question-content {
+  padding: 20px 20px 20px 10px;
+  margin-left: 41px;
+}
+
+.qa--icon-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px dotted #000;
+  width: 40px;
+}
+
+.qa--icon {
+  text-align: center;
 }

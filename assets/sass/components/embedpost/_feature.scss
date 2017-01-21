@@ -10,9 +10,16 @@
 .embedpost--entry-title a {
   color: $darkBlue;
   font-weight: 400;
-  @include rem( font-size, 22px);
+  @include rem(font-size, 22px);
 
   &:hover {
     color: $orange;
   }
+}
+
+.embedpost--parent-title {
+  font-weight: 400;
+  @include rem(font-size, 16px);
+  padding: 10px;
+  background-color: #ccc;
 }
