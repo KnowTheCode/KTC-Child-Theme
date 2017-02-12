@@ -66,24 +66,3 @@
     @include rem( font-size, 18px );
   }
 }
-
-.icon--genesis {
-  border-radius: 50%;
-  border: 1px solid $white;
-  width: 35px;
-  height: 35px;
-  display: inline-block;
-  margin: 0 auto;
-  line-height: 1;
-  font-weight: 200;
-
-  @include media($medium-screen-up) {
-    width: 45px;
-    height: 45px;
-  }
-
-  @include media($large-screen-up) {
-    width: 55px;
-    height: 55px;
-  }
-}

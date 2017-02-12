@@ -1,0 +1,33 @@
+.icon--genesis,
+.big-button--icon .fa {
+  @include rem( font-size, 30px );
+
+  @include media($medium-screen-up) {
+    @include rem( font-size, 40px );
+  }
+
+  @include media($large-screen-up) {
+    @include rem( font-size, 50px );
+  }
+}
+
+.icon--genesis {
+  border-radius: 50%;
+  border: 1px solid $white;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  margin: 0 auto;
+  line-height: 1;
+  font-weight: 200;
+
+  @include media($medium-screen-up) {
+    width: 45px;
+    height: 45px;
+  }
+
+  @include media($large-screen-up) {
+    width: 55px;
+    height: 55px;
+  }
+}
