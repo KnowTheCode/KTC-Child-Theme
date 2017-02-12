@@ -1,0 +1,101 @@
+//
+// Notched Button List
+//===================
+
+.entry-content .notched-button-list {
+  margin: 0;
+
+  li {
+    margin-left: 0;
+  }
+
+  > li {
+    list-style-type: none;
+  }
+
+}
+
+.notched-button-list {
+  overflow: hidden;
+  margin: 40px 0;
+}
+
+.notched-button-list--button {
+
+  height: 100px;
+  display: block;
+  margin: 0;
+
+  padding: 5px;
+  height: 100px;
+  width: 100%;
+  color: $white;
+
+  border-bottom: none;
+  background-color: $blue;
+  color: $white;
+
+  @include display(flex);
+  @include flex-direction(column);
+  @include justify-content(center);
+  text-align: center;
+
+  @media screen and (min-width: 480px) {
+    position: relative;
+    float: left;
+    display: inline-block;
+    @include rem(font-size, 22px);
+    height: 150px;
+
+  }
+
+  @media screen and (min-width: 600px) {
+    &::before {
+      z-index: 10;
+      content: " ";
+      position: absolute;
+      left: -1px;
+      top: 50px;
+      @include triangle(50px 20px, $white, right);
+    }
+  }
+
+  // 2 columns
+  @media screen and (min-width: 480px) and (max-width: 767px) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1399px) {
+    width: 33.333333333333%;
+  }
+
+  // 3 columns
+  @media screen and (min-width: 1400px) {
+    width: 25%;
+  }
+
+  @include media($large-screen-up) {
+    @include rem(font-size, 40px);
+    padding: 15px;
+  }
+
+  @media screen and (min-width: 480px) {
+    height: 150px;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.notched-button-list--description {
+  @include rem(font-size, 18px);
+  font-weight: 400;
+
+  @include media($small-screen-up) {
+    @include rem(font-size, 16px);
+  }
+  @include media($large-screen-up) {
+    @include rem(font-size, 18px);
+  }
+}

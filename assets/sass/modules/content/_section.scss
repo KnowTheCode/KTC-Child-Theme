@@ -1,0 +1,10 @@
+.entry--section {
+  margin: 40px 0;
+  position: relative;
+
+  &--linkable {
+    position: absolute;
+    left: -30px;
+    top: 5px;
+  }
+}

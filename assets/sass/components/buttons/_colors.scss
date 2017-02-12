@@ -1,0 +1,121 @@
+//
+// Button colors manager
+//==========================
+
+.big-button__button,
+.notched-big-buttons__button,
+.notched-button-list--button,
+.button {
+
+  &.orange {
+    background-color: $orange;
+  }
+
+  &.yellow {
+    background-color: $yellow;
+    color: $blue;
+  }
+
+  &.green {
+    background-color: $green;
+  }
+
+  &:hover, &:focus, &:active {
+    background-color: $green;
+
+    &.green {
+      background-color: $blue;
+    }
+
+    &.green, &.yellow {
+      color: $white;
+    }
+  }
+
+  &.gray {
+    background-color: #ced2b7;
+    color: $black;
+    &:hover, &:focus, &:active {
+      background-color: #d1d2d6;
+      color: #cc4b14;
+    }
+  }
+
+  &.php {
+    background-color: $colorPHP;
+
+    &:hover, &:focus, &:active {
+      background-color: lighten( $colorPHP, 20% );
+    }
+  }
+
+  &.wordpress, &.plugins {
+    background-color: $colorWordPress;
+
+    &:hover, &:focus, &:active {
+      background-color: lighten( $colorWordPress, 20% );
+    }
+  }
+
+  &.plugins {
+    background-color: $colorPlugins;
+    color: $darkBlue;
+
+    &:hover, &:focus, &:active {
+      background-color: lighten( $colorPlugins, 20% );
+    }
+  }
+
+  &.genesis {
+    background-color: $colorGenesis;
+
+    &:hover, &:focus, &:active {
+      background-color: lighten( $colorGenesis, 20% );
+
+      .icon--genesis {
+        border-color: $darkBlue;
+      }
+    }
+  }
+
+  &.jquery {
+    background-color: $colorJS;
+
+    &:hover, &:focus, &:active {
+      background-color: darken( $colorJS, 20% );
+    }
+  }
+
+  &.js {
+    background-color: $colorJS;
+
+    &:hover, &:focus, &:active {
+      background-color: darken( $colorJS, 20% );
+    }
+  }
+
+  &.sql {
+    background-color: $colorSQL;
+    &:hover, &:focus, &:active {
+      background-color: darken( $colorSQL, 20% );
+    }
+  }
+
+  &.html {
+    background-color: $colorHTML;
+    &:hover, &:focus, &:active {
+      background-color: darken( $colorHTML, 20% );
+    }
+  }
+
+  &.css {
+    background-color: $colorCSS;
+    &:hover, &:focus, &:active {
+      background-color: darken( $colorCSS, 20% );
+    }
+  }
+
+  &.jquery, &.js {
+    color: $darkBlue;
+  }
+}

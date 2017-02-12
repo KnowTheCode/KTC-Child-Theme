@@ -1,0 +1,19 @@
+.skip-to-episode-playlist {
+  &::before {
+    content: "\f059";
+    font-family: 'FontAwesome';
+    margin-right: 10px;
+  }
+
+  background-color: $gray;
+  padding: 5px 10px;
+  color: lighten( $darkBlue, 20% );
+  border-bottom: none;
+  font-weight: 300;
+  margin: 20px 0 40px;
+
+  &:hover, &.focus, &.visited {
+    color: $white;
+    background-color: $darkBlue;
+  }
+}

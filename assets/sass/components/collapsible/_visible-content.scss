@@ -1,0 +1,66 @@
+.qa--question,
+.collapsible--visible {
+  background-color: $gray;
+  position: relative;
+  overflow: hidden;
+
+  &.lighter {
+    background-color: #f2f2f2;
+  }
+
+  &.blue, &.php, &.green, &.wordpress, &.genesis {
+    color: $white;
+  }
+
+  &.blue {
+    background-color: $darkBlue;
+  }
+  &.green {
+    background-color: $green;
+  }
+  &.orange {
+    background-color: $orange;
+  }
+
+  &.olive {
+    background-color: $lightOlive;
+  }
+
+  &.php {
+    background-color: $colorPHP;
+  }
+
+  &.wordpress {
+    background-color: $colorWordPress;
+  }
+  &.genesis {
+    background-color: $colorGenesis;
+    color: $white;
+  }
+}
+
+.qa--quiz.qa--question {
+  background-color: #f2f2f2;
+  border: 1px solid $darkBlue;
+}
+
+.qa--question-content {
+  padding: 20px 20px 20px 10px;
+  margin-left: 41px;
+}
+
+.qa--icon-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px dotted #000;
+  width: 40px;
+}
+
+.qa--icon {
+  text-align: center;
+}

@@ -1,0 +1,16 @@
+.sidebar--embed {
+  padding: 20px;
+
+  margin-bottom: 30px;
+
+  @include media($small-screen) {
+    @include span-columns(4);
+    @include omega();
+    clear: right;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+}

@@ -4,6 +4,12 @@
 
 .big-button-callouts {
   overflow: hidden;
+  margin: 40px 0;
+
+  &::after {
+    content: '';
+    clear: both;
+  }
 }
 
 .big-button__button {
@@ -22,39 +28,6 @@
   text-align: center;
   @include rem( font-size, 30px );
 
-  &.orange {
-    background: $orange;
-    color: $blue;
-  }
-
-  &.green {
-    background: $green;
-    color: $blue;
-  }
-
-  &:hover, &:focus, &:active {
-    background-color: #e1e5cc;
-    color: #1c202c;
-    border-color: transparent;
-
-    &.orange {
-      background-color: #f6dbd0;
-    }
-
-    &.green {
-      background-color: #dde7a9;
-    }
-  }
-
-  &.gray {
-    background-color: #ced2b7;
-    color: $black;
-    &:hover, &:focus, &:active {
-      background-color: #d1d2d6;
-      color: #cc4b14;
-    }
-  }
-
   @include media($smaller-screen-up) {
     @include rem( font-size, 22px );
     width: 50%;
@@ -69,6 +42,19 @@
   }
 }
 
+.big-button--icon {
+  display: block;
+  text-align: center;
+
+  @include media($medium-screen-up) {
+    @include rem( font-size, 40px );
+  }
+
+  @include media($large-screen-up) {
+    @include rem( font-size, 50px );
+  }
+}
+
 .big-button__description {
   @include rem( font-size, 18px );
   font-weight: 400;
@@ -78,5 +64,26 @@
   }
   @include media($large-screen-up) {
     @include rem( font-size, 18px );
+  }
+}
+
+.icon--genesis {
+  border-radius: 50%;
+  border: 1px solid $white;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  margin: 0 auto;
+  line-height: 1;
+  font-weight: 200;
+
+  @include media($medium-screen-up) {
+    width: 45px;
+    height: 45px;
+  }
+
+  @include media($large-screen-up) {
+    width: 55px;
+    height: 55px;
   }
 }

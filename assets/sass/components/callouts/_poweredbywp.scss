@@ -1,0 +1,42 @@
+.callout--poweredbywp {
+
+  background: linear-gradient( rgba(206,210,183,0.90) 100%, #ced2b7),
+    url(#{$image--path}/KTCToPowerofWP.png) repeat center 50% #ced2b7;
+
+  @media screen and (min-width: 768px) {
+    @include display(flex);
+    @include flex-direction(column);
+    @include justify-content(center);
+    min-height: 300px;
+  }
+
+  p {
+    color: $darkBlue;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    @media screen and (min-width: 768px) {
+      font-size: 26px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .quote--author {
+    font-size: 14px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 18px;
+    }
+  }
+
+  &.left {
+    h4, h5, h6, p {
+      text-align: left;
+    }
+  }
+}

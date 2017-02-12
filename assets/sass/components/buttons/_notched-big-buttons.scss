@@ -87,55 +87,10 @@
   @media screen and (min-width: 480px) {
     height: 150px;
   }
-
-  &.orange {
-    background-color: $orange;
-  }
-
-  &.yellow {
-    background-color: $yellow;
-    color: $blue;
-  }
-
-  &.green {
-    background-color: $green;
-  }
-
-  &.php {
-    background-color: $colorPHP;
-  }
-
-  &.wordpress {
-    background-color: $colorWordPress;
-  }
-
-  &.genesis {
-    background-color: $colorGenesis;
-  }
-
-  &.jquery {
-    background-color: $colorJS;
-  }
-
-  &.js {
-    background-color: $colorJS;
-  }
-
-  &:hover, &:focus, &:active {
-    background-color: $green;
-
-    &.green {
-      background-color: $blue;
-      color: $white;
-    }
-
-    &.yellow {
-      color: $white;
-    }
-  }
 }
 
-.notched-big-buttons__description {
+.notched-big-buttons__description,
+.notched-big-buttons--description {
   @include rem( font-size, 18px );
   font-weight: 400;
 

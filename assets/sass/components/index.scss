@@ -5,26 +5,21 @@
 @import 'author-box/index';
 @import 'avatar';
 @import 'badge';
-@import 'big-buttons';
-@import 'notched-big-buttons';
+@import 'buttons/index';
 @import 'breadcrumb';
 
 @import "donext/index";
 @import "embedpost/index";
 
-@import 'episode';
-@import 'episode-list';
-
-@import 'faq';
+@import 'episodes/index';
+@import 'collapsible/index';
 @import 'filterby-nav';
 @import 'glossary-instruction-list';
 @import 'grids/index';
 @import "highlighter";
 
-@import 'callout';
-@import 'info-boxes';
+@import 'callouts/index';
 @import 'intro';
-@import 'learn-do-list';
 @import 'media-gallery';
 @import 'partners/index';
 @import 'quotes/index';
