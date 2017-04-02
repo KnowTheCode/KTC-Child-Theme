@@ -19,7 +19,18 @@
   &.green {
     background-color: $green;
   }
+}
 
+.button {
+  &:hover, &:focus, &:active {
+    background-color: $white;
+    color: $blue;
+  }
+}
+
+.big-button__button,
+.notched-big-buttons__button,
+.notched-button-list--button {
   &:hover, &:focus, &:active {
     background-color: $green;
 
@@ -31,6 +42,12 @@
       color: $white;
     }
   }
+}
+
+.big-button__button,
+.notched-big-buttons__button,
+.notched-button-list--button,
+.button {
 
   &.gray {
     background-color: #ced2b7;
@@ -98,6 +115,7 @@
     background-color: $colorSQL;
     &:hover, &:focus, &:active {
       background-color: darken( $colorSQL, 20% );
+      color: $white;
     }
   }
 
