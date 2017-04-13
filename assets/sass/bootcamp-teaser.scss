@@ -1,0 +1,16 @@
+/*!
+  Bootcamp Teaser Stylesheet
+
+  Version: 1.0.0
+
+*/
+
+// Configuration
+$use-bounceInDown: true;
+
+// CSS path dist/css/
+$image--path: '../../images';
+
+@import 'base-stuff';
+
+@import "templates/bootcamp-teaser/index";

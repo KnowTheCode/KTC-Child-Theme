@@ -1,0 +1,29 @@
+ul, ol {
+  &.no-bullets {
+    .entry-content &, &, .entry-content & > li {
+      list-style-type: none;
+      margin-bottom: 15px;
+    }
+
+    li::before {
+      font-family: "FontAwesome";
+      margin: 0 10px 0 -22px;
+    }
+  }
+
+  &.--green li::before {
+    color: $green;
+  }
+
+  &.--orange li::before {
+    color: $orange;
+  }
+
+  &.--checkmark li::before {
+    content: "\f00c";
+  }
+
+  &.--checksquare li::before {
+    content: "\f14a";
+  }
+}

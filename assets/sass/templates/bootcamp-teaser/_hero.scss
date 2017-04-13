@@ -1,0 +1,117 @@
+//
+// Bootcamp hero section
+// ============================
+
+.header-hero {
+  min-height: 550px;
+
+
+  @media screen and (min-width: 768px) {
+    background-image: url(#{$image--path}/header-green-abstract.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    min-height: 700px;
+
+    @include display(flex);
+    @include flex-direction(column);
+    @include justify-content(center);
+    text-align: center;
+  }
+
+  .wrapper {
+    padding-top: 120px;
+    @media screen and (min-width: 768px) {
+      padding-top: 0;
+    }
+  }
+
+  overflow: hidden;
+  position: relative;
+
+  h1, h2, h3, h4, h5, p {
+    color: $darkBlue;
+  }
+
+  @media screen and (min-width: 768px) {
+    h1, h2 {
+      span {
+        display: block;
+      }
+    }
+  }
+
+  h1 {
+    @include rem( font-size, 26px );
+
+    @include media($smaller-screen) {
+      @include rem( font-size, 30px );
+    }
+    @include media($small-screen-up) {
+      @include rem( font-size, 50px );
+    }
+    @include media($large-screen-up) {
+      @include rem( font-size, 60px );
+    }
+  }
+
+  h2 {
+    @include rem( font-size, 16px );
+    @include media($smaller-screen) {
+      @include rem( font-size, 20px );
+    }
+    @include media($small-screen-up) {
+      @include rem( font-size, 24px );
+    }
+    @include media($large-screen-up) {
+      @include rem( font-size, 28px );
+    }
+  }
+
+  h3 {
+    color: $orange;
+
+    @include rem( font-size, 16px );
+    @include media($smaller-screen) {
+      @include rem( font-size, 18px );
+    }
+    @include media($small-screen-up) {
+      @include rem( font-size, 20px );
+    }
+    @include media($large-screen-up) {
+      @include rem( font-size, 24px );
+    }
+
+    em {
+      border-bottom: 1px dotted $orange;
+    }
+  }
+}
+
+.entry-content .bootcamp-hero {
+  a.button, .button {
+    margin-top: 30px;
+    @include border-top-radius(5px);
+    @include border-right-radius(5px);
+    @include border-bottom-radius(5px);
+    @include border-left-radius(5px);
+    color: $white;
+    &.first {
+      margin-right: 2%;
+      @include media($small-screen-up) {
+        margin-right: 40px;
+      }
+    }
+
+    &:hover, &:focus, &:active {
+      background-color: $green;
+      border-color: $green;
+
+      &.green {
+        background-color: $orange;
+        border-color: $orange;
+      }
+    }
+  }
+}

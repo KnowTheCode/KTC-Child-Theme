@@ -1,0 +1,16 @@
+//
+// Bootcamp Teaser Sections
+//=========================
+
+.bootcamp-section {
+
+  padding: 80px 0;
+
+  &.--background-white {
+    background-color: $white;
+  }
+
+  &.--background-olive {
+    background-color: $lightOlive;
+  }
+}
