@@ -115,3 +115,39 @@
     }
   }
 }
+
+.entry-content .hero-quick-links ul {
+  margin-left: 0;
+}
+
+.hero-quick-links {
+  overflow: hidden;
+
+  margin: 30px 0 60px;
+
+  @media screen and (min-width: 768px) {
+    margin: 30px 0 20px;
+  }
+
+  .genesis-nav-menu {
+
+    .menu-item, a {
+      margin-left: 0;
+      margin-right: 0;
+      display: block;
+
+      @media screen and (min-width: 768px) {
+        display: inline-block;
+      }
+    }
+
+    a {
+      background-color: $green;
+
+      &:hover {
+        background-color: transparent;
+        color: $darkBlue;
+      }
+    }
+  }
+}

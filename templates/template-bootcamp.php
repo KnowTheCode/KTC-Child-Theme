@@ -29,7 +29,7 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
  * @return void
  */
 function enqueue_assets() {
-	wp_enqueue_style( 'ktc_bootcamp_css', CHILD_URL . '/assets/dist/css/bootcamp-teaser.min.css', array(), '1.0.0' );
+	wp_enqueue_style( 'ktc_bootcamp_css', CHILD_URL . '/assets/dist/css/bootcamp-teaser.min.css', array(), '1.0.1' );
 	wp_enqueue_script( 'ktc_front_page_js', CHILD_URL . '/assets/dist/js/jquery.front-page.min.js', array('jquery'), '1.6.5', true );
 }
 

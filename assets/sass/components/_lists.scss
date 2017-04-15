@@ -26,4 +26,24 @@ ul, ol {
   &.--checksquare li::before {
     content: "\f14a";
   }
+
+  &.--checksquare-open li::before {
+    content: "\f046";
+  }
+
+  &.--code li::before {
+    content: "\f121";
+  }
+
+  &.--play li::before {
+    content: "\f04b";
+  }
+
+  &.--play-circle li::before {
+    content: "\f144";
+  }
+
+  &.--play-circle-open li::before {
+    content: "\f01d";
+  }
 }

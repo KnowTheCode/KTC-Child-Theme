@@ -13,4 +13,12 @@
   &.--background-olive {
     background-color: $lightOlive;
   }
+
+  &.--background-blue {
+    background-color: $darkBlue;
+  }
+}
+
+.bootcamp-section--header {
+  margin-top: 40px;
 }
