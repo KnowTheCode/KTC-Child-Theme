@@ -21,7 +21,7 @@ function unregister_header_events() {
 
 }
 
-//add_action( 'genesis_before_header', __NAMESPACE__ . '\render_hello_bar', 9 );
+add_action( 'genesis_before_header', __NAMESPACE__ . '\render_hello_bar', 9 );
 /**
  * Renders out the under_main_nav.
  *

@@ -38,6 +38,11 @@
     h1, h2 {
       span {
         display: block;
+
+        &.--rotate-text {
+          display: inline-block;
+          font-size: 16px;
+        }
       }
     }
   }
@@ -143,6 +148,7 @@
 
     a {
       background-color: $green;
+      color: $white;
 
       &:hover {
         background-color: transparent;

@@ -29,8 +29,8 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
  * @return void
  */
 function enqueue_assets() {
-	wp_enqueue_style( 'ktc_bootcamp_css', CHILD_URL . '/assets/dist/css/bootcamp-teaser.min.css', array(), '1.0.1' );
-	wp_enqueue_script( 'ktc_front_page_js', CHILD_URL . '/assets/dist/js/jquery.front-page.min.js', array('jquery'), '1.6.5', true );
+	wp_enqueue_style( 'ktc_bootcamp_css', CHILD_URL . '/assets/dist/css/bootcamp-teaser.min.css', array(), '1.0.3' );
+	wp_enqueue_script( 'ktc_front_page_js', CHILD_URL . '/assets/dist/js/jquery.front-page.min.js', array('jquery'), '1.6.7', true );
 }
 
 add_action( 'genesis_header', __NAMESPACE__ . '\render_main_nav', 11 );
@@ -45,6 +45,18 @@ function render_main_nav() {
 	$user_is_logged_in = is_user_logged_in();
 
 	require_once( CHILD_THEME_DIR . '/lib/structure/views/front-page-main-nav.php' );
+}
+
+add_action( 'genesis_footer', __NAMESPACE__ . '\render_catfish', 99 );
+/**
+ * Render navigation.
+ *
+ * @since 1.3.0
+ *
+ * @return void
+ */
+function render_catfish() {
+	include_once( CHILD_THEME_DIR . '/lib/views/bootcamp-teaser/catfish.php' );
 }
 
 genesis();
