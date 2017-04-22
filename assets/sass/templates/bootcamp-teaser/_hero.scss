@@ -5,25 +5,24 @@
 .header-hero {
   min-height: 550px;
 
-
   @media screen and (min-width: 768px) {
     background-image: url(#{$image--path}/header-green-abstract.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
-    min-height: 700px;
+    min-height: 800px;
 
-    @include display(flex);
-    @include flex-direction(column);
-    @include justify-content(center);
-    text-align: center;
+    //@include display(flex);
+    //@include flex-direction(column);
+    //@include justify-content(center);
+    text-align: left;
   }
 
   .wrapper {
     padding-top: 120px;
     @media screen and (min-width: 768px) {
-      padding-top: 0;
+      padding-top: 200px;
     }
   }
 
@@ -34,21 +33,9 @@
     color: $darkBlue;
   }
 
-  @media screen and (min-width: 768px) {
-    h1, h2 {
-      span {
-        display: block;
-
-        &.--rotate-text {
-          display: inline-block;
-          font-size: 16px;
-        }
-      }
-    }
-  }
-
-  h1 {
+  h2.tagline {
     @include rem( font-size, 26px );
+    margin-bottom: 30px;
 
     @include media($smaller-screen) {
       @include rem( font-size, 30px );
@@ -61,16 +48,17 @@
     }
   }
 
-  h2 {
-    @include rem( font-size, 16px );
+  h1 {
+    @include rem( font-size, 20px );
+
     @include media($smaller-screen) {
-      @include rem( font-size, 20px );
-    }
-    @include media($small-screen-up) {
       @include rem( font-size, 24px );
     }
+    @include media($small-screen-up) {
+      @include rem( font-size, 40px );
+    }
     @include media($large-screen-up) {
-      @include rem( font-size, 28px );
+      @include rem( font-size, 48px );
     }
   }
 
@@ -156,4 +144,8 @@
       }
     }
   }
+}
+
+.tagline .delay {
+  animation-delay: 1.5s;
 }

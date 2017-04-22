@@ -19,5 +19,14 @@ body.bootcamp-teaser {
     background: transparent;
     padding: 0;
     margin-bottom: 0;
+    @include rem( font-size, 20px );
+  }
+}
+
+.animated {
+  //transition-duration: 0.8s;
+
+  &.delay {
+    animation-delay: 1s;
   }
 }

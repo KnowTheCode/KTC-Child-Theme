@@ -1,12 +1,21 @@
 /*!
   Bootcamp Teaser Stylesheet
 
-  Version: 1.0.3
+  Version: 1.0.5
 
 */
 
 // Configuration
+$use-tada: true;
 $use-bounceInDown: true;
+$use-bounceInUp: true;
+$use-fadeInDownBig: true;
+$use-fadeOut: true;
+$use-fadeIn: true;
+$use-fadeInUp: true;
+$use-fadeInDown: true;
+
+$base-duration: 1.3s;
 
 // CSS path dist/css/
 $image--path: '../../images';

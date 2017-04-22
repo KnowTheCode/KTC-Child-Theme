@@ -13,7 +13,7 @@ namespace KnowTheCode\Support;
 /**
  * Initialize the filenames to be loaded.
  *
- * @since 1.4.9
+ * @since 1.6.0
  *
  * @return void
  */
@@ -26,13 +26,16 @@ function init_files() {
 		'support/load-assets.php',
 		'structure/archive.php',
 		'structure/comments.php',
-//		'structure/comments.php',
 		'structure/footer.php',
 		'structure/header.php',
 		'structure/nav.php',
 		'structure/post.php',
 		'structure/search.php',
 	);
+
+	if ( is_admin() ) {
+		$filenames[] = 'admin/metabox/optin-fullpage.php';
+	}
 
 	load_specified_files( $filenames );
 }

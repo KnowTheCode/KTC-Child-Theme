@@ -1,0 +1,40 @@
+.--display {
+  &-block {
+    display: block;
+  }
+
+  &-inline-block {
+    display: inline-block;
+  }
+
+}
+
+.divider {
+  width: 50px;
+  text-align: left;
+  display: block;
+  border-top: 3px dotted $green;
+  margin: 20px 0 30px;
+
+  &.--solid {
+    border-style: solid;
+  }
+
+  &.--border-color {
+    &-blue {
+      border-color: $darkBlue;
+    }
+
+    &-orange {
+      border-color: $orange;
+    }
+
+    &-white {
+      border-color: $white;
+    }
+
+    &-olive {
+      border-color: $lightOlive;
+    }
+  }
+}
