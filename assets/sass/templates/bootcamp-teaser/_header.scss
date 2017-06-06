@@ -1,90 +1,60 @@
 .site-header {
-    position: fixed;
-    z-index: 99;
-    width: 100%;
-    background-color: transparent;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  background-color: transparent;
 
-    .wrap {
-        position: relative;
-        width: 100%;
-        height: 75px;
-        @media screen and (min-width: 768px) {
-            height: 125px;
-        }
+  .wrap {
+    position: relative;
+    width: 100%;
+    height: 75px;
+    @media screen and (min-width: 768px) {
+      height: 125px;
     }
+  }
 }
 
 .title-area {
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 
-    .header-full-width &, & {
-        width: 125px;
-    }
+  .header-full-width &, & {
+    width: 125px;
+  }
 
-    @media screen and (min-width: 768px) {
-        text-align: left;
-        width: 50%;
-    }
+  @media screen and (min-width: 768px) {
+    text-align: left;
+    width: 50%;
+  }
 }
 
 .site-title {
-    line-height: 1;
-    margin: 0;
+  line-height: 1;
+  margin: 0;
 
-    a,
-    a:hover, a:focus, a:active {
-        border: 0;
-        outline: none;
+  a,
+  a:hover, a:focus, a:active {
+    border: 0;
+    outline: none;
 
-        background-image: url(#{$image--path}/know-the-code-logo.png);
-        background-color: transparent;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: block;
-        background-size: 75px;
-        height: 75px;
-        width: 75px;
-
-        @media screen and (min-width: 1025px) {
-            background-image: url(#{$image--path}/know-the-code-logo@2x.png);
-            background-size: 125px;
-            height: 125px;
-            width: 125px;
-        }
-
-        margin: 0;
-        text-indent: -9999px;
-    }
-}
-
-.nav-primary {
-    position: absolute;
-    top: 0;
-    right: 0;
+    background-image: url(#{$image--path}/know-the-code-logo.png);
     background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    background-size: 75px;
+    height: 75px;
+    width: 75px;
 
-    .menu-item {
-        text-align: right;
-        display: block;
-        @media screen and (min-width: 768px) {
-            display: inline-block;
-            text-align: center;
-        }
+    @media screen and (min-width: 1025px) {
+      background-image: url(#{$image--path}/know-the-code-logo@2x.png);
+      background-size: 125px;
+      height: 125px;
+      width: 125px;
     }
 
-    a {
-        color: $darkBlue;
-        padding: 5px 10px;
-
-        @media screen and (min-width: 768px) {
-            padding: 7px 12px;
-        }
-
-        &:hover {
-            background-color: $darkBlue;
-            color: $white;
-        }
-    }
+    margin: 0;
+    text-indent: -9999px;
+  }
 }

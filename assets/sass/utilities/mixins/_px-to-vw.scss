@@ -1,0 +1,18 @@
+$vw-wide-screen: "(min-width: 1025px)" !default;
+
+$max-vw-breakpoint: 1025 !default;
+
+// Function to convert px into vw.
+@function convert-px-to-vw($target) {
+  $vw-context: ($max-vw-breakpoint *.01) * 1px;
+
+  @return ($target/$vw-context) * 1vw;
+}
+
+@mixin vw($size) {
+  font-size: convert-px-to-vw($size);
+
+  @media #{$vw-wide-screen} {
+    font-size: $size;
+  }
+}

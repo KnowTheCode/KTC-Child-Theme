@@ -1,0 +1,109 @@
+.make-a-point--icon {
+  font-size: 200%;
+  float: left;
+  display: block;
+  margin: 10px 15px 15px 0;
+  color: $orange;
+}
+
+.icon--arrow-right,
+.icon--arrow-left,
+.icon--arrow-squiggly-right,
+.icon--arrow-squiggly-left {
+  background: url(#{$image--path}/element-sprints-1.png) no-repeat 0 0 transparent;
+  display: block;
+  float: left;
+  margin-right: 10px;
+}
+
+.icon--arrow-right, .icon--arrow-left,
+.icon--arrow-squiggly-right, .icon--arrow-squiggly-left {
+  width: 70px;
+  height: 40px;
+}
+
+.icon--arrow-right {
+  background-position: -78px -10px;
+}
+
+.icon-arrow-left {
+  background-position: -7px -12px;
+}
+
+.icon--arrow-squiggly-right,
+.icon--arrow-squiggly-left {
+  width: 60px;
+  height: 34px;
+}
+
+.icon--arrow-squiggly-right {
+  background-position: -230px -12px;
+}
+
+.icon--arrow-squiggly-left {
+  background-position: -160px -12px;
+}
+
+//==================
+// Color Key Code
+//==================
+.color-code-key {
+  position: absolute;
+  margin-bottom: 0;
+  font-size: 12px;
+
+  @media screen and (max-width: 767px) {
+    top: -65px;
+    right: 10px;
+  }
+
+  @media screen and (min-width: 768px) {
+    top: -25px;
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    left: 10px;
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1100px) {
+    left: -10px;
+  }
+
+  @media screen and (min-width: 1200px) and (max-width: 1599px) {
+    left: -80px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    left: -130px;
+  }
+
+  .message {
+    width: 50px;
+    @media screen and (min-width: 768px) {
+      width: 100px;
+    }
+  }
+
+  @media screen and (max-width: 766px) {
+    .message, .icon--arrow-right {
+      float: right;
+    }
+  }
+
+  span {
+    float: left;
+    display: block;
+  }
+
+  .icon--arrow-right {
+    margin-right: 0;
+    margin: 13px 0 0 -30px;
+    background-position: -7px -12px;
+
+    @media screen and (min-width: 768px) {
+      background-position: -78px -10px;
+      margin: -13px 0 0 -20px;
+    }
+  }
+}

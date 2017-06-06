@@ -23,10 +23,28 @@ body.bootcamp-teaser {
   }
 }
 
-.animated {
-  //transition-duration: 0.8s;
+.bootcamp-section, .header-hero {
+  .wrapper {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      padding-left: 100px;
+    }
+    @media screen and (min-width: 1200px) and (max-width: 1599px) {
+      width: 80%;
+    }
 
+    @media screen and (min-width: 1600px) {
+      width: 100%;
+    }
+
+  }
+}
+
+.animated {
   &.delay {
     animation-delay: 1s;
   }
+}
+
+.button.--pop {
+  box-shadow: 10px 10px 32px 2px rgba(0,0,0,0.12);
 }

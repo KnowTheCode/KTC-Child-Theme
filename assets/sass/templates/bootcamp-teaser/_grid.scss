@@ -1,0 +1,81 @@
+//
+// Grid Boxes
+//=====================
+
+$background--accent-color: #ebebeb;
+
+.boxed--container {
+  margin: 30px 0;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  @media screen and (min-width: 800px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.section--boxed {
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.boxed-grid {
+  @media screen and (min-width: 1024px) {
+    min-height: 300px;
+    &--callout, &--content {
+      float: left;
+
+      @media screen and (min-width: 768px) {
+        width: 50%;
+        margin: 0;
+
+        &.--width-33p {
+          width: 33%;
+        }
+
+        &.--width-66p {
+          width: 66%;
+        }
+      }
+    }
+  }
+
+  &--callout {
+    clear: both;
+    background-color: $background--accent-color;
+
+    h3 {
+      font-weight: 300;
+    }
+
+    @media screen and (min-width: 1024px) {
+      margin: 0 0 40px;
+
+      &.--flex-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      &.--float-right {
+        float: right;
+      }
+    }
+  }
+
+  &--content {
+    border: 1px solid $background--accent-color;
+    margin: 0 0 40px;
+  }
+
+  em, strong {
+    display: inline-block;
+  }
+}

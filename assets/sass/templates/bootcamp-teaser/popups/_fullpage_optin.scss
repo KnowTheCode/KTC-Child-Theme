@@ -20,12 +20,22 @@
     min-height: 500px;
     overflow: auto;
   }
+}
 
-  .fullpage-option--close-button {
-    position: absolute;
-    font-size: 30px;
-    top: 40px;
-    right: 40px;
-    border-bottom: 0;
+// close button
+.fullpage-optin--close-button {
+  position: absolute;
+  font-size: 22px;
+  top: 40px;
+  right: 40px;
+  border-bottom: 0;
+  background-color: $orange;
+  color: $white;
+  padding: 15px;
+  z-index: 9999999999999;
+
+  &:hover {
+    background-color: $white;
+    color: $orange;
   }
 }

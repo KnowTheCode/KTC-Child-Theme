@@ -6,22 +6,33 @@
   min-height: 550px;
 
   @media screen and (min-width: 768px) {
-    background-image: url(#{$image--path}/header-green-abstract.jpg);
+    background-color: $white;
+    background-image: linear-gradient(rgba(255,255,255, 0.5) 100%, $white),
+        url(#{$image--path}/profitable-developer-bootcamp-hero.png);
+
+    //background-image: url(#{$image--path}/header-green-abstract.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
-    min-height: 800px;
-
-    //@include display(flex);
-    //@include flex-direction(column);
-    //@include justify-content(center);
     text-align: left;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px){
+    min-height: 800px;
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1399px) {
+    min-height: 700px;
+  }
+
+  @media screen and (min-width: 1400px) {
+    min-height: 800px;
   }
 
   .wrapper {
     padding-top: 120px;
-    @media screen and (min-width: 768px) {
+
+    @media screen and (min-width: 1200px) {
       padding-top: 200px;
     }
   }

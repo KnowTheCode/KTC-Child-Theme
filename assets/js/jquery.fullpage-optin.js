@@ -18,14 +18,14 @@
 		$window = $( window );
 		$body = $('body');
 
-		$container = $('.fullpage-optin-section');
+		$container = $('#fullpage-optin');
 
 		slideIn = $container.data('slidein');
 		slideOut = $container.data('slideout');
 
-		$('#fullpage-optin--open-button').on('click', clickHandler );
+		$('.fullpage-optin--open-button').on('click', clickHandler );
 
-		$('.fullpage-option--close-button').on('click', closeContainer );
+		$('.fullpage-optin--close-button').on('click', closeContainer );
 	}
 
 	var clickHandler = function() {

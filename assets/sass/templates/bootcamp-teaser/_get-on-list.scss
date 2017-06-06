@@ -1,0 +1,87 @@
+.bootcamp-section.--background-list {
+  background-color: $white;
+  padding: 30px 0;
+  overflow: hidden;
+  border-top: 1px dotted #ccc;
+  border-bottom: 1px dotted #ccc;
+
+  h3 {
+    font-size: 22px;
+    @media screen and (min-width: 1023px) {
+      font-size: 24px;
+    }
+  }
+
+  .fullpage-optin--open-button {
+    width: 90%;
+    display: block;
+    text-align: center;
+
+    box-shadow: 10px 10px 32px 2px rgba(0,0,0,0.12);
+    margin: 30px 10px 10px;
+    margin-top: 30px;
+
+    .fa {
+      font-size: 140%;
+      float: left;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-top: 0;
+      float: right;
+
+      .fa {
+        display: none;
+      }
+    }
+  }
+}
+
+.list {
+
+  &--left, &--middle, &--right {
+    float: none;
+    overflow: hidden;
+
+    @media screen and (min-width: 768px) {
+      float: left;
+    }
+  }
+
+  &--left {
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      width: 60%
+    }
+
+    @media screen and (min-width: 1024px) {
+      width: 55%;
+    }
+  }
+
+  &--middle {
+    display: none;
+    @media screen and (min-width: 1023px) {
+      width: 15%;
+      display: block;
+    }
+
+    .icon--arrow-squiggly-right {
+      float: right;
+    }
+  }
+
+  &--right {
+    @media screen and (min-width: 768px) {
+      float: right;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      width: 40%
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 30%;
+    }
+  }
+}

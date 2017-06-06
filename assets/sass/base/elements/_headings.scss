@@ -16,26 +16,52 @@ h6 {
   padding: 0;
 }
 
+$header-full-size--minwidth: 1200px;
+
 h1 {
-  font-size: $h1-font-size;
+  @include rem( font-size, $h1-font-size--min);
+
+  @media screen and (min-width: $header-full-size--minwidth) {
+    @include rem( font-size, $h1-font-size);
+  }
 }
 
 h2 {
-  font-size: $h2-font-size;
+  @include rem( font-size, $h2-font-size--min);
+
+  @media screen and (min-width: $header-full-size--minwidth) {
+    @include rem( font-size, $h2-font-size);
+  }
 }
 
 h3 {
-  font-size: $h3-font-size;
+  @include rem( font-size, $h3-font-size--min);
+
+  @media screen and (min-width: $header-full-size--minwidth) {
+    @include rem( font-size, $h3-font-size);
+  }
 }
 
 h4 {
-  font-size: $h4-font-size;
+  @include rem( font-size, $h4-font-size--min);
+
+  @media screen and (min-width: $header-full-size--minwidth) {
+    @include rem( font-size, $h4-font-size);
+  }
 }
 
 h5 {
-  font-size: $h5-font-size;
+  @include rem( font-size, $h5-font-size--min);
+
+  @media screen and (min-width: $header-full-size--minwidth) {
+    @include rem( font-size, $h5-font-size);
+  }
 }
 
 h6 {
-  font-size: $h6-font-size;
+  @include rem( font-size, $h6-font-size--min);
+
+  @media screen and (min-width: $header-full-size--minwidth) {
+    @include rem( font-size, $h6-font-size);
+  }
 }

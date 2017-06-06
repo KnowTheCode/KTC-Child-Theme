@@ -1,0 +1,17 @@
+.nav-primary {
+
+  .menu-item {
+    text-align: center;
+    display: block;
+    @include rem(font-size, 20px);
+    margin-bottom: 12px;
+  }
+
+  a {
+    color: $darkBlue;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+}

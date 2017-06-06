@@ -13,21 +13,38 @@ $mono: "Courier 10 Pitch", Courier, monospace;
 $base-font-family: $sans-serif;
 $heading-font-family: $serif;
 $blockquote-font-family: $serif;
+
 // Base Font Sizes
 //------------------------------------------------------------------------------
-$base-font-size: 18px;
+$base-font-size: 18px !default;
+$base-font-size--min: 16px !default;
 $base-line-height: 1.625;
 $heading-line-height: 1.25;
 $secondary-font-size: floor(modular-scale(-1, $base-font-size, $major-second));
 $site-title-font-size: floor(modular-scale(5, $base-font-size, $major-second));
+
 // Heading Font Properties
 //------------------------------------------------------------------------------
-$h1-font-size: floor(modular-scale(6, $base-font-size, $major-second));
-$h2-font-size: floor(modular-scale(5, $base-font-size, $major-second));
-$h3-font-size: floor(modular-scale(4, $base-font-size, $major-second));
-$h4-font-size: floor(modular-scale(3, $base-font-size, $major-second));
-$h5-font-size: floor(modular-scale(2, $base-font-size, $major-second));
-$h6-font-size: floor(modular-scale(1, $base-font-size, $major-second));
+$h1-font-size: floor(modular-scale(6, $base-font-size, $major-second))!default;
+$h1-font-size--min: floor(modular-scale(6, $base-font-size--min, $major-second))!default;
+$h2-font-size: floor(modular-scale(5, $base-font-size, $major-second))!default;
+$h2-font-size--min: floor(modular-scale(5, $base-font-size--min, $major-second))!default;
+$h3-font-size: floor(modular-scale(4, $base-font-size, $major-second))!default;
+$h3-font-size--min: floor(modular-scale(4, $base-font-size--min, $major-second))!default;
+$h4-font-size: floor(modular-scale(3, $base-font-size, $major-second))!default;
+$h4-font-size--min: floor(modular-scale(3, $base-font-size--min, $major-second))!default;
+$h5-font-size: floor(modular-scale(2, $base-font-size, $major-second))!default;
+$h5-font-size--min: floor(modular-scale(2, $base-font-size--min, $major-second))!default;
+$h6-font-size: floor(modular-scale(1, $base-font-size, $major-second))!default;
+$h6-font-size--min: floor(modular-scale(1, $base-font-size--min, $major-second))!default;
+
+//$h1-font-size: 36px !default;
+//$h2-font-size: 32px !default;
+//$h3-font-size: 28px !default;
+//$h4-font-size: 24px !default;
+//$h5-font-size: 22px !default;
+//$h6-font-size: 20px !default;
+
 // Header Font Properties
 //------------------------------------------------------------------------------
 $header-font-family: $heading-font-family;

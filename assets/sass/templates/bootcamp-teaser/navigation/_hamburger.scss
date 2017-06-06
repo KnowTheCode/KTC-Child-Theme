@@ -1,0 +1,78 @@
+$hamburgerSpacing: 8px;
+
+.hamburger--button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 90px;
+  cursor: pointer;
+  z-index: 99;
+  transform: translate(0, -20px);
+  border-bottom: none;
+  background-color: $lightOlive;
+  border: 0;
+  padding: 10px 10px;
+
+  body.menu--open & {
+    z-index: 999999;
+  }
+
+  &:focus {
+    outline: 0;
+    background-color: $lightOlive;
+  }
+}
+
+.hamburger--text {
+  text-align: center;
+  color: $sidebar--color;
+  font-size: 12px;
+  display: block;
+}
+
+.hamburger--lines {
+  display: block;
+  position: relative;
+  height: 24px;
+  margin: 0 auto;
+
+  &:hover .hamburger--line {
+    background-color: $darkBlue;
+    transform: scale(1.3);
+  }
+}
+
+.hamburger--line {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: $darkBlue;
+
+  left: 10px;
+  transition: all ease-in-out 0.2s;
+
+  @for $index from 0 through 2 {
+    &:nth-child(#{$index + 1}) {
+      top: 10px + $index * $hamburgerSpacing;
+    }
+  }
+}
+
+body.menu--open .hamburger--line {
+  transition: all 0.2s ease-in-out;
+  background-color: $orange;
+
+  &:nth-child(1) {
+    transform: rotate(45deg);
+  }
+
+  &:nth-child(2) {
+    display: none;
+  }
+
+  &:nth-child(3) {
+    top: 10px;
+    transform: rotate(-45deg);
+  }
+}

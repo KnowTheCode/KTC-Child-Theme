@@ -10,14 +10,19 @@
  */
 namespace KnowTheCode\Support;
 
+use Fulcrum\Config\Config;
+use KnowTheCode\Admin\Metabox\Metabox;
+
 /**
  * Initialize the filenames to be loaded.
  *
  * @since 1.6.0
  *
+ * @param bool $is_admin
+ *
  * @return void
  */
-function init_files() {
+function init_files( $is_admin = false ) {
 	$filenames = array(
 		'support/dependencies-helpers.php',
 		'setup.php',
@@ -33,8 +38,8 @@ function init_files() {
 		'structure/search.php',
 	);
 
-	if ( is_admin() ) {
-		$filenames[] = 'admin/metabox/optin-fullpage.php';
+	if ( $is_admin ) {
+		$filenames[] = 'admin/metabox/class-metabox.php';
 	}
 
 	load_specified_files( $filenames );
@@ -58,4 +63,39 @@ function load_specified_files( array $filenames, $folder_root = '' ) {
 	}
 }
 
-init_files();
+/**
+ * Create the metaboxes.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function create_metaboxes() {
+	$metabox_configs = (array) include( CHILD_THEME_DIR . '/config/admin/metabox/metaboxes.php' );
+	if ( ! $metabox_configs ) {
+		return;
+	}
+
+	foreach( $metabox_configs as $config ) {
+		new Metabox( new Config( $config ) );
+	}
+}
+
+/**
+ * Autoload the files and dependencies.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function do_autoload() {
+	$is_admin = is_admin();
+
+	init_files( $is_admin );
+
+	if ( $is_admin ) {
+		create_metaboxes();
+	}
+}
+
+do_autoload();

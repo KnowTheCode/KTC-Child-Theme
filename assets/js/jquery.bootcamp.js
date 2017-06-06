@@ -11,60 +11,111 @@
 	'use strict';
 
 	var $window, $body,
-		$header, $teacherBio,
-		slideIn = 'fadeIn',
-		slideOut = 'fadeOut';
+		$header;
 
 	var init = function() {
 		$window = $( window );
 		$body = $('body');
 
-		$header = $('.site-header');
 		$('.aniview').AniView();
 
-		$('.teacher-card').on('click', teacherBio);
-		$('.teacher-bio--close-button').on('click', closeContainer );
+		initHeader();
+		initTeachersBio();
+		initPopups();
+	}
+
+	//==========================
+	// Header Handlers
+	//==========================
+
+	function initHeader() {
+		$header = $('.site-header');
+		$(window)
+			.scroll(headerHandler);
 
 		headerHandler();
 	}
 
 	function headerHandler() {
+
 		var position =  $( this ).scrollTop();
 
-		if ( position > 500 ) {
+		if ( position > 500 & $window.width() < 766 ) {
 			$header.slideUp();
-		} else if ( ! $header.is(':visible') ) {
+			return;
+		}
+
+		if ( position > 500 ) {
+			$header.addClass('--is-onscroll');
+		}
+
+		if ( ! $header.is(':visible') ) {
 			$header.slideDown();
+			$header.removeClass('--is-onscroll');
 		}
 	}
 
-	var teacherBio = function() {
-		var $teacherCard = $(this),
-			teacherId = $teacherCard.data('teacher');
+	//==========================
+	// Teacher Bio Handlers
+	//==========================
 
-		$teacherBio = $('#' + teacherId);
+	function initTeachersBio() {
+		var data = {
+			panelOpenClass: 'panel--is-open'
+		}
+		$('.teacher-card').on('click', data, popupHandler);
+		$('.panel-close--button').on('click', data, popupHandler );
+	}
 
-		if ( $teacherBio.hasClass('teacher-bio--is-open') ) {
-			closeContainer();
+	//==========================
+	// Topic Handlers
+	//==========================
+
+	function initPopups() {
+		var data = {
+			panelOpenClass: 'panel--is-open'
+		}
+		$('.popup-reveal-button').on('click', data, popupHandler );
+		$('.popup-close--button').on('click', data, popupHandler );
+	}
+
+	//==========================
+	// Popup Handlers
+	//==========================
+
+	var popupHandler = function( event ) {
+		var $button = $(this),
+			panelID = $button.data('popupId'),
+			data;
+
+		var $panel = $('#' + panelID);
+
+		data = {
+			slideInClass : $panel.data( 'slidein' ),
+			slideOutClass : $panel.data( 'slideout' ),
+			panelOpenClass: event.data.panelOpenClass
+		}
+
+		if ( $panel.hasClass( data.panelOpenClass ) ) {
+			closeContainer( $panel, data );
 
 		} else {
-			openContainer();
+			openContainer( $panel, data );
 		}
 	}
 
-
-	function closeContainer() {
-		$teacherBio
-			.removeClass('teacher-bio--is-open')
-			.removeClass( slideIn )
-			.addClass( slideOut );
+	function closeContainer( $el, data ) {
+		$el
+			.removeClass( data.panelOpenClass )
+			.removeClass( data.slideInClass )
+			.addClass( data.slideOutClass );
 	}
 
-	function openContainer() {
-		$teacherBio
-			.addClass('teacher-bio--is-open')
-			.addClass( slideIn )
-			.removeClass( slideOut );
+	function openContainer( $el, data ) {
+		$el
+			.addClass( data.panelOpenClass )
+			.addClass( data.slideInClass )
+			.removeClass( data.slideOutClass );
 	}
 
 	$( document ).ready( function () {
