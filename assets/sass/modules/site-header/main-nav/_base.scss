@@ -1,0 +1,19 @@
+.main-nav--container {
+  text-align: left;
+  display: none;
+
+  @media screen and (max-width: $full-layout--screen) {
+    body.main-nav--open & {
+      display: block;
+      margin-top: $hamburger--height;
+    }
+  }
+
+  @media screen and (min-width: $full-layout--screen) {
+    display: block;
+  }
+
+  ul {
+    list-style: none;
+  }
+}

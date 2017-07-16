@@ -1,11 +1,11 @@
 /**
  * scripts.js - Builds the distribution JavaScript and jQuery files
  *
- * @package     KnowTheCodeGulp
+ * @package     UpGulp
  * @since       1.0.0
- * @author      hellofromTonya <hellofromtonya@knowthecode.io>
- * @link        https://knowthecode.io
- * @license     GNU General Public License 2.0+
+ * @author      hellofromTonya
+ * @link        https://KnowTheCode.io
+ * @license     GNU-2.0+
  */
 
 'use strict';
@@ -21,14 +21,13 @@ module.exports = function ( gulp, plugins, config ) {
 	 * Tasks are run synchronously to ensure each step is completed
 	 * BEFORE moving on to the next one.  We don't want any race situations.
 	 *
-	 * @since 1.0.1
+	 * @since 1.0.0
 	 */
 	gulp.task( 'scripts', function ( callback ) {
-
-		runSequence( 'scripts-clean',
+		runSequence(
+			'scripts-clean',
+			'scripts-build-concat',
 			'scripts-minify',
-// 			'scripts-finalize',
-// 			'scripts-final-clean',
 			callback );
 	} );
 
@@ -44,13 +43,7 @@ module.exports = function ( gulp, plugins, config ) {
 	} );
 
 	gulp.task( 'scripts-minify', function () {
-		var settings = config.scripts.minify;
-
-		return minifyScripts(settings);
-	} );
-
-	gulp.task( 'scripts-finalize', function () {
-// 		return stylesFinalize();
+		return minifyScripts();
 	} );
 
 	/*******************
@@ -66,9 +59,7 @@ module.exports = function ( gulp, plugins, config ) {
 	 * @returns {*}
 	 */
 	function cleanScripts( settings ) {
-		plugins.del( settings.src ).then( function () {
-			plugins.util.log( plugins.util.colors.bgGreen( 'Scripts are now clean....[cleanScripts()]' ) );
-		} );
+		plugins.del( settings.src );
 	};
 
 	/**
@@ -81,40 +72,28 @@ module.exports = function ( gulp, plugins, config ) {
 	function concatScripts() {
 		var settings = config.scripts.concat;
 
-		console.log( settings );
-
 		return gulp.src( settings.src )
 
-           // Deal with errors.
            .pipe( plugins.plumber( {errorHandler: handleErrors} ) )
-
-           .pipe( plugins.sourcemaps.init() )
-           .pipe( concat( settings.concatSrc ) )
-           .pipe( plugins.sourcemaps.write() )
-
-           .pipe( gulp.dest( settings.dest ) ).on( 'end', function () {
-				plugins.util.log( plugins.util.colors.bgGreen( 'Scripts concat is now done....[concatScripts()]' ) );
-			} )
-           .pipe( plugins.browserSync.stream() );
+           .pipe( plugins.concat( settings.concatSrc ) )
+           .pipe( gulp.dest( settings.dest ) );
 	}
 	/**
 	 * Minify scripts
 	 *
 	 * @since 1.0.0
 	 */
-	function minifyScripts( settings ) {
+	function minifyScripts() {
+		var settings = config.scripts.uglify;
 
 		return gulp.src( settings.src )
-	           // Deal with errors.
 	           .pipe( plugins.plumber( {errorHandler: handleErrors} ) )
 
+	           .pipe( plugins.rename( {suffix: '.min'} ) )
 	           .pipe( plugins.uglify( {
 		           mangle: false
 	           } ) )
-               .pipe( plugins.rename( {suffix: '.min'} ) )
-	           .pipe( gulp.dest( settings.dest ) ).on( 'end', function () {
-					plugins.util.log( plugins.util.colors.bgGreen( 'Scripts are now minified....[minifyScripts()]' ) );
-				} )
+               .pipe( gulp.dest( settings.dest ) )
 	           .pipe( plugins.notify( {message: 'Scripts are built.'} ) );
 	};
 };

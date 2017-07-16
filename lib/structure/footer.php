@@ -2,11 +2,11 @@
 /**
  * Footer structure
  *
- * @package     KTC\Structure
- * @since       1.3.0
+ * @package     KnowTheCode\Structure
+ * @since       2.0.0
  * @author      hellofromTonya
- * @link        https://UpTechLabs.io
- * @license     GNU General Public License 2.0+
+ * @link        https://KnowTheCode.io
+ * @license     GPL-2.0+
  */
 namespace KnowTheCode\Structure;
 
@@ -45,7 +45,7 @@ add_action( 'genesis_after_footer', __NAMESPACE__ . '\do_disclaimer' );
  * @return void
  */
 function do_disclaimer() {
-	include( CHILD_THEME_DIR . '/lib/views/scrollup.php' );
+//	include( CHILD_THEME_DIR . '/lib/views/scrollup.php' );
 
 	genesis_widget_area( 'disclaimer', array(
 		'before' => '<div class="disclaimer"><div class="wrap">',

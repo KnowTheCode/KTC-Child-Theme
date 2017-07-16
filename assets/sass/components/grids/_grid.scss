@@ -6,8 +6,8 @@
   overflow: hidden;
   @include media(480px) {
     @include outer-container;
-    @include display(flex);
-    @include flex-wrap(wrap);
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -37,7 +37,7 @@
 
   // 2 columns
   @include media(480px) {
-    @include display(flex);
-    @include flex(1 0 auto);
+    display: flex;
+    flex: 1 0 auto;
   }
 }

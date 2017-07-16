@@ -35,9 +35,9 @@
   background-color: $blue;
   color: $white;
 
-  @include display(flex);
-  @include flex-direction(column);
-  @include justify-content(center);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
 
   @media screen and (min-width: 480px) {

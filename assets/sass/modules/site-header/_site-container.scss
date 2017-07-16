@@ -1,0 +1,14 @@
+body.site-header-as-sidebar {
+  &.subnav-open {
+    .site-container {
+      opacity: 0;
+    }
+  }
+
+  @media screen and (min-width: $full-layout--screen) {
+    .site-container {
+      padding-left: $site-header--width;
+      z-index: 0;
+    }
+  }
+}

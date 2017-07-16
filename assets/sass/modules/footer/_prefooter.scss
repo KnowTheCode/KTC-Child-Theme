@@ -16,10 +16,10 @@
 
 .prefooter .textwidget {
   @include media(768px) {
-    @include align-items(center);
-    @include display(flex);
-    @include flex-direction(row);
-    @include justify-content(center);
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 }
 

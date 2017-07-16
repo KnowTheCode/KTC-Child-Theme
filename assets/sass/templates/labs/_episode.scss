@@ -1,0 +1,6 @@
+body.single-lab {
+  .episode__video {
+    @include page_header();
+    background-color: #f2f2f2;
+  }
+}

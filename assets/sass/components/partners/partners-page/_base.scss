@@ -6,8 +6,8 @@
 
   @include media(480px) {
     @include outer-container;
-    @include display(flex);
-    @include flex-wrap(wrap);
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .partner {

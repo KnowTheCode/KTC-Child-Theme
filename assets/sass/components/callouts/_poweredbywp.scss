@@ -4,9 +4,9 @@
     url(#{$image--path}/KTCToPowerofWP.png) repeat center 50% #ced2b7;
 
   @media screen and (min-width: 768px) {
-    @include display(flex);
-    @include flex-direction(column);
-    @include justify-content(center);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     min-height: 300px;
   }
 

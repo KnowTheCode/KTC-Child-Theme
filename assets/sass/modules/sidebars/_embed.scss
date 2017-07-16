@@ -3,10 +3,17 @@
 
   margin-bottom: 30px;
 
-  @include media($small-screen) {
-    @include span-columns(4);
+  @media screen and (min-width: 600px) {
     @include omega();
     clear: right;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1023px) {
+    @include span-columns(6);
+  }
+
+  @media screen and (min-width: 1024px) {
+    @include span-columns(4);
   }
 
   p:last-child {

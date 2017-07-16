@@ -1,0 +1,24 @@
+//
+// Inpost Marketing
+//============================
+
+.inpost-marketing {
+  .one-half {
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+      @include span-columns(6);
+
+      &:nth-child(even) {
+        @include omega();
+        clear: right;
+      }
+
+      clear: left;
+
+      &.last {
+        clear: none;
+      }
+    }
+  }
+}

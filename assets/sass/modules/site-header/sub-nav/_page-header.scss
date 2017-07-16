@@ -1,0 +1,11 @@
+.site-header--subnav-header {
+  display: block;
+  background-color: #f2f2f2;
+  padding: 100px 0 60px;
+  position: relative;
+
+  > .wrap {
+    max-width: 100%;
+    padding: 0 100px;
+  }
+}

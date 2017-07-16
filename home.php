@@ -1,13 +1,12 @@
 <?php
-
 /**
  * Insights page template
  *
  * @package     KnowTheCode\Insights
- * @since       1.0.0
+ * @since       2.0.0
  * @author      hellofromTonya
- * @link        https://UpTechLabs.io
- * @license     GNU General Public License 2.0+ and MIT Licence (MIT)
+ * @link        https://KnowTheCode.io
+ * @license     GPL-2.0+
  */
 namespace KnowTheCode\Insights;
 

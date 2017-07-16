@@ -1,17 +1,17 @@
 {
-  "name": "KnowtheCode",
-  "version": "1.0.0",
-  "description": "The Genesis-Powered Child Theme for Know the Code",
+  "name": "UpGulp",
+  "version": "1.0.3",
+  "description": "A Gulp Starter for WordPress Project",
   "repository": {
     "type": "git",
-    "url": "https://github.com/KnowTheCode/KTC-Child-Theme"
+    "url": "https://github.com/KnowTheCode/UpGulp"
   },
   "author": "hellofromTonya",
-  "license": "GPL-2",
+  "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/KnowTheCode/Genesis-Developers-Starter-Theme/issues"
+    "url": "https://github.com/KnowTheCode/UpGulp/issues"
   },
-  "homepage": "https://github.com/KnowTheCode/Genesis-Developers-Starter-Theme#readme",
+  "homepage": "hhttps://github.com/KnowTheCode/UpGulp",
   "devDependencies": {
     "autoprefixer": "^6.3.1",
     "bourbon": "^4.2.6",

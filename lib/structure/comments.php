@@ -3,10 +3,10 @@
  * Comments structures
  *
  * @package     KnowTheCode\Structure
- * @since       1.5.8
+ * @since       2.0.0
  * @author      hellofromTonya
  * @link        https://KnowTheCode.io
- * @license     GNU-2.0+
+ * @license     GPL-2.0+
  */
 namespace KnowTheCode\Structure;
 

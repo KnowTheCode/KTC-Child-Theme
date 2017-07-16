@@ -6,4 +6,14 @@
     background: transparent;
     padding: 0;
     margin-bottom: 40px;
+
+    @media screen and (max-width: 479px) {
+
+      &::after {
+        content: '';
+        border: 1px dotted #ccc;
+        width: 40%;
+        margin: 20px auto;
+      }
+    }
   }

@@ -1,0 +1,31 @@
+.asktonya--episode-opener {
+  p {
+    margin-bottom: 10px;
+  }
+}
+
+.asktonya--episode-content {
+  .more-link {
+    background-color: $blue;
+    border: 1px solid $blue;
+    border-bottom: 1px solid $blue;
+    color: $white;
+    cursor: pointer;
+    font-size: $base-font-size;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 16px 24px;
+    width: auto;
+    border-radius: 0;
+
+    &:hover {
+      background-color: $white;
+      border: 1px solid $blue;
+      color: $blue;
+    }
+  }
+}
+
+.asktonya--episode-number {
+  font-size: 150%;
+}

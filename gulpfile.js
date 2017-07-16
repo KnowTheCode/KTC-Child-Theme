@@ -1,11 +1,11 @@
 /**
  * gulfile.js - Entry point for launching KnowTheCodeGulp
  *
- * @package     KnowTheCodeGulp
- * @since       1.0.0
- * @author      hellofromTonya <hellofromtonya@knowthecode.io>
- * @link        https://knowthecode.io
- * @license     GNU General Public License 2.0+
+ * @package     UpGulp
+ * @since       1.0.2
+ * @author      hellofromTonya
+ * @link        https://KnowTheCode.io
+ * @license     GPL-2.0+
  *
  * This gulpfile.js is a customized version of the wd_s from WebDevStudios
  * @link https://github.com/WebDevStudios/wd_s/blob/master/Gulpfile.js
@@ -28,15 +28,15 @@ var gulp = require( 'gulp' ),
 	 */
 	gulpConfig = require( './package' ).gulpConfig,
 	/**
-	 * We want to make sure we have the theme's root, as files are being
+	 * We want to make sure we have the module's root, as files are being
 	 * loaded and processed from subfolders.
 	 */
-	themeRoot = require( 'app-root-path' ).resolve( './' ),
+	moduleRoot = require( 'app-root-path' ).resolve( './' ),
 	/**
 	 * Now load the `config.js` file, which has all of the
 	 * settings and parameters for the tasks.
 	 */
-	config = require( "./" + gulpConfig )( themeRoot );
+	config = require( "./" + gulpConfig )( moduleRoot );
 
 /**
  * Load up the reload into plugins.

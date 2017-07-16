@@ -1,15 +1,14 @@
 <?php
-
 /**
- * Enqueue assets
+ * Load up the assets
  *
- * @package     KnowTheCode
- * @since       1.3.0
+ * @package     KnowTheCode\Structure
+ * @since       2.0.0
  * @author      hellofromTonya
- * @link        https://UpTechLabs.io
- * @license     GNU General Public License 2.0+
+ * @link        https://KnowTheCode.io
+ * @license     GPL-2.0+
  */
-namespace KnowTheCode;
+namespace KnowTheCode\Structure;
 
 add_filter( 'stylesheet_uri', __NAMESPACE__ . '\change_stylesheet_uri_to_min' );
 /**
@@ -29,7 +28,7 @@ function change_stylesheet_uri_to_min( $stylesheet_uri ) {
 	return CHILD_URL . '/style.min.css';
 }
 
-//add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
 /**
  * Enqueue theme assets.
  *
@@ -37,7 +36,14 @@ function change_stylesheet_uri_to_min( $stylesheet_uri ) {
  */
 function enqueue_assets() {
 
-	$assets_uri = CHILD_URL . '/assets/js/';
+	$asset_file = '/assets/dist/js/jquery.ktc.min.js';
+	wp_enqueue_script(
+		'ktc_theme_js',
+		CHILD_URL . $asset_file,
+		array( 'jquery' ),
+		get_asset_version_number( CHILD_THEME_DIR . $asset_file ),
+		true
+	);
 
 }
 

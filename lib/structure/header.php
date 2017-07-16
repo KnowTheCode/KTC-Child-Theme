@@ -2,11 +2,11 @@
 /**
  * Header structure functionality
  *
- * @package     KTC\Structure
- * @since       1.3.0
+ * @package     KnowTheCode\Structure
+ * @since       2.0.0
  * @author      hellofromTonya
- * @link        https://UpTechLabs.io
- * @license     GNU General Public License 2.0+
+ * @link        https://KnowTheCode.io
+ * @license     GPL-2.0+
  */
 namespace KnowTheCode\Structure;
 
@@ -21,32 +21,38 @@ function unregister_header_events() {
 
 }
 
-add_action( 'genesis_before_header', __NAMESPACE__ . '\render_hello_bar', 9 );
+add_filter( 'body_class', __NAMESPACE__ . '\add_site_header_as_sidebar', 999999 );
 /**
- * Renders out the under_main_nav.
+ * If this web page is NOT using a custom site-header, then:
+ *
+ * 1. Relocate the site-header
+ * 2. Add our site-header as sidebar
  *
  * @since 1.0.0
  *
- * @return void
+ * @param array $body_classes
+ *
+ * @return array
  */
-function render_hello_bar() {
-	genesis_widget_area( 'hello_bar', array(
-		'before' => '<div class="hello-bar" style="display: none;"><div class="wrap">',
-		'after'  => '</div></div>',
-	) );
+function add_site_header_as_sidebar( array $body_classes ) {
+	if ( ! in_array( 'custom-site-header', $body_classes ) ) {
+		remove_all_actions( 'genesis_header' );
+
+		add_action( 'genesis_before', __NAMESPACE__ . '\render_site_header_as_sidebar' );
+
+		$body_classes[] = 'site-header-as-sidebar';
+	}
+
+	return $body_classes;
 }
 
-add_action( 'genesis_before_header', __NAMESPACE__ . '\render_utility_bar' );
 /**
- * Add Utility Bar above header.
+ * Render the site header as sidebar.
  *
  * @since 1.0.0
  *
  * @return void
  */
-function render_utility_bar() {
-	genesis_widget_area( 'utility-bar', array(
-		'before' => '<div class="utility-bar"><div class="wrap">',
-		'after'  => '</div></div>',
-	) );
+function render_site_header_as_sidebar() {
+	require( __DIR__ . '/views/site-header/site-header.php' );
 }

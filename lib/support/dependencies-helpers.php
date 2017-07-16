@@ -1,5 +1,30 @@
 <?php
 /**
+ * Dependency helpers - here in case Fulcrum is not installed.
+ *
+ * @package     KnowTheCode
+ * @since       2.0.0
+ * @author      hellofromTonya
+ * @link        https://KnowTheCode.io
+ * @license     GPL-2.0+
+ */
+
+if ( ! function_exists( 'get_asset_version_number' ) ) {
+	/**
+	 * Get the version number for an asset file using the file's timestamp.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $asset_file Absolute path to the asset file.
+	 *
+	 * @return bool|int
+	 */
+	function get_asset_version_number( $asset_file ) {
+		return filemtime( $asset_file );
+	}
+}
+
+/**
  * Missing plugin function helpers.
  *
  * This child theme uses multiple plugins to create the unique experience
@@ -39,7 +64,7 @@ if ( ! function_exists( 'fulcrum_is_dev_environment' ) ) {
 	 * @return bool
 	 */
 	function fulcrum_is_dev_environment() {
-		return WP_DEBUG === true;
+		return ( SCRIPT_DEBUG === true );
 	}
 }
 
@@ -69,5 +94,11 @@ if ( ! function_exists( 'fulcrum_load_login_form_styling' ) ) {
 	 */
 	function fulcrum_load_login_form_styling( $stylesheet ) {
 		// do nothing.
+	}
+}
+
+if ( ! function_exists( 'is_help_center_page' ) ) {
+	function is_help_center_page() {
+		return false;
 	}
 }

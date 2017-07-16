@@ -2,13 +2,13 @@
 /**
  * Formatting
  *
- * @package     KnowTheCode
- * @since       1.3.0
+ * @package     KnowTheCode\Support
+ * @since       2.0.0
  * @author      hellofromTonya
- * @link        https://UpTechLabs.io
- * @license     GNU General Public License 2.0+
+ * @link        https://KnowTheCode.io
+ * @license     GPL-2.0+
  */
-namespace KnowTheCode;
+namespace KnowTheCode\Support;
 
 add_filter( 'genesis_breadcrumb_args', __NAMESPACE__ . '\change_breadcrumb_default_prefixes' );
 /**
@@ -44,10 +44,4 @@ function modify_the_content_more_link( $html, $more_link_text ) {
 	$html = str_replace( $more_link_text, 'Learn more', $html );
 
 	return $html;
-}
-
-if ( ! function_exists( 'is_help_center_page' ) ) {
-	function is_help_center_page() {
-		return false;
-	}
 }

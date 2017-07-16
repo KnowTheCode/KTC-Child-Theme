@@ -1,0 +1,66 @@
+.big-button-callouts {
+  overflow: hidden;
+
+  .button {
+    float: left;
+    height: 400px;
+    width: 100%;
+    color: $white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+    @include rem(font-size, 30px);
+
+    &:hover, &:focus, &:active {
+      background-color: #e1e5cc;
+      color: #1c202c;
+      border-color: transparent;
+
+      &.orange {
+        background-color: #f6dbd0;
+      }
+
+      &.green {
+        background-color: #dde7a9;
+      }
+    }
+
+    &.gray {
+      background-color: #ced2b7;
+      color: $black;
+      &:hover, &:focus, &:active {
+        background-color: #d1d2d6;
+        color: #cc4b14;
+      }
+    }
+
+    @include media($smaller-screen-up) {
+      @include rem(font-size, 22px);
+      width: 50%;
+    }
+
+    @include media($small-screen-up) {
+      @include rem(font-size, 22px);
+      width: 25%;
+    }
+    @include media($large-screen-up) {
+      @include rem(font-size, 30px);
+      height: 300px;
+    }
+
+    .big-button-description {
+      @include rem(font-size, 18px);
+      font-weight: 400;
+
+      @include media($small-screen-up) {
+        @include rem(font-size, 16px);
+      }
+      @include media($large-screen-up) {
+        @include rem(font-size, 18px);
+      }
+    }
+  }
+}

@@ -1,22 +1,20 @@
 <?php
-
 /**
  * Front page template
  *
  * @package     KnowTheCode\Front_Page
- * @since       1.6.1
+ * @since       2.0.0
  * @author      hellofromTonya
- * @link        https://UpTechLabs.io
- * @license     GNU General Public License 2.0+ and MIT Licence (MIT)
+ * @link        https://KnowTheCode.io
+ * @license     GPL-2.0+
  */
 namespace KnowTheCode\FrontPage;
 
 remove_all_actions( 'genesis_entry_header' );
 remove_all_actions( 'genesis_entry_footer' );
-remove_action( 'genesis_before_header', 'KnowTheCode\Structure\render_hello_bar', 9 );
-remove_action( 'genesis_before_header', 'KnowTheCode\Structure\render_utility_bar' );
-remove_action( 'genesis_after_header', 'KnowTheCode\Structure\render_sub_nav', 12 );
-remove_action( 'genesis_after_header', 'KnowTheCode\Structure\render_main_nav' );
+add_action( 'genesis_header', 'genesis_header_markup_open', 5 );
+add_action( 'genesis_header', 'genesis_do_header' );
+add_action( 'genesis_header', 'genesis_header_markup_close', 15 );
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_front_page_assets' );
 /**
@@ -28,8 +26,38 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_front_page_assets' )
  * @return void
  */
 function enqueue_front_page_assets() {
-	wp_enqueue_style( 'ktc_front_page_css', CHILD_URL . '/assets/dist/css/front-page.min.css', array(), '1.6.5' );
-	wp_enqueue_script( 'ktc_front_page_js', CHILD_URL . '/assets/dist/js/jquery.front-page.min.js', array('jquery'), '1.6.5', true );
+	$asset_file = '/assets/dist/css/front-page.min.css';
+	wp_enqueue_style(
+		'ktc_front_page_css',
+		CHILD_URL . $asset_file,
+		array(),
+		get_asset_version_number( CHILD_THEME_DIR . $asset_file )
+	);
+
+	$asset_file = '/assets/js/templates/jquery.front-page.js';
+	wp_enqueue_script(
+		'ktc_front_page_js',
+		CHILD_URL . $asset_file,
+		array( 'jquery' ),
+		get_asset_version_number( CHILD_THEME_DIR . $asset_file ),
+		true
+	);
+}
+
+add_filter( 'body_class', __NAMESPACE__ . '\add_body_class_for_custom_site_header', 1 );
+/**
+ * Description.
+ *
+ * @since 1.0.0
+ *
+ * @param array $body_classes Array of body classes
+ *
+ * @return array
+ */
+function add_body_class_for_custom_site_header( array $body_classes ) {
+	$body_classes[] = 'custom-site-header';
+
+	return $body_classes;
 }
 
 add_action( 'genesis_header', __NAMESPACE__ . '\render_front_page_main_nav', 11 );

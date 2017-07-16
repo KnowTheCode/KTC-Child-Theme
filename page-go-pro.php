@@ -1,22 +1,23 @@
 <?php
 /**
- * Description
+ * Go Pro landing page
  *
  * @package     KnowTheCode\GoPro
- * @since       1.0.0
+ * @since       2.0.0
  * @author      hellofromTonya
  * @link        https://KnowTheCode.io
- * @license     GNU-2.0+
+ * @license     GPL-2.0+
  */
 namespace KnowTheCode\GoPro;
 
 remove_all_actions( 'genesis_entry_header' );
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 remove_all_actions( 'genesis_entry_footer' );
-remove_action( 'genesis_before_header', 'KnowTheCode\Structure\render_hello_bar', 9 );
-remove_action( 'genesis_before_header', 'KnowTheCode\Structure\render_utility_bar' );
-remove_action( 'genesis_after_header', 'KnowTheCode\Structure\render_sub_nav', 12 );
-remove_action( 'genesis_after_header', 'KnowTheCode\Structure\render_main_nav' );
+
+add_action( 'genesis_header', 'genesis_header_markup_open', 5 );
+add_action( 'genesis_header', 'genesis_do_header' );
+add_action( 'genesis_header', 'genesis_header_markup_close', 15 );
+remove_action('genesis_header', 'KnowTheCode\Structure\render_site_header' );
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
 /**
@@ -28,7 +29,13 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
  * @return void
  */
 function enqueue_assets() {
-	wp_enqueue_style( 'ktc_gopro_css', CHILD_URL . '/assets/dist/css/gopro.min.css', array(), '1.0.0' );
+	$asset_file = '/assets/dist/css/gopro.min.css';
+	wp_enqueue_style(
+		'ktc_gopro_css',
+		CHILD_URL . $asset_file,
+		array(),
+		get_asset_version_number( CHILD_THEME_DIR . $asset_file )
+	);
 }
 
 add_action( 'genesis_header', __NAMESPACE__ . '\render_front_page_main_nav', 11 );

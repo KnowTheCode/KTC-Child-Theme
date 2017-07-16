@@ -3,20 +3,13 @@
 //=======================
 
 .full-width-bar,
-.entry-header,
+body.single .entry-header,
 .author-box,
 .archive-description,
 .page-header {
-  margin: 0 -5% 30px;
-  padding: 20px 5%;
+  margin: 0 -17vw 30px;
+  padding: 20px 17vw;
   background-color: $titleBannerColor;
-
-  @include media($medium-screen-up) {
-    margin-left: -17vw;
-    margin-right: -17vw;
-    padding-left: 17vw;
-    padding-right: 17vw;
-  }
 
   @include media($large-screen-up) {
     margin-left: -19vw;

@@ -16,10 +16,10 @@
   ul {
     list-style: none;
     @include media($small-screen-up) {
-      @include align-items(stretch);
-      @include display(flex);
-      @include flex-direction(row);
-      @include justify-content(flex-start);
+      align-items: stretch;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
     }
   }
   li {
@@ -31,7 +31,7 @@
 
     @include media($small-screen-up) {
       @include rem( font-size, 22px );
-      @include flex(1);
+      flex: 1;
       &::before {
         z-index:10;
         content: " ";
@@ -53,9 +53,11 @@
     height: 200px;
     width: 100%;
     color: $white;
-    @include display(flex);
-    @include flex-direction(column);
-    @include justify-content(center);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     text-align: center;
     @include rem( font-size, 30px );
     border-bottom: none;

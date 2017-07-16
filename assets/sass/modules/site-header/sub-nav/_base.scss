@@ -1,0 +1,47 @@
+.site-header--subnav-container {
+  margin-top: -100vh;
+
+  @media screen and (max-width: $full-layout--screen - 1px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  @media screen and (min-width: $full-layout--screen) {
+    position: fixed;
+    overflow-y: scroll;
+    top: 0;
+  }
+}
+
+.site-header--subnav-container, .site-header--subnav {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  background-color: $white;
+}
+
+.site-header.subnav-open {
+  .site-header--subnav-container {
+    z-index: 40;
+
+    @media screen and (max-width: $full-layout--screen - 1px) {
+      bottom: 0;
+    }
+
+    @media screen and (min-width: $full-layout--screen) {
+      padding-left: $site-header--width;
+    }
+    margin-top: 0;
+  }
+
+  .site-header--subnav-container, .site-header--subnav.subnav-open {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.site-header--subnav.subnav-open {
+  padding-bottom: 100px;
+}

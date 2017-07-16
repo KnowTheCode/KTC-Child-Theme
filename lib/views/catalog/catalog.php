@@ -1,3 +1,6 @@
+<?php
+namespace KnowTheCode\Catalog;
+?>
 <section class="catalog">
 	<ul>
 	<?php foreach( $catalog_items as $term ) :

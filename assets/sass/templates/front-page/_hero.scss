@@ -16,9 +16,9 @@
 
     min-height: 700px;
 
-    @include display(flex);
-    @include flex-direction(column);
-    @include justify-content(center);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
   }
 
@@ -94,10 +94,12 @@
 .entry-content .home-hero {
   a.button, .button {
     margin-top: 30px;
-    @include border-top-radius(5px);
-    @include border-right-radius(5px);
-    @include border-bottom-radius(5px);
-    @include border-left-radius(5px);
+
+    border-top-radius: 5px;
+    border-right-radius: 5px;
+    border-bottom-radius: 5px;
+    border-left-radius: 5px;
+
     color: $white;
     &.first {
       margin-right: 2%;

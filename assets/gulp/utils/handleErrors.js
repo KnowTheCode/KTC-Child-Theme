@@ -6,11 +6,11 @@
  * different run-time dependencies to actually show a real notification.
  * @see https://www.npmjs.com/package/gulp-notify#requirements
  *
- * @package     KnowTheCodeGulp
+ * @package     UpGulp
  * @since       1.0.0
- * @author      hellofromTonya <hellofromtonya@knowthecode.io>
- * @link        https://knowthecode.io
- * @license     GNU General Public License 2.0+
+ * @author      hellofromTonya
+ * @link        https://KnowTheCode.io
+ * @license     GNU-2.0+
  */
 
 var notify = require( 'gulp-notify' ),

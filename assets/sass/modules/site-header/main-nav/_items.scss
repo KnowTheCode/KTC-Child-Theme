@@ -1,0 +1,84 @@
+.main-nav {
+  list-style: none;
+  margin: 0 auto;
+  text-align: left;
+
+  @media screen and (min-width: $full-layout--screen) {
+    margin: 20px auto;
+  }
+
+  .fa {
+    text-align: left;
+    line-height: 50px;
+    font-size: 32px;
+  }
+
+  .menu-item {
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.1;
+    padding: 5px;
+    font-weight: 400;
+
+    &:hover, a:hover {
+      background-color: $darkBlue;
+      color: $white;
+      font-weight: 400;
+    }
+
+    a {
+      color: $darkBlue;
+      font-weight: 400;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    @media screen and (max-width: $full-layout--screen - 1px) {
+      border: 1px solid $darkBlue;
+    }
+
+    @media screen and (min-width: $full-layout--screen) {
+      border: none;
+      line-height: 50px;
+    }
+
+    a, & {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  a {
+    font-weight: 400;
+    border-bottom: 0;
+  }
+
+  .menu-item--text {
+    line-height: 1;
+    display: inline-block;
+    word-wrap: break-word;
+  }
+
+  //==================
+  // Go Pro Menu Item
+  //==================
+  .menu-item.menu--gopro {
+    border: 1px solid $orange;
+    background-color: $orange;
+    a {
+      color: $white;
+
+      &:hover {
+        color: $orange;
+      }
+    }
+
+    &:hover {
+      background-color: $white;
+    }
+  }
+
+}

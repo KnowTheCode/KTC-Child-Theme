@@ -1,0 +1,23 @@
+//
+// Promotions Sidebar
+//============================
+
+.promotions {
+  padding: 20px;
+  border: 10px dotted #ebebeb;
+  margin: 40px 0 80px;
+
+  .wrap {
+    padding: 20px;
+    background-color: #f2f2f2;
+  }
+
+  .widget-title {
+    position: relative;
+    font-size: 20px;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 22px;
+    }
+  }
+}

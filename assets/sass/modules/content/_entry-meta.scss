@@ -2,15 +2,9 @@
 --------------------------------------------- */
 
 .entry-meta {
-  color: lighten($black, 33);
-  font-size: $secondary-font-size;
-
-  .entry-header & {
-    background-color: lighten($black, 92);
-    margin: 0 -40px 24px;
-    padding: 10px;
-    text-align: right;
-  }
+  color: #1b202d;
+  font-weight: 400;
+  margin-bottom: 0;
 
   .entry-footer & {
     .button {

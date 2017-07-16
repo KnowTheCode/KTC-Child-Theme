@@ -1,25 +1,33 @@
 /**
- * config.js - Configures the gulp tasks
+ * UpGulp - Gulp tasks runtime configuration script
  *
- * You will want to configure up the folder structures and theme settings.
- *
- * @package     KnowTheCodeGulp
- * @since       1.0.0
+ * @package     UpGulp
+ * @since       1.0.3
  * @author      hellofromTonya
- * @link        https://UpTechLabs.io
- * @license     GNU General Public License 2.0+
+ * @link        https://KnowTheCode.io
+ * @license     GNU-2.0+
  */
 
-module.exports = function ( themeRoot ) {
+module.exports = function ( moduleRoot ) {
 
-	var themeSettings = {
-		package: 'ktc',
+	/************************************
+	 * Module Settings
+	 *
+	 * ACTION:
+	 * You need to change these settings
+	 * to fit your project.
+	 ***********************************/
+
+	var moduleSettings = {
+		package: 'knowthecode',
 		domain: 'knowthecode.dev',
+		// If this is for a theme, set to `true`; else, set to `false`.
+		isTheme: true,
 		i18n: {
-			textdomain: 'ktc',
-			languageFilename: 'ktc.pot',
+			textdomain: 'knowthecode',
+			languageFilename: 'knowthecode.pot',
 			bugReport: 'https://knowthecode.io',
-			lastTranslator: 'John Doe <hello@knowthecode.io>',
+			lastTranslator: 'Know the Code <hello@knowthecode.io>',
 			team: 'Team <hello@knowthecode.io>'
 		}
 	};
@@ -35,7 +43,7 @@ module.exports = function ( themeRoot ) {
 	 *
 	 * @type {String}
 	 */
-	var assetsDir = themeRoot + 'assets/';
+	var assetsDir = moduleRoot + 'assets/';
 
 	/**
 	 * gulp folder - path to where the gulp utils and
@@ -77,8 +85,7 @@ module.exports = function ( themeRoot ) {
 		icons: assetDirs.images + 'svg-icons/*.svg',
 		images: [ assetDirs.images + '*', '!' + assetDirs.images + '*.svg' ],
 		sass: assetDirs.sass + '**/*.scss',
-		concatScripts: assetDirs.scripts + '/*.js',
-		vendorScripts: [ assetDirs.scripts + 'vendors/*.js', '!' + assetDirs.scripts + 'vendors/*.min.js' ],
+		concatScripts: assetDirs.scripts + '*.js',
 		scripts: [ assetDirs.scripts + '*.js', '!' + assetDirs.scripts + '*.min.js' ],
 		sprites: assetDirs.images + 'sprites/*.png'
 	};
@@ -90,10 +97,14 @@ module.exports = function ( themeRoot ) {
 	 * @type {Object}
 	 */
 	var distDirs = {
-		root: themeRoot,
+		root: moduleRoot,
 		css: distDir + 'css/',
-		scripts: distDir + 'js/',
-		vendorScripts: distDir + 'js/',
+		finalCSS: moduleSettings.isTheme ? moduleRoot : distDir + 'css/',
+		scripts: distDir + 'js/'
+	};
+
+	var distFilenames = {
+		concatScripts: 'jquery.ktc.js'
 	};
 
 	/************************************
@@ -102,7 +113,7 @@ module.exports = function ( themeRoot ) {
 
 	var stylesSettings = {
 		clean: {
-			src : [ distDirs.css + "*.*", themeRoot + "style.css", themeRoot + "style.min.css" ]
+			src : [ distDirs.css + "*.*", moduleRoot + "style.css", moduleRoot + "style.min.css" ]
 		},
 		postcss: {
 			src: [ assetDirs.sass + '*.scss' ],
@@ -121,9 +132,10 @@ module.exports = function ( themeRoot ) {
 			dest: distDirs.css,
 		},
 		cssfinalize: {
-			run: false,
+			// Fix for Issue #1 - v1.0.3 11.July.2017
+			run: moduleSettings.isTheme ? true : false,
 			src: [ distDirs.css + "style.css", distDirs.css + "style.min.css" ],
-			dest: themeRoot
+			dest: distDirs.finalCSS,
 		}
 	};
 
@@ -131,30 +143,35 @@ module.exports = function ( themeRoot ) {
 		clean: {
 			src : [ distDirs.scripts + "*.*" ]
 		},
-		minify: {
-			src: assetDirs.scripts + '*.js',
+		concat: {
+			src: paths.concatScripts,
+			dest: distDirs.scripts,
+			concatSrc: distFilenames.concatScripts,
+		},
+		uglify: {
+			src: distDirs.scripts + '*.js',
 			dest: distDirs.scripts,
 		}
 	};
-	
+
 	var i18nSettings = {
 		clean: {
-			src : [ themeRoot + "languages/" + themeSettings.i18n.languageFilename ]
+			src : [ moduleRoot + "languages/" + moduleSettings.i18n.languageFilename ]
 		},
 		pot: {
 			src: paths.php,
 			wppot: {
-				domain: themeSettings.i18n.textdomain,
-				destFile: themeSettings.i18n.languageFilename,
-				package: themeSettings.package,
-				bugReport: themeSettings.i18n.bugReport,
-				lastTranslator: themeSettings.i18n.lastTranslator,
-				team: themeSettings.i18n.team
+				domain: moduleSettings.i18n.textdomain,
+				destFile: moduleSettings.i18n.languageFilename,
+				package: moduleSettings.package,
+				bugReport: moduleSettings.i18n.bugReport,
+				lastTranslator: moduleSettings.i18n.lastTranslator,
+				team: moduleSettings.i18n.team
 			},
-			dest: themeRoot + "languages/"
+			dest: moduleRoot + "languages/"
 		}
 	}
-	
+
 	var iconsSettings = {
 		clean: {
 			src : [ assetDirs.images + "svg-icons.svg" ]
@@ -184,7 +201,7 @@ module.exports = function ( themeRoot ) {
 		browserSync:	{
 			open: false,             // Open project in a new tab?
 			injectChanges: true,     // Auto inject changes instead of full reload
-			proxy: themeSettings.domain,  // Use http://domainname.tld:3000 to use BrowserSync
+			proxy: moduleSettings.domain,  // Use http://domainname.tld:3000 to use BrowserSync
 			watchOptions: {
 				debounceDelay: 1000  // Wait 1 second before injecting
 			}
@@ -201,7 +218,7 @@ module.exports = function ( themeRoot ) {
 	 ***********************************/
 
 	return {
-		themeRoot: themeRoot,
+		moduleRoot: moduleRoot,
 		assetsDir: assetsDir,
 		assetDirs: assetDirs,
 		dist: distDirs,

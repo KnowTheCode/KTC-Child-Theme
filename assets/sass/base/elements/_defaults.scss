@@ -11,7 +11,7 @@ input[type="reset"],
 input[type="submit"],
 textarea:focus,
 .gallery img {
-	@include transition( all 0.1s ease-in-out );
+	transition: all 0.1s ease-in-out;
 }
 
 ::-moz-selection {
@@ -30,12 +30,17 @@ a {
 	font-weight: 700;
 	text-decoration: none;
 	word-wrap: break-word;
+
 	img {
 		margin-bottom: -4px;
 	}
 
 	&:hover, &:focus {
 		color: $link--hover-color;
+	}
+
+	&.--no-bottom-border {
+		border-bottom: none;
 	}
 }
 

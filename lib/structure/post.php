@@ -2,11 +2,11 @@
 /**
  * Post structures
  *
- * @package     KnowTheCode
- * @since       1.5.8
+ * @package     KnowTheCode\Structure
+ * @since       2.0.0
  * @author      hellofromTonya
  * @link        https://KnowTheCode.io
- * @license     GNU-2.0+
+ * @license     GPL-2.0+
  */
 namespace KnowTheCode\Structure;
 
@@ -68,15 +68,15 @@ function do_post_pagination() {
 
 add_filter( 'genesis_noposts_text', '__return_empty_string' );
 
-add_action( 'genesis_after_entry', __NAMESPACE__ . '\render_inpost_navigation', 7 );
+add_action( 'genesis_after_entry', __NAMESPACE__ . '\render_inpost_after_content', 7 );
 /**
- * Add Prev/Next to bottom of the singles.
+ * Render the after entry content for blog posts.
  *
  * @since 1.5.8
  *
  * @return void
  */
-function render_inpost_navigation() {
+function render_inpost_after_content() {
 	if ( ! is_single() || get_post_type() != 'post' ) {
 		return;
 	}
@@ -85,12 +85,38 @@ function render_inpost_navigation() {
 		return;
 	}
 
+	render_inpost_navigation();
+
+	render_promotions();
+}
+
+/**
+ * Add Prev/Next to bottom of the singles.
+ *
+ * @since 1.5.8
+ *
+ * @return void
+ */
+function render_inpost_navigation() {
 	$previous = fulcrum_get_previous_parent_post();
 	$next     = fulcrum_get_next_parent_post();
 
 	include( CHILD_THEME_DIR . '/lib/views/single-navigation.php' );
+}
 
-	include( __DIR__ . '/views/marketing.php' );
+/**
+ * Render out the promotions widget area.
+ *
+ * @since 1.6.0
+ *
+ * @return void
+ */
+function render_promotions() {
+
+	genesis_widget_area( 'promotions', array(
+		'before' => '<div class="promotions"><div class="wrap">',
+		'after'  => '</div></div>',
+	) );
 }
 
 add_action( 'genesis_after_entry', __NAMESPACE__ . '\render_inpost_marketing', 10 );

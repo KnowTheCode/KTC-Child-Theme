@@ -3,10 +3,10 @@
  * Search Template Handler
  *
  * @package     KnowTheCode\Structure
- * @since       1.5.0
+ * @since       2.0.0
  * @author      hellofromTonya
- * @link        https://UpTechLabs.io
- * @license     GNU General Public License 2.0+
+ * @link        https://KnowTheCode.io
+ * @license     GPL-2.0+
  */
 namespace KnowTheCode\Structure;
 

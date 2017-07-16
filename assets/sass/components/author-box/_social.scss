@@ -1,0 +1,13 @@
+.author-box--social {
+  a {
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .fa {
+      padding: 0 10px;
+    }
+  }
+}

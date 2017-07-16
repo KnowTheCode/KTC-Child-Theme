@@ -8,24 +8,19 @@
 
   @media screen and (min-width: 768px) {
     background-image: url(#{$image--path}/KTC-hero-1.jpg);
-    //background-image: linear-gradient( rgba(255, 255, 255, 0.8) 100%, $white),
-    //        url(#{$image--path}/wordpress-developer-hero.jpg);
     background-position: bottom left;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 700px;
 
-    @include display(flex);
-    @include flex-direction(column);
-    @include justify-content(center);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: left;
   }
 
   .wrapper {
     padding-top: 150px;
-    @media screen and (min-width: 768px) {
-      //padding-top: 0;
-    }
   }
 
   overflow: hidden;

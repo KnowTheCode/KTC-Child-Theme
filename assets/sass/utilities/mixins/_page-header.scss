@@ -2,8 +2,39 @@
 // Page Header Mixin
 //==============================
 
+@mixin page_header($margin: 23vw, $content_left: 0) {
+  display: block;
+  background-color: #f2f2f2;
+  padding: 100px 0 60px;
 
-@mixin page_header($margin: 23vw, $content_left: -40px) {
+  margin-left: -$margin;
+  margin-right: -$margin;
+  padding-left: $margin;
+  padding-right: $margin;
+  margin-bottom: 60px;
+
+
+  .entry-title {
+    @include media($medium-screen-up)  {
+      margin-left: $content_left;
+    }
+  }
+
+  p {
+    @include media($medium-screen-up)  {
+      margin-left: $content_left;
+    }
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .entry-title {
+    margin-bottom: 30px;
+  }
+}
+
+@mixin page_header_image_background($margin: 23vw, $content_left: 0) {
   background: transparent;
 
   padding-top: 40px;

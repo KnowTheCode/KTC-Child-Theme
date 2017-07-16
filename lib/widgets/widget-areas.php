@@ -1,14 +1,14 @@
 <?php
-
 /**
  * Sidebars and widgets functionality
  *
- * @package     KnowTheCode\Insights
- * @since       1.0.0
+ * @package     KnowTheCode\Widgets
+ * @since       2.0.0
  * @author      hellofromTonya
- * @link        https://UpTechLabs.io
- * @license     GNU General Public License 2.0+ and MIT Licence (MIT)
+ * @link        https://KnowTheCode.io
+ * @license     GPL-2.0+
  */
+
 namespace KnowTheCode\Widgets;
 
 add_action( 'genesis_setup', __NAMESPACE__ . '\setup', 15 );
@@ -20,55 +20,43 @@ add_action( 'genesis_setup', __NAMESPACE__ . '\setup', 15 );
  * @return void
  */
 function setup() {
-	unregister_sidebar( 'sidebar-alt' );
-	add_filter( 'widget_text', 'do_shortcode' );
+	$config = include( CHILD_THEME_DIR . '/config/widgets/widget-areas.php' );
 
-	register_widget_areas();
+	foreach( (array) $config as $function_name => $specific_configuration ) {
+		$function_name = sprintf( '%s\%s', __NAMESPACE__, $function_name );
+
+		$function_name( $specific_configuration );
+	}
+
+	add_filter( 'widget_text', 'do_shortcode' );
 }
 
 /**
- * Register the widget areas enabled by default in Utility.
+ * Unregister the widget areas
  *
  * @since  1.0.0
  *
+ * @param array $config Runtime configuration parameters
+ *
  * @return void
  */
-function register_widget_areas() {
+function unregister_widget_areas( array $config ) {
+	foreach ( $config as $sidebar_name ) {
+		unregister_sidebar( $sidebar_name );
+	}
+}
 
-	$widget_areas = array(
-		array(
-			'id'          => 'hello_bar',
-			'name'        => __( 'Hello Bar', 'ktc' ),
-			'description' => __( 'This is the message bar under very top of the page.', 'ktc' ),
-		),
-		array(
-			'id'          => 'search_bar',
-			'name'        => __( 'Search Bar', 'ktc' ),
-			'description' => __( 'This is the search bar.', 'ktc' ),
-		),
-		array(
-			'id'          => 'utility-bar',
-			'name'        => __( 'Utility Bar', 'ktc' ),
-			'description' => __( 'This is the utility bar across the top of page.', 'ktc' ),
-		),
-		array(
-			'id'          => 'blog',
-			'name'        => __( 'Insights', 'ktc' ),
-			'description' => __( 'This is the Insights section which appears on the Insights page.', 'ktc' ),
-		),
-		array(
-			'id'          => 'pre_footer',
-			'name'        => __( 'Pre-Footer', 'ktc' ),
-			'description' => __( 'This is the Pre-Footer section, just before the footer widgets.', 'ktc' ),
-		),
-		array(
-			'id'          => 'disclaimer',
-			'name'        => __( 'Disclaimer', 'ktc' ),
-			'description' => __( 'This is the Disclaimer section on very bottom of the site.', 'ktc' ),
-		),
-	);
-
-	foreach ( $widget_areas as $widget_area ) {
+/**
+ * Register the widget areas
+ *
+ * @since  1.0.0
+ *
+ * @param array $config Runtime configuration parameters
+ *
+ * @return void
+ */
+function register_widget_areas( array $config ) {
+	foreach ( $config as $widget_area ) {
 		genesis_register_sidebar( $widget_area );
 	}
 }

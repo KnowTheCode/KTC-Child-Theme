@@ -11,7 +11,6 @@
 
 
 .episode-list__directory {
-  //border-bottom: 1px solid #ddd;
   margin: 40px 0;
 }
 
@@ -39,10 +38,12 @@
     line-height: 1;
     padding: 0 25px;
     position: relative;
-    @include align-items(center);
-    @include display(flex);
-    @include flex-direction(row);
-    @include justify-content(flex-end);
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
     font-weight: 400;
 
     &.episode__current, &:hover {
@@ -75,8 +76,8 @@
 
   &__title {
     color: #3a3a3a;
-    @include flex(1);
-    @include align-items(center);
+    flex: 1;
+    align-items: center;
     -webkit-flex-basis: 200px;
     -ms-flex-preferred-size: 200px;
     flex-basis: 200px;

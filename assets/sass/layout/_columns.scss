@@ -6,7 +6,7 @@
 /* Column Classes
 --------------------------------------------- */
 
-@include media($smaller-screen) {
+@media screen and (min-width: 600px) and (max-width: 1023px) {
 
   .one-half,
   .three-sixths,
@@ -18,18 +18,17 @@
   .one-fourth {
     @include span-columns(6);
 
-    @include media($small-screen-max) {
-      &:nth-child(even) {
-        @include omega();
-        clear: right;
-      }
+    // clear the right column
+    &:nth-child(odd) {
+      @include omega();
+      clear: right;
     }
   }
 
 }
 
 
-@include media($small-screen) {
+@media screen and (min-width: 1024px) {
 
   .one-half,
   .three-sixths,

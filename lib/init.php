@@ -3,10 +3,10 @@
  * Theme initialization
  *
  * @package     KnowTheCode
- * @since       1.3.0
+ * @since       2.0.0
  * @author      hellofromTonya
- * @link        https://UpTechLabs.io
- * @license     GNU General Public License 2.0+
+ * @link        https://KnowTheCode.io
+ * @license     GPL-2.0+
  */
 namespace KnowTheCode;
 
@@ -19,16 +19,18 @@ namespace KnowTheCode;
  */
 function init_constants() {
 
+	define( 'CHILD_THEME_DIR', get_stylesheet_directory() );
+
+	$version_number = get_asset_version_number( CHILD_THEME_DIR . '/style.min.css' );
+
 	$child_theme = wp_get_theme();
 
 	define( 'CHILD_THEME_NAME', $child_theme->get( 'Name' ) );
 	define( 'CHILD_THEME_URL', $child_theme->get( 'ThemeURI' ) );
-	define( 'CHILD_THEME_VERSION', $child_theme->get( 'Version' ) );
+	define( 'CHILD_THEME_VERSION', $version_number );
 	define( 'CHILD_TEXT_DOMAIN', $child_theme->get( 'TextDomain' ) );
 
-	define( 'CHILD_THEME_DIR', get_stylesheet_directory() );
 	define( 'CHILD_CONFIG_DIR', CHILD_THEME_DIR . '/config/' );
-
 	define( 'CHILD_DIST_URL', get_stylesheet_directory_uri() . '/assets/dist/' );
 }
 

@@ -1,0 +1,12 @@
+//
+// We need some extra wrap styles here
+//=====================================
+
+.site-inner {
+  padding-top: 0;
+  > .wrap {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+  }
+}

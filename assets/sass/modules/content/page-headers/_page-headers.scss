@@ -1,0 +1,24 @@
+//
+// Page Headers
+//=======================
+
+body.page .entry-header,
+body.single .entry-header,
+.page-header,
+.entry.membership .entry-header,
+body.single-docx .entry.docx .entry-header,
+.archive-description,
+body.bbpress .entry-header,
+//body.blog .page-header,
+.type-memberpressproduct .entry-header {
+  @include page_header();
+  background-color: $darkBlue;
+  color: $white;
+  .entry-title {
+
+    a, & {
+      border-bottom: 0;
+      color: $white;
+    }
+  }
+}

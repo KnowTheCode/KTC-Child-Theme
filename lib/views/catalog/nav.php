@@ -1,3 +1,6 @@
+<?php
+namespace KnowTheCode\Catalog;
+?>
 <nav class="filterby__nav">
 	<ul>
 		<li><label>Filter by:</label></li>

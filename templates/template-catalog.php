@@ -1,16 +1,22 @@
 <?php
-
 /**
  * Catalog Template
  *
  * @package     KnowTheCode
+ *
  * Template Name: Catalog
- * @since       1.4.0
+ *
+ * @since       2.0.0
  * @author      hellofromTonya
- * @link        https://UpTechLabs.io
- * @license     GNU General Public License 2.0+
+ * @link        https://KnowTheCode.io
+ * @license     GPL-2.0+
  */
-namespace KnowTheCode;
+
+namespace KnowTheCode\Catalog;
+
+function get_catalog_view_dir() {
+	return CHILD_THEME_DIR .'/lib/views/catalog/';
+}
 
 remove_all_actions( 'genesis_entry_content' );
 add_action( 'genesis_entry_content', __NAMESPACE__ . '\do_the_catalog_page' );
@@ -25,7 +31,7 @@ function do_the_catalog_page() {
 	$permalink = get_the_permalink();
 	$filter    = get_catalog_filter();
 
-	require_once( 'lib/views/catalog/nav.php' );
+	require_once( get_catalog_view_dir() . 'nav.php' );
 
 	if ( $filter === 'index' ) {
 		render_catalog_index();
@@ -55,7 +61,7 @@ function render_catalog_topics() {
 		return;
 	}
 
-	require_once( 'lib/views/catalog/catalog.php' );
+	require_once( get_catalog_view_dir() .'catalog.php' );
 }
 
 /**
@@ -70,11 +76,11 @@ function render_catalog_index() {
 		'post_type'      => array( 'post', 'lab' ),
 		'post_status'    => 'publish',
 		'post_parent'    => 0,
-		'posts_per_page' => - 1,
+		'posts_per_page' => 20,
 		'orderby'        => 'title',
 	);
 
-	render_catalog_query( $args, 'lib/views/catalog/index.php' );
+	render_catalog_query( $args, get_catalog_view_dir() . 'index.php' );
 }
 
 /**
@@ -93,7 +99,7 @@ function render_catalog_series() {
 		'orderby'        => 'title',
 	);
 
-	render_catalog_query( $args, 'lib/views/catalog/index.php' );
+	render_catalog_query( $args, get_catalog_view_dir() . 'index.php' );
 }
 
 
@@ -137,7 +143,7 @@ function render_catalog_index_items( $query ) {
 	while ( $query->have_posts() ) {
 		$query->the_post();
 
-		include( 'lib/views/catalog/' . $view_filename );
+		include( get_catalog_view_dir() . $view_filename );
 	}
 }
 

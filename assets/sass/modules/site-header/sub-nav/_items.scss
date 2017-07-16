@@ -1,0 +1,46 @@
+.site-header--subnav-items {
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    border-bottom: 0;
+    border-bottom: 1px dotted #ccc;
+    width: 100%;
+
+    @media screen and (min-width: 480px) {
+      border-right: 1px dotted #ccc;
+    }
+
+    padding: 30px 20px;
+    color: $darkBlue;
+    font-weight: 400;
+    text-align: center;
+
+    &:hover {
+      background-color: #ccc;
+    }
+
+    .fa, h4, p, & {
+      display: block;
+    }
+
+    .fa {
+      font-size: 40px;
+    }
+
+    // 2 columns
+    @media screen and (min-width: 480px) and (max-width: 1023px) {
+      width: 50%;
+    }
+
+    // 3 columns
+    @media screen and (min-width: 1024px) and (max-width: 1279px) {
+      width: percentage(1/3);
+    }
+
+    // 4 columns
+    @media screen and (min-width: 1280px) {
+      width: 25%;
+    }
+  }
+}

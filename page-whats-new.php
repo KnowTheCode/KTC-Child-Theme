@@ -3,16 +3,23 @@
  * What's New Page
  *
  * @package     KnowTheCode\WhatsNew
- * @since       1.4.0
+ * @since       2.0.0
  * @author      hellofromTonya
- * @link        https://UpTechLabs.io
- * @license     GNU General Public License 2.0+
+ * @link        https://KnowTheCode.io
+ * @license     GPL-2.0+
  */
 namespace KnowTheCode\WhatsNew;
 
-
 remove_all_actions( 'genesis_entry_content' );
+
 add_action( 'genesis_entry_content', __NAMESPACE__ . '\do_the_whats_new_page' );
+/**
+ * Let's build the What's New page.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
 function do_the_whats_new_page() {
 
 	$filterby = get_the_uri_filter();

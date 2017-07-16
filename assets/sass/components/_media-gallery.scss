@@ -76,7 +76,7 @@
   }
 
   .gallery-caption {
-    @include transition(all, 0.2s ease-in-out);
+    transition: all, 0.2s ease-in-out;
     background: transparentize($black, 0.5);
     color: $white;
     font-size: $gallery-caption-font-size;
@@ -91,7 +91,7 @@
   }
 
   &:hover .gallery-caption {
-    @include transform(translate(0, -100%));
+    transform: translate(0, -100%);
     visibility: visible;
     opacity: 1;
   }

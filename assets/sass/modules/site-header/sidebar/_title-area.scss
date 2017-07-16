@@ -1,0 +1,67 @@
+//
+// Title Area
+// - Site Title
+// - Site Description
+//======================================
+
+.title-area {
+  float: left;
+  margin-top: -10px;
+  @media screen and (min-width: $full-layout--screen) {
+    width: 100%;
+    float: none;
+    margin-top: 0;
+  }
+}
+
+.site-title {
+  margin: 0 auto;
+
+  a, & {
+    width: $logo--width;
+    height: $logo--height;
+    @media screen and (min-width: $full-layout--screen) {
+      width: $logo--width-full-layout;
+      height: $logo--height-full-layout;
+    }
+  }
+
+  a,
+  a:hover, a:focus, a:active {
+    border: 0;
+    outline: none;
+    display: block;
+
+    background-image: url(#{$image--path}/know-the-code-logo@2x.png);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: $logo--width, $logo--height;
+
+    @media screen and (min-width: $full-layout--screen) {
+      background-size: $logo--width-full-layout, $logo--height-full-layout;
+    }
+  }
+
+  a:hover {
+    background-size: $logo--width + 10px, $logo--height + 10px;
+
+    @media screen and (min-width: $full-layout--screen) {
+      background-size: $logo--width-full-layout + 10px, $logo--height-full-layout + 10px;
+    }
+  }
+
+  a:hover {
+
+  }
+}
+
+.site-title, .site-description {
+  text-indent: -9999px;
+}
+
+.site-description {
+  display: block;
+  height: 0;
+  margin-bottom: 0;
+}

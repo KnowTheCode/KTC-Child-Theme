@@ -1,0 +1,29 @@
+//
+// Site Header
+//====================
+
+$site-header--background-color: #f2f2f2;
+
+.site-header--sidebar {
+  z-index: 50;
+  padding: 10px 0;
+  width: 100%;
+
+  @media screen and (min-width: $full-layout--screen) {
+    display: block;
+    position: fixed;
+    background-color: #f2f2f2;
+    box-shadow: 5px 0px 5px 0px rgba(204,204,204,0.5);
+    transition: opacity 150ms ease-in-out, background-color 150ms ease-in-out;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: $site-header--width;
+  }
+}
+
+@media screen and (min-width: $full-layout--screen) {
+  body.admin-bar .site-header--sidebar {
+    top: 32px;
+  }
+}

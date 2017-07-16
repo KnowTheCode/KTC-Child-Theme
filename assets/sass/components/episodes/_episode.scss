@@ -11,9 +11,9 @@
   background: url(#{$image--path}/KTC-hero-2.jpg) center no-repeat transparent;
   background-size: cover;
 
-  @include display(flex);
-  @include flex-direction(column);
-  @include justify-content(center);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   min-height: 400px;
 }

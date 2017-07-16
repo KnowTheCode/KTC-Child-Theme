@@ -2,11 +2,11 @@
 /**
  * Autoload files to launch the theme.
  *
- * @package     KnowTheCode
- * @since       1.3.0
+ * @package     KnowTheCode\Support
+ * @since       2.0.0
  * @author      hellofromTonya
- * @link        https://UpTechLabs.io
- * @license     GNU General Public License 2.0+
+ * @link        https://KnowTheCode.io
+ * @license     GPL-2.0+
  */
 namespace KnowTheCode\Support;
 
@@ -24,7 +24,6 @@ use KnowTheCode\Admin\Metabox\Metabox;
  */
 function init_files( $is_admin = false ) {
 	$filenames = array(
-		'support/dependencies-helpers.php',
 		'setup.php',
 		'widgets/widget-areas.php',
 		'support/formatting.php',
@@ -37,10 +36,6 @@ function init_files( $is_admin = false ) {
 		'structure/post.php',
 		'structure/search.php',
 	);
-
-	if ( $is_admin ) {
-		$filenames[] = 'admin/metabox/class-metabox.php';
-	}
 
 	load_specified_files( $filenames );
 }
@@ -64,27 +59,9 @@ function load_specified_files( array $filenames, $folder_root = '' ) {
 }
 
 /**
- * Create the metaboxes.
- *
- * @since 1.0.0
- *
- * @return void
- */
-function create_metaboxes() {
-	$metabox_configs = (array) include( CHILD_THEME_DIR . '/config/admin/metabox/metaboxes.php' );
-	if ( ! $metabox_configs ) {
-		return;
-	}
-
-	foreach( $metabox_configs as $config ) {
-		new Metabox( new Config( $config ) );
-	}
-}
-
-/**
  * Autoload the files and dependencies.
  *
- * @since 1.0.0
+ * @since 2.0.0
  *
  * @return void
  */
@@ -92,9 +69,35 @@ function do_autoload() {
 	$is_admin = is_admin();
 
 	init_files( $is_admin );
+}
 
-	if ( $is_admin ) {
-		create_metaboxes();
+/**
+ * Get runtime configuration parameters.
+ *
+ * @since 1.3.0
+ *
+ * @param string $key Configuration parameter key
+ * @param string $config_file (Optional) Configuration filename without the extension.
+ *
+ * @return array|null|mixed
+ */
+function get_configuration_parameters( $key = '', $config_file = 'theme-setup' ) {
+	static $config = array();
+
+	if ( ! $config_file ) {
+		return;
+	}
+
+	if ( ! array_key_exists( $config_file, $config ) ) {
+		$config[ $config_file ] = (array) include( CHILD_THEME_DIR . '/config/' . $config_file . '.php' );
+	}
+
+	if ( ! $key ) {
+		return $config[ $config_file ];
+	}
+
+	if ( array_key_exists( $key, $config[ $config_file ] ) ) {
+		return $config[ $config_file ][ $key ];
 	}
 }
 
