@@ -90,10 +90,15 @@ function render_inpost_after_content() {
 	render_promotions();
 }
 
+add_action( 'render_single_next_prev_navigation', __NAMESPACE__ . '\render_inpost_navigation' );
 /**
  * Add Prev/Next to bottom of the singles.
  *
- * @since 1.5.8
+ * The `render_single_next_prev_navigation` event is called externally by
+ * plugins to embed the previous and next navigation into a custom post
+ * type.
+ *
+ * @since 2.0.1
  *
  * @return void
  */
