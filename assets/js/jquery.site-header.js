@@ -1,8 +1,8 @@
 /*!
  * Site Header Navigation handling
  *
- * @package     Site Header
- * @since       1.0.0
+ * @package     KnowTheCode\ChildTheme
+ * @since       2.0.0
  * @author      hellofromTonya
  * @link        http://KnowTheCode.io
  * @license     GPL-2.0+

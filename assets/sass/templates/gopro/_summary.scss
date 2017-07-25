@@ -3,37 +3,47 @@
 // ============================
 
 .gopro-summary {
-
   min-height: 550px;
+  text-align: left;
 
   @media screen and (min-width: 768px) {
-    background-image: url(#{$image--path}/KTC-hero-1.jpg);
-    background-position: bottom left;
+    background: linear-gradient(rgba(255,255,255, 0.8) 100%, $white),
+      url(#{$image--path}/watching-know-the-code.jpg) repeat center $white;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
     min-height: 700px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: left;
   }
 
   .wrapper {
-    padding-top: 150px;
+    padding-top: 120px;
+    @media screen and (min-width: 768px) {
+      padding-top: 0;
+    }
   }
 
   overflow: hidden;
   position: relative;
 
   h1 {
-    display: inline-block;
-    padding: 10px;
     text-align: center;
     margin: 40px auto 50px;
-    box-shadow: 5px 5px 5px 0px rgba(200,207,169,1);
   }
 
+  .price-plan--panel {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid $darkBlue;
+  }
+
+  .gopro-pricing--price {
+    background-color: rgba(255,255,255, 0.8);
+  }
 }
 
 .price {
@@ -49,3 +59,4 @@
   position: relative;
   text-transform: uppercase;
 }
+

@@ -104,7 +104,7 @@ module.exports = function ( moduleRoot ) {
 	};
 
 	var distFilenames = {
-		concatScripts: 'jquery.ktc.js'
+		concatScripts: 'jquery.ktc-theme.js'
 	};
 
 	/************************************

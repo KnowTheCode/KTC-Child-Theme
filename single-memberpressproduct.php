@@ -1,18 +1,18 @@
 <?php
 /**
- * Go Pro landing page
+ * Registration pages to sign up.
  *
- * @package     KnowTheCode\GoPro
+ * @package     KnowTheCode\KTCTheme\Register
  * @since       2.0.0
  * @author      hellofromTonya
  * @link        https://KnowTheCode.io
- * @license     GPL-2.0+
+ * @license     GNU-2.0+
  */
-namespace KnowTheCode\GoPro;
+namespace KnowTheCode\KTCTheme\Register;
 
-remove_all_actions( 'genesis_entry_header' );
-remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
-remove_all_actions( 'genesis_entry_footer' );
+//remove_all_actions( 'genesis_entry_header' );
+//remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
+//remove_all_actions( 'genesis_entry_footer' );
 
 add_action( 'genesis_header', 'genesis_header_markup_open', 5 );
 add_action( 'genesis_header', 'genesis_do_header' );
@@ -49,7 +49,7 @@ add_filter( 'body_class', __NAMESPACE__ . '\add_body_class_for_custom_site_heade
  * @return array
  */
 function add_body_class_for_custom_site_header( array $body_classes ) {
-	$body_classes[] = 'go-pro';
+//	$body_classes[] = 'go-pro';
 	$body_classes[] = 'custom-site-header';
 
 	return $body_classes;
@@ -65,7 +65,7 @@ add_action( 'genesis_header', __NAMESPACE__ . '\render_main_nav', 11 );
  */
 function render_main_nav() {
 	$user_is_logged_in = is_user_logged_in();
-	$show_library = true;
+	$show_gopro = true;
 
 	require_once( __DIR__ . '/lib/structure/views/gopro-main-nav.php' );
 }

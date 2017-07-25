@@ -1,0 +1,48 @@
+.gopro--section {
+  padding: 50px 0;
+
+  &.--background-dark {
+    background-color: $darkBlue;
+  }
+
+  &.--background-green {
+    background-color: $green;
+  }
+
+  &.--background-olive {
+    background-color: $lightOlive;
+  }
+
+  &.--background-dark,
+  &.--background-green {
+    h2, h3, h4, h5, h6, p, & {
+      color: $white;
+    }
+  }
+
+}
+
+.gopro--features li {
+  font-size: 22px;
+}
+
+.gopro--section-header {
+  text-align: center;
+  margin: 20px 0 40px;
+
+  &::after {
+    content: '';
+    display: block;
+    background-color: $darkBlue;
+    width: 80px;
+    height: 3px;
+    margin: 0 auto 40px;
+  }
+
+  .--background-dark &,
+  .--background-green & {
+    &::after {
+      background-color: $white;
+    }
+  }
+}

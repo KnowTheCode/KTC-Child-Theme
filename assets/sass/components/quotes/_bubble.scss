@@ -1,0 +1,29 @@
+.quote-bubble {
+  padding: 60px 0;
+  overflow: hidden;
+
+  blockquote {
+    border-right: 0;
+    border: 3px solid $lightOlive;
+    position: relative;
+    padding: 20px;
+    margin: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -50px;
+      left: 50px;
+      border-width: 0 20px 50px 0px;
+      border-style: solid;
+      border-color: transparent $lightOlive;
+      background: $white;
+      display: block;
+      width: 0;
+    }
+  }
+
+  .quote-bubble--who {
+    margin: 15px 0 2em 85px;
+  }
+}

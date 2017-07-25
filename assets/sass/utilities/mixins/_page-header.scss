@@ -2,10 +2,14 @@
 // Page Header Mixin
 //==============================
 
-@mixin page_header($margin: 23vw, $content_left: 0) {
+@mixin page_header($margin: 23vw, $content_left: 60px) {
   display: block;
   background-color: #f2f2f2;
-  padding: 100px 0 60px;
+  padding: 40px 0 20px;
+
+  @media screen and (min-width: 1025px) {
+    padding: 100px 0 60px;
+  }
 
   margin-left: -$margin;
   margin-right: -$margin;
@@ -13,17 +17,16 @@
   padding-right: $margin;
   margin-bottom: 60px;
 
-
-  .entry-title {
-    @include media($medium-screen-up)  {
-      margin-left: $content_left;
+  .entry-title, p {
+    @media screen and (min-width: 1025px) {
+      margin-left: $margin;
+      margin-right: $margin;
+      padding-left: -$margin;
+      padding-right: -$margin;
     }
   }
 
   p {
-    @include media($medium-screen-up)  {
-      margin-left: $content_left;
-    }
     :last-child {
       margin-bottom: 0;
     }

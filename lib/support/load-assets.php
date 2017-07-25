@@ -35,8 +35,7 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
  * @since 1.0.0
  */
 function enqueue_assets() {
-
-	$asset_file = '/assets/dist/js/jquery.ktc.min.js';
+	$asset_file = '/assets/dist/js/jquery.ktc-theme.min.js';
 	wp_enqueue_script(
 		'ktc_theme_js',
 		CHILD_URL . $asset_file,
