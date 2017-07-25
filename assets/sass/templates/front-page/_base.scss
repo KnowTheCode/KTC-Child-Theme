@@ -5,12 +5,7 @@
 body.home {
   background-color: $white;
 
-  .site-inner {
-    padding-top: 0;
-    padding-left: 0;
-  }
-
-  .site-inner .wrap, .wrap {
+  .site-inner .wrap {
     max-width: 100%;
     width: 100%;
     padding: 0;
