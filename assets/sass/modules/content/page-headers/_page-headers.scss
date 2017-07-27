@@ -14,11 +14,13 @@ body.bbpress .entry-header,
   @include page_header();
   background-color: $darkBlue;
   color: $white;
-  .entry-title {
 
+  .entry-title, .archive-title {
     a, & {
       border-bottom: 0;
       color: $white;
     }
   }
 }
+
+

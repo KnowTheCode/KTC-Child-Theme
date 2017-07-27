@@ -1,0 +1,33 @@
+//
+// Full Width Section Mixin
+//==============================
+
+@mixin fullwidth-section() {
+  $margin: 23vw;
+
+  display: block;
+  padding: 50px 0;
+
+  margin-left: -$margin;
+  margin-right: -$margin;
+  padding-left: $margin;
+  padding-right: $margin;
+
+  p {
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin fullwidth-section-background-color($background-color: $white, $isDark: false) {
+  @include fullwidth-section();
+
+  background-color: $background-color;
+
+  @if $isDark == true {
+    h2, h3, h4, h5, h6, p, & {
+      color: $white;
+    }
+  }
+}

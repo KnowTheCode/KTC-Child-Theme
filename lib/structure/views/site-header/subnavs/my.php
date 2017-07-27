@@ -11,6 +11,11 @@
         </div>
     </div>
 
+    <div class="infobox reminder"><div class="wrap">
+        <h4><i class="fa fa-bullhorn" aria-hidden="true"></i> NEW – Coaching Pro Add-On</h4>
+        <p>Do you want a coach, someone to help keep you motivated, focused, and accountable while you work through the labs and roadmaps? Then <a href="<?php echo fulcrum_get_url_relative_to_home_url( 'register/coaching-pro' ); ?>" target="_blank" style="color: #1b202d;">Coaching Pro</a> is your answer.</p>
+    </div></div>
+
     <div class="site-header--subnav-items">
         <a href="<?php echo fulcrum_get_url_relative_to_home_url( 'my-dashboard' ); ?>" itemprop="url">
             <i class="fa fa-tachometer" aria-hidden="true"></i>

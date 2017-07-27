@@ -1,0 +1,18 @@
+.--subnav-search {
+
+  .search_bar {
+    width: 100%;
+    margin: 40px;
+
+    @media screen and (min-width: 768px) {
+      width: 500px;
+    }
+  }
+
+  input[type="search"] {
+    width: 70%;
+    font-size: 20px;
+    padding: 5px;
+    line-height: 50px;
+  }
+}

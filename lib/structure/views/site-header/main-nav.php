@@ -24,6 +24,9 @@
         <li class="menu-item menu--help --has-subnav">
             <a href="javascript:void(0)" itemprop="url"><span itemprop="name" class="menu-item--text">Help</span></a>
         </li>
+        <li class="menu-item menu--help --has-subnav">
+            <a href="javascript:void(0)" itemprop="url"><span itemprop="name" class="menu-item--text">Search</span></a>
+        </li>
     </ul>
 </nav>
 

@@ -57,6 +57,7 @@ function render_subnavs() {
 		'build-learn',
 		'insights',
 		'help',
+		'search',
 	);
 
 	foreach ( $subnavs as $filename ) {

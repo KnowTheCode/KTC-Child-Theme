@@ -1,0 +1,13 @@
+body.single-memberpressproduct {
+  .entry-header {
+    background-color: $colorPro;
+
+    .entry-title, & {
+      color: $darkBlue;
+    }
+  }
+
+  .gopro--section {
+    @include fullwidth-section();
+  }
+}

@@ -5,10 +5,12 @@
 @mixin page_header($margin: 23vw, $content_left: 60px) {
   display: block;
   background-color: #f2f2f2;
-  padding: 40px 0 20px;
+  padding-top: 40px;
+  padding-bottom: 20px;
 
   @media screen and (min-width: 1025px) {
-    padding: 100px 0 60px;
+    padding-top: 100px;
+    padding-bottom: 60px;
   }
 
   margin-left: -$margin;
@@ -16,15 +18,6 @@
   padding-left: $margin;
   padding-right: $margin;
   margin-bottom: 60px;
-
-  .entry-title, p {
-    @media screen and (min-width: 1025px) {
-      margin-left: $margin;
-      margin-right: $margin;
-      padding-left: -$margin;
-      padding-right: -$margin;
-    }
-  }
 
   p {
     :last-child {
