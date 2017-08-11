@@ -8,6 +8,7 @@
  * @link        https://KnowTheCode.io
  * @license     GPL-2.0+
  */
+
 namespace KnowTheCode\WhatsNew;
 
 remove_all_actions( 'genesis_entry_content' );
@@ -44,6 +45,7 @@ function render_filterby_navigation( $filterby ) {
 		'labs'     => __( 'Hands-On Labs', 'ktc' ),
 		'insights' => __( 'Insights & Tips', 'ktc' ),
 		'docx'     => __( 'Docx', 'ktc' ),
+		'asktonya' => __( 'Ask Tonya', 'ktc' ),
 	);
 
 	require_once( 'lib/views/whats-new/nav.php' );
