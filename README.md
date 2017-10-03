@@ -1,8 +1,20 @@
 # Know the Code Child Theme
 
-This [Genesis-powered](http://www.studiopress.com/features/) child theme is for [Know the Code](https://KnowTheCode.io).  It handles serving up the styling and HTML markup for the site.  It's modular, Sass-ified, and [gulp](https://knowthecode.io/labs/part-3a-automating-tasks-gulp) running.  It serves up a minified version of the stylesheet to keep the assets lean and mean.  And it uses Bourbon and Neat just for fun.  
+This [Genesis-powered](http://www.studiopress.com/features/) child theme is for [Know the Code](https://KnowTheCode.io). It is specifically designed for our website.  The view files for the templates and menus are custom for our needs.
 
-Want to build your own Genesis starter theme? No problem.  We have a [hands-on lab](https://knowthecode.io/labs-guide/lets-build-custom-developers-genesis-starter-child-theme) that walks you through the process step-by-step.  Go build your own and save yourself a ton of time and money. 
+## Can I use this theme as a starter?
+
+Not really, but kinda. Why? It's specifically designed for Know the Code.  However, you can use it as inspiration for your project or theme.  Use the architecture, task runner setups, Sass structures, etc.  Modify the view files for your needs and strip away what you don't need.
+
+## Features 
+
+This theme includes the following features:
+
+1. [Genesis-powered](http://www.studiopress.com/features/)
+2. ModularConfiguration architecture
+3. [Sass-powered](https://github.com/KnowTheCode/KTC-Child-Theme/tree/master/assets/sass) styling
+4. [UpGulp](https://github.com/KnowTheCode/UpGulp) - gulp for task running lint, concatenation, optimization, and minification.
+
 
 ## Dependencies
 
