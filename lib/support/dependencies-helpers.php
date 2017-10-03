@@ -102,3 +102,36 @@ if ( ! function_exists( 'is_help_center_page' ) ) {
 		return false;
 	}
 }
+
+if ( ! function_exists( 'fulcrum_get_url_relative_to_home_url' ) ) {
+	/**
+	 * Get the URL relative to the site's root (home url).
+	 *
+	 * Performance function.
+	 *
+	 * This function uses `get_home_url()` and caches it.  It allows us to speed up
+	 * building links and menus as we don't have to call `home_url( 'some-path' );`
+	 * over and over again.
+	 *
+	 * @since 1.2.3
+	 *
+	 * @param  string      $path    Optional. Path relative to the home URL. Default empty.
+	 * @param  string|null $scheme  Optional. Scheme to give the home URL context. Accepts
+	 *                              'http', 'https', 'relative', 'rest', or null. Default null.
+	 *
+	 * @return string Home URL link with optional path appended.
+	 */
+	function fulcrum_get_url_relative_to_home_url( $path = '', $scheme = null ) {
+		static $home_url;
+
+		if ( ! $home_url ) {
+			$home_url = get_home_url( null, '', $scheme );
+		}
+
+		if ( ! $home_url ) {
+			return '';
+		}
+
+		return sprintf( '%s/%s', $home_url, ltrim( $path, '/' ) );
+	}
+}

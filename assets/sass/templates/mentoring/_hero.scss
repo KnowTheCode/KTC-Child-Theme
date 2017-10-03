@@ -10,6 +10,11 @@
     background-image: linear-gradient(rgba(255,255,255, 0.5) 100%, $white),
         url(#{$image--path}/mentoring-program-bkgrd.jpg);
 
+    body.coaching-pro & {
+      background-image: linear-gradient(rgba(255,255,255, 0.5) 100%, $white),
+        url(#{$image--path}/coaching-pro-bkgrd.jpg);
+    }
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

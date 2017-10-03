@@ -14,6 +14,10 @@
     background-color: $lightOlive;
   }
 
+  &.--background-green {
+    background-color: $green;
+  }
+
   &.--background-blue {
     background-color: $darkBlue;
     h2, h3, h4, h5, h6, p, & {

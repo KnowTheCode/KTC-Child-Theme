@@ -8,6 +8,7 @@
  * @link        https://KnowTheCode.io
  * @license     GPL-2.0+
  */
+
 namespace KnowTheCode\Support;
 
 use Fulcrum\Config\Config;
@@ -16,7 +17,7 @@ use KnowTheCode\Admin\Metabox\Metabox;
 /**
  * Initialize the filenames to be loaded.
  *
- * @since 1.6.0
+ * @since 2.0.1
  *
  * @param bool $is_admin
  *
@@ -36,6 +37,15 @@ function init_files( $is_admin = false ) {
 		'structure/post.php',
 		'structure/search.php',
 	);
+
+	if ( ! class_exists( 'Fulcrum\Fulcrum' ) ) {
+		// If Fulcrum is not loaded, then
+		// load the dependencies-helpers file first.
+		array_unshift(
+			$filenames,
+			'support/dependencies-helpers.php'
+		);
+	}
 
 	load_specified_files( $filenames );
 }
