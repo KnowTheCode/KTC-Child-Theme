@@ -8,8 +8,7 @@
     </div>
 
     <div class="site-header--subnav-items">
-	    <?php if ( $user_is_logged_in ): ?>
-        <a href="<?php echo fulcrum_get_url_relative_to_home_url( 'register/coaching-pro' ); ?>" itemprop="url">
+        <a href="<?php echo fulcrum_get_url_relative_to_home_url( 'coaching-pro' ); ?>" itemprop="url">
             <i class="fa fa-bullhorn" aria-hidden="true"></i>
             <h4 itemprop="name">Coaching Pro</h4>
             <p>Hire Tonya to motivate you, check you focused, and maximize your learning.</p>
@@ -19,7 +18,6 @@
             <h4 itemprop="name">1-on-1 Mentoring</h4>
             <p>1-on-1 Personalized Mentoring Program. Private. Customized to fit what you want to master.</p>
         </a>
-        <?php endif; ?>
         <a href="<?php echo fulcrum_get_url_relative_to_home_url( 'roadmap/custom-wordpress-plugin-developer-roadmap' ); ?>" itemprop="url">
             <i class="fa fa-map" aria-hidden="true"></i>
             <h4 itemprop="name">Plugin Developer Roadmap</h4>
