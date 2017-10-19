@@ -54,5 +54,5 @@ function add_site_header_as_sidebar( array $body_classes ) {
  * @return void
  */
 function render_site_header_as_sidebar() {
-	require( __DIR__ . '/views/site-header/site-header.php' );
+	require __DIR__ . '/views/site-header/site-header.php';
 }

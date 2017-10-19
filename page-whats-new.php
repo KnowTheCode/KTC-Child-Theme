@@ -48,7 +48,7 @@ function render_filterby_navigation( $filterby ) {
 		'asktonya' => __( 'Ask Tonya', 'ktc' ),
 	);
 
-	require_once( 'lib/views/whats-new/nav.php' );
+	require_once __DIR__ . '/lib/views/whats-new/nav.php';
 }
 
 /**
@@ -66,7 +66,7 @@ function render_new_content( $filterby ) {
 		return;
 	}
 
-	require_once( 'lib/views/whats-new/page.php' );
+	require_once __DIR__ . '/lib/views/whats-new/page.php';
 
 	wp_reset_postdata();
 }
@@ -85,7 +85,7 @@ function render_new_item( $query ) {
 	while ( $query->have_posts() ) {
 		$query->the_post();
 
-		include( 'lib/views/whats-new/item.php' );
+		include __DIR__ . '/lib/views/whats-new/item.php';
 	}
 }
 

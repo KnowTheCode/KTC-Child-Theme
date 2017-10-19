@@ -18,7 +18,7 @@ namespace KnowTheCode\Structure;
  * @return void
  */
 function unregister_footer_events() {
-
+	remove_action( 'genesis_footer', 'genesis_do_footer' );
 }
 
 add_action( 'genesis_before_footer', __NAMESPACE__ . '\render_pre_footer' );
@@ -45,7 +45,7 @@ add_action( 'genesis_after_footer', __NAMESPACE__ . '\do_disclaimer' );
  * @return void
  */
 function do_disclaimer() {
-//	include( CHILD_THEME_DIR . '/lib/views/scrollup.php' );
+//	include CHILD_THEME_DIR . '/lib/views/scrollup.php';
 
 	genesis_widget_area( 'disclaimer', array(
 		'before' => '<div class="disclaimer"><div class="wrap">',
@@ -77,20 +77,16 @@ function footer_menu_args( $args ) {
 	return $args;
 }
 
-add_filter( 'genesis_footer_creds_text', __NAMESPACE__ . '\do_footer_creds' );
+add_filter( 'genesis_footer', __NAMESPACE__ . '\do_footer_credits' );
 /**
- * Change the footer text.
+ * Load the footer credits view.
  *
  * @since  1.3.0
  *
- * @param string $creds Existing credentials.
- *
- * @return string Footer credentials, as shortcodes.
+ * @return void
  */
-function do_footer_creds( $creds ) {
+function do_footer_credits() {
+	$copyright = do_shortcode( '[footer_copyright first="2016"]' );
 
-	ob_start();
-	require_once( 'views/footer-credits.php' );
-
-	return ob_get_clean();
+	include __DIR__ . '/views/footer-credits.php';
 }

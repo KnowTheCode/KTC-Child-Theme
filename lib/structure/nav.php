@@ -33,7 +33,7 @@ function render_main_nav() {
 	$user_is_logged_in  = is_user_logged_in();
 	$signinout_redirect = site_url( $_SERVER['REQUEST_URI'] );
 
-	require( __DIR__ . '/views/site-header/main-nav.php' );
+	require __DIR__ . '/views/site-header/main-nav.php';
 }
 
 /**
@@ -62,7 +62,6 @@ function render_subnavs() {
 
 	foreach ( $subnavs as $filename ) {
 		$file = __DIR__ . '/views/site-header/subnavs/' . $filename . '.php';
-		require( $file );
+		require $file;
 	}
-
 }

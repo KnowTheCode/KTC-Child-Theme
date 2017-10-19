@@ -71,7 +71,7 @@ add_action( 'genesis_header', __NAMESPACE__ . '\render_front_page_main_nav', 11 
 function render_front_page_main_nav() {
 	$user_is_logged_in = is_user_logged_in();
 
-	require_once( __DIR__ . '/lib/structure/views/front-page-main-nav.php' );
+	require_once __DIR__ . '/lib/structure/views/front-page-main-nav.php';
 }
 
 genesis();

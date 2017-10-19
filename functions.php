@@ -10,6 +10,6 @@
  */
 namespace KnowTheCode;
 
-require_once( __DIR__ . '/lib/support/dependencies-helpers.php' );
-require_once( 'lib/init.php' );
-require_once( 'lib/support/autoload.php' );
+require_once __DIR__ . '/lib/support/dependencies-helpers.php';
+require_once __DIR__ . '/lib/init.php';
+require_once __DIR__ . '/lib/support/autoload.php';

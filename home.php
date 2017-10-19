@@ -30,7 +30,7 @@ function add_in_blog_page_contents() {
 	$content = do_shortcode( $blog_page->post_content );
 	remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
-	include( CHILD_THEME_DIR . '/lib/views/home-page-header.php' );
+	include CHILD_THEME_DIR . '/lib/views/home-page-header.php';
 }
 
 genesis();

@@ -67,7 +67,7 @@ function render_main_nav() {
 	$user_is_logged_in = is_user_logged_in();
 	$show_library = true;
 
-	require_once( __DIR__ . '/lib/structure/views/gopro-main-nav.php' );
+	require_once __DIR__ . '/lib/structure/views/gopro-main-nav.php';
 }
 
 genesis();

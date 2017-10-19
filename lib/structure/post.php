@@ -106,7 +106,7 @@ function render_inpost_navigation() {
 	$previous = fulcrum_get_previous_parent_post();
 	$next     = fulcrum_get_next_parent_post();
 
-	include( CHILD_THEME_DIR . '/lib/views/single-navigation.php' );
+	include CHILD_THEME_DIR . '/lib/views/single-navigation.php';
 }
 
 /**
@@ -136,7 +136,7 @@ function render_inpost_marketing() {
 	if ( ! is_single() || get_post_type() != 'post' ) {
 		return;
 	}
-	include( __DIR__ . '/views/marketing.php' );
+	include __DIR__ . '/views/marketing.php';
 }
 
 /**

@@ -64,7 +64,7 @@ function load_specified_files( array $filenames, $folder_root = '' ) {
 	$folder_root = $folder_root ?: CHILD_THEME_DIR . '/lib/';
 
 	foreach ( $filenames as $filename ) {
-		require_once( $folder_root . $filename );
+		require_once $folder_root . $filename;
 	}
 }
 
